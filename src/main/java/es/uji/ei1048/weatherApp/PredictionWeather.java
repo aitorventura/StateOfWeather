@@ -2,7 +2,7 @@ package es.uji.ei1048.weatherApp;
 
 import java.time.LocalDateTime;
 
-public class PredictionWeather {
+public class PredictionWeather extends Weather{
 
     LocalDateTime predictionDate;
 

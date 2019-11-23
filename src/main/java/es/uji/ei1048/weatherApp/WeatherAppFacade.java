@@ -10,7 +10,7 @@ public class WeatherAppFacade {
         throw new NotImplementedException();
     }
 
-    public CurrentWeather currentWeatherCoordenades(double longitude, double latitude ){
+    public CurrentWeather currentWeatherCoordinates(double longitude, double latitude ){
         throw new NotImplementedException();
     }
 
@@ -18,7 +18,7 @@ public class WeatherAppFacade {
         throw new NotImplementedException();
     }
 
-    public List<PredictionWeather> previsionOfWeatherCoordenades(double longitude, double latitude ){
+    public List<PredictionWeather> previsionOfWeatherCoordinates(double longitude, double latitude ){
         throw new NotImplementedException();
     }
 

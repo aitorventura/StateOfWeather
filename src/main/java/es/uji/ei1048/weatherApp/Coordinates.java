@@ -1,20 +1,15 @@
 package es.uji.ei1048.weatherApp;
 
-public class Label {
+public class Coordinates {
     private double lon;
     private double lat;
-    private String label;
 
-    public Label(double lon, double lat, String label) {
+    public Coordinates(double lon, double lat) {
         this.lon = lon;
         this.lat = lat;
-        this.label = label;
     }
 
 
-    public String getLabel(double lon, double lat) {
-        return label;
-    }
 
     public double getLat() {
         return lat;
@@ -24,9 +19,6 @@ public class Label {
         return lon;
     }
 
-    public String getLabel() {
-        return label;
-    }
 
     public void setLat(double lat) {
         this.lat = lat;
@@ -36,9 +28,6 @@ public class Label {
         this.lon = lon;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
-    }
 
 
 }

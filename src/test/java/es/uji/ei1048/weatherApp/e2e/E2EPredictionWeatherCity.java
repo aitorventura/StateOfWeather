@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 public class E2EPredictionWeatherCity extends E2ETestBed{
@@ -19,11 +20,12 @@ public class E2EPredictionWeatherCity extends E2ETestBed{
         List<PredictionWeather> listPredictionWeather = weatherAppFacade.previsionOfWeatherCity(city);
 
         //Then
+        assertTrue(listPredictionWeather.size() ==  3);
+
         for(PredictionWeather predictionWeather: listPredictionWeather){
             assertTrue(predictionWeather.getTemperature() > 5);
             assertTrue(predictionWeather.getTemperature() < 25);
         }
-
 
     }
 

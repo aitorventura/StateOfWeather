@@ -4,8 +4,7 @@ import java.time.LocalDateTime;
 
 public abstract class Weather {
     String city;
-    double longitude;
-    double latitude;
+    Coordinates coordinates;
     double temperature;
     double humidty;
     double preassure;
@@ -20,20 +19,12 @@ public abstract class Weather {
         this.city = city;
     }
 
-    public double getLongitude() {
-        return longitude;
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
     }
 
     public double getTemperature() {

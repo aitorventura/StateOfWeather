@@ -4,19 +4,18 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 
 public class WeatherAppFacade {
-    Map<String, Label> listOfLabels;
-    List<String> listOfFavoriteCities;
-    List<Double[]> listOfFavoriteCoordinates;   //No sé que estrucutra de datos es mejor para poner un vector de dos doubles
+    Map<String, Coordinates> listOfLabels;
+    List<String> listOfFauvoriteCities;
+    List<Double[]> listOfFauvoriteCoordinates;   //No sé que estrucutra de datos es mejor para poner un vector de dos doubles
 
 
     public CurrentWeather currentWeatherCity(String city){
         throw new NotImplementedException();
     }
 
-    public CurrentWeather currentWeatherCoordinates(double longitude, double latitude ){
+    public CurrentWeather currentWeatherCoordinates(Coordinates coordinates ){
         throw new NotImplementedException();
     }
 
@@ -24,41 +23,47 @@ public class WeatherAppFacade {
         throw new NotImplementedException();
     }
 
-    public List<PredictionWeather> previsionOfWeatherCoordinates(double longitude, double latitude ){
+    public List<PredictionWeather> previsionOfWeatherCoordinates(Coordinates coordinates){
         throw new NotImplementedException();
     }
 
-    public void addLabel(Label label) {
-        listOfLabels.put(label.getLabel(), label);
+    public boolean addLabel(String label, Coordinates coordinates) {
+        throw new NotImplementedException();
     }
 
-    public boolean containsLabel(String labelName) {
-        if (listOfLabels.containsKey(labelName)){
-            //return listOfLabels.get(labelName);
-            return true;
-        }
-        return false;
-    }
+
 
     //Devuelve el elemento que ha borrado o null si no existía
-    public Label deleteLabel(String nameOfLabel) {
-        return listOfLabels.remove(nameOfLabel);
+    public boolean deleteLabel(String nameOfLabel) {
+        //Se debe controlar que se borre el elemento pedido
+        throw new NotImplementedException();
 
+        //return listOfLabels.remove(nameOfLabel);
     }
 
 
     public boolean addCityToFavorites(String city){
-        if (!listOfFavoriteCities.contains(city)){ //Comprobar si la ciudad existe
+        /*if (!listOfFavoriteCities.contains(city)){ //Comprobar si la ciudad existe
             return listOfFavoriteCities.add(city);
         }
-        return false;
+        return false;*/
+        throw new NotImplementedException();
+
     }
 
 
-    public boolean deleteCityToFavorites(String city){
-        return listOfFavoriteCities.remove(city);
+    public boolean deleteCityFromFavorites(String city){
+        //return listOfFavoriteCities.remove(city);
+        throw new NotImplementedException();
+
     }
 
+    public boolean addCoordinatesToFavorites(Coordinates coordinates){
+        throw new NotImplementedException();
+    }
 
-    //Falta el addCoordinatesToFavorites y el deleteCityToFavorites
+    public boolean deleteCoordinatesFromFavorites(Coordinates coordinates){
+        throw new NotImplementedException();
+    }
+
 }

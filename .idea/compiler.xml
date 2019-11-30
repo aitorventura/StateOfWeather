@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="es.uji.ei1048.StateOfWeather.main" target="1.8" />
+      <module name="es.uji.ei1048.StateOfWeather.test" target="1.8" />
       <module name="StateOfWeather.main" target="1.8" />
       <module name="StateOfWeather.test" target="1.8" />
     </bytecodeTargetLevel>

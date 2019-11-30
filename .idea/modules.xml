@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StateOfWeather.iml" filepath="$PROJECT_DIR$/.idea/modules/StateOfWeather.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StateOfWeather.main.iml" filepath="$PROJECT_DIR$/.idea/modules/StateOfWeather.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StateOfWeather.test.iml" filepath="$PROJECT_DIR$/.idea/modules/StateOfWeather.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/es.uji.ei1048.StateOfWeather.iml" filepath="$PROJECT_DIR$/.idea/modules/es.uji.ei1048.StateOfWeather.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/es.uji.ei1048.StateOfWeather.main.iml" filepath="$PROJECT_DIR$/.idea/modules/es.uji.ei1048.StateOfWeather.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/es.uji.ei1048.StateOfWeather.test.iml" filepath="$PROJECT_DIR$/.idea/modules/es.uji.ei1048.StateOfWeather.test.iml" />
     </modules>
   </component>
 </project>

@@ -11,6 +11,8 @@ public class WeatherAppFacade {
     List<Double[]> listOfFauvoriteCoordinates;   //No sé que estrucutra de datos es mejor para poner un vector de dos doubles
 
 
+
+
     public CurrentWeather currentWeatherCity(String city){
         throw new NotImplementedException();
     }
@@ -64,6 +66,25 @@ public class WeatherAppFacade {
 
     public boolean deleteCoordinatesFromFavorites(Coordinates coordinates){
         throw new NotImplementedException();
+    }
+
+
+
+
+    public List<Double[]> getListOfFauvoriteCoordinates() {
+        return listOfFauvoriteCoordinates;
+    }
+
+    public void setListOfFauvoriteCoordinates(List<Double[]> listOfFauvoriteCoordinates) {
+        this.listOfFauvoriteCoordinates = listOfFauvoriteCoordinates;
+    }
+
+    public List<String> getListOfFauvoriteCities() {
+        return listOfFauvoriteCities;
+    }
+
+    public void setListOfFauvoriteCities(List<String> listOfFauvoriteCities) {
+        this.listOfFauvoriteCities = listOfFauvoriteCities;
     }
 
 }

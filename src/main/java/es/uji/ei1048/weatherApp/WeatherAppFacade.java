@@ -1,24 +1,31 @@
 package es.uji.ei1048.weatherApp;
 
+import es.uji.ei1048.weatherApp.currentWeather.CurrentWeatherUsingCity;
+import es.uji.ei1048.weatherApp.currentWeather.CurrentWeatherUsingCoordinates;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 import java.util.Map;
 
 public class WeatherAppFacade {
+    CurrentWeatherUsingCity currentWeatherUsingCity;
+    CurrentWeatherUsingCoordinates currentWeatherUsingCoordinates;
     Map<String, Coordinates> listOfLabels;
     List<String> listOfFauvoriteCities;
     List<Double[]> listOfFauvoriteCoordinates;   //No sé que estrucutra de datos es mejor para poner un vector de dos doubles
 
 
-
+    public WeatherAppFacade(){
+        this.currentWeatherUsingCity = new CurrentWeatherUsingCity();
+        this.currentWeatherUsingCoordinates = new CurrentWeatherUsingCoordinates();
+    }
 
     public CurrentWeather currentWeatherCity(String city){
-        throw new NotImplementedException();
+        return currentWeatherUsingCity.giveMeTheCurrentWeatherUsingACity(city);
     }
 
     public CurrentWeather currentWeatherCoordinates(Coordinates coordinates ){
-        throw new NotImplementedException();
+        return currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordenates(coordinates.getLon(), coordinates.getLat());
     }
 
     public List<PredictionWeather> previsionOfWeatherCity(String city){

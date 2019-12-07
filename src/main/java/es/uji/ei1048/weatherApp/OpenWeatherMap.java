@@ -16,6 +16,7 @@ import com.google.gson.*;
 import com.google.gson.reflect.*;
 
 public class OpenWeatherMap {
+
     private String API_KEY = "142886e6af3947dd437c5dc91db51abb";
 
 
@@ -27,7 +28,7 @@ public class OpenWeatherMap {
     }
 
 
-    public CurrentWeather giveMeTheCurrentTimeUsingACity(String city){
+    public CurrentWeather giveMeTheCurrentWeatherUsingACity(String city){
         String urlStringLocation ="http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=" + API_KEY + "&units=metric";
         CurrentWeather currentWeather = getCurrentWeather(urlStringLocation);
 
@@ -35,7 +36,7 @@ public class OpenWeatherMap {
 
     }
 
-    public CurrentWeather giveMeTheCurrentTimeUsingCoordinates(double lon, double lat){
+    public CurrentWeather giveMeTheCurrentWeatherUsingCoordinates(double lon, double lat){
 
         String urlStringCoordenadas = "http://api.openweathermap.org/data/2.5/weather?lon=" + lon +"&lat=" + lat +"&appid=" + API_KEY + "&units=metric";
         CurrentWeather currentWeather = getCurrentWeather(urlStringCoordenadas);
@@ -45,6 +46,7 @@ public class OpenWeatherMap {
     }
 
     private CurrentWeather getCurrentWeather( String urlFinished) {
+
         CurrentWeather currentWeather = new CurrentWeather();
         try {
             StringBuilder result = new StringBuilder();
@@ -72,10 +74,6 @@ public class OpenWeatherMap {
             currentWeather.setHumidty(Double.parseDouble(mainMap.get("humidity").toString()));
             currentWeather.setPreassure(Double.parseDouble(mainMap.get("pressure").toString()));
             currentWeather.setDateOfConsultation(new Timestamp(System.currentTimeMillis()));
-
-
-
-
 
 
         } catch(IOException e) {

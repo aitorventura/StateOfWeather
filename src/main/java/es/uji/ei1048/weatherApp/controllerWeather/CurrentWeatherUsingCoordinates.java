@@ -1,4 +1,4 @@
-package es.uji.ei1048.weatherApp.currentWeather;
+package es.uji.ei1048.weatherApp.controllerWeather;
 
 import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.OpenWeatherMap;
@@ -17,12 +17,12 @@ public class CurrentWeatherUsingCoordinates {
     }
 
     public CurrentWeather giveMeTheCurrentWeatherUsingACoordenates(double lon, double lat) {
-        sqLiteDB.removeOldCurrentTimes();
+        sqLiteDB.removeOldCurrentWeathers();
 
         CurrentWeather currentWeather = sqLiteDB.giveMeTheCurrentWeather(lon, lat);
 
         if (currentWeather == null) {
-            currentWeather = this.openWeatherMap.giveMeTheCurrentTimeUsingCoordinates(lon, lat);
+            currentWeather = this.openWeatherMap.giveMeTheCurrentWeatherUsingCoordinates(lon, lat);
         } else {
             return currentWeather;
         }

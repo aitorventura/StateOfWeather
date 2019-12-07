@@ -29,5 +29,18 @@ public class Coordinates {
     }
 
 
+    @Override
+    public boolean equals(Object obj) {
 
+        try{
+            Coordinates coordObj = (Coordinates) obj;
+            if(coordObj.getLon() == this.lon && coordObj.getLat() == this.lat){
+                return true;
+            }
+            return false;
+        }catch(Exception e){
+            return false;
+        }
+
+    }
 }

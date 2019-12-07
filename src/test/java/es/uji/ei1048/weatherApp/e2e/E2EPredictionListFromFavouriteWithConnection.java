@@ -1,8 +1,11 @@
 package es.uji.ei1048.weatherApp.e2e;
 
+import es.uji.ei1048.weatherApp.Coordinates;
+import es.uji.ei1048.weatherApp.PredictionWeather;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.assertTrue;
 
@@ -13,8 +16,7 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
     public void predictionOfFavouritePlacesWithConnectionAndDataLessThan1Hour(){
 
         //Given: lista de favoritos
-        List<String> favouriteCities =  weatherAppFacade.getListOfFavouriteCities();
-        List<Double[]> favouriteCoordinates =  weatherAppFacade.getListOfFavouriteCoordinates();
+        //TODO en principio no se necesita nada
 
 
         //When: entro en la aplicación, hay conexión y datos de menos de XXX
@@ -30,14 +32,12 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
     public void predictionOfFavouritePlacesWithConnectionAndWithoutDataLessThan1Hour(){
 
         //Given: lista de favoritos
-        List<String> favouriteCities =  weatherAppFacade.getListOfFavouriteCities();
-        List<Double[]> favouriteCoordinates =  weatherAppFacade.getListOfFavouriteCoordinates();
+        //TODO en principio no se necesita nada
 
 
         //When: entro en la aplicación, hay conexión, pero no datos de menos de XXX en la BBDD
-        //TODO: Método que devuelva el tiempo de los datos
-        //TODO: Calcular predicciones
-
+        Map<String, List<PredictionWeather>> predictionOfFavouriteCities = weatherAppFacade.predictionOfFavouriteCities();
+        Map<Coordinates, List<PredictionWeather>> predictionOfFavouriteCoordinates = weatherAppFacade.predictionOfFavouriteCoordenates();
 
         //Then: se muestran los datos
 

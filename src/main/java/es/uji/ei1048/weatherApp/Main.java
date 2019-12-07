@@ -14,7 +14,7 @@ public class Main {
 
         System.out.println();
         System.out.println("SOLO DEBERÍA ESTAR CASTELLÓN EN FAVORITOS");
-        sqLiteDB.deleteCityFromFavorite("Valencia");
+        sqLiteDB.removeCityFromFavorite("Valencia");
         sqLiteDB.listFavoriteCities();
 
         sqLiteDB.closeConnection();

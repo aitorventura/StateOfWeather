@@ -44,7 +44,6 @@ public class E2EDeleteCoordinatesFromFavorites  extends  E2ETestBed{
         double lon = -500.908;
         double lat = 56.872;
         Coordinates coordinates = new Coordinates(lon, lat);
-        //TODO comprobar que coordenadas son inválidas
 
         //When: no existe la ciudad que quiero borrar en favoritos
         boolean deleted = weatherAppFacade.deleteCoordinatesFromFavorites(coordinates);

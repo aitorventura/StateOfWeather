@@ -11,9 +11,12 @@ public class E2ECurrentWeatherCoordinates extends E2ETestBed {
 
     @Test
     public void validCurrentWeatherConsultationUsingCoordinates(){
+        //double lon =  39.9945711; estaban al revés
+        //double lat = -0.071089;
+
         //Given: coordenadas válidas
-        double lon =  39.9945711;
-        double lat = -0.071089;
+        double lat =  39.9945711;
+        double lon = -0.071089;
         Coordinates coordinates = new Coordinates(lon, lat);
 
 

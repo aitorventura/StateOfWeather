@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.*;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SQLiteDB {
     Connection c = null;
@@ -21,7 +23,7 @@ public class SQLiteDB {
 
     //CONSULTATIONS TO ADMIN CURRENT WEATHER
 
-    public void removeOldCurrentTimes(){
+    public void removeOldCurrentWeathers(){
         try{
             this.stmt = c.createStatement();
             stmt.execute("DELETE FROM CurrentWeather " +
@@ -77,6 +79,7 @@ public class SQLiteDB {
 
 
         CurrentWeather currentWeather = new CurrentWeather();
+
         try{
             this.stmt = c.createStatement();
 
@@ -87,8 +90,6 @@ public class SQLiteDB {
             query.append(newLat);
 
             ResultSet resultSet = stmt.executeQuery(query.toString());
-
-
 
 
             currentWeather.setCity(resultSet.getString("city"));
@@ -115,7 +116,6 @@ public class SQLiteDB {
 
     }
 
-
     public void addCurrentWeatherToTheDataBase(CurrentWeather currentWeather){
         try{
             this.stmt = c.createStatement();
@@ -141,44 +141,116 @@ public class SQLiteDB {
     }
 
 
+    //CONSULTATIONS TO ADMIN FAVORITECITY
 
+    public List<String> listFavoriteCities(){
 
-    //CONSULTATIONS TO ADMIN FAVORITES
-    public void listFavoriteCities(){
+        List<String> favouriteCities = new ArrayList<>();
+
         try{
             this.stmt = c.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM Favorite");
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM FavoriteCity");
 
             while (resultSet.next()){
                 String city = resultSet.getString("city");
+                favouriteCities.add(city);
                 System.out.println(city);
             }
         } catch (Exception e){
             e.printStackTrace();
         }
+
+        return favouriteCities;
     }
 
-    public void addCityToFavorite(String city){
+    public boolean addCityToFavorite(String city){
         try{
             this.stmt = c.createStatement();
-            stmt.execute("INSERT INTO FAVORITE(city) VALUES('"+ city+ "')");
+            stmt.execute("INSERT INTO FAVORITECITY(city) VALUES('"+ city+ "')");
+            return true;
 
         } catch (Exception e){
             e.printStackTrace();
+            return false;
         }
     }
 
-    public void deleteCityFromFavorite(String city){
+    public boolean removeCityFromFavorite(String city){
+        //todo hay que comprobar si al intentar borrar algo que no existe da error, en teoría no deberia
+        //por tanto, se debe ver si la ciudad estaba en la bbdd o no
+
         try{
             this.stmt = c.createStatement();
-            stmt.execute("DELETE FROM FAVORITE WHERE CITY = '"+ city+ "'");
-
+            stmt.execute("DELETE FROM FAVORITECITY WHERE CITY = '"+ city+ "'");
+            return true;
 
         } catch (Exception e){
             e.printStackTrace();
+            return false;
         }
     }
 
+    //CONSULTATIONS TO ADMIN FAVORITECOORDINATES
+
+    public List<Coordinates> listFavoriteCoordinates(){
+
+        List<Coordinates> favouriteCoordinates = new ArrayList<>();
+
+        try{
+            this.stmt = c.createStatement();
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM FavoriteCoordinates");
+
+            while (resultSet.next()){
+                double longitude = resultSet.getDouble("longitude");
+                double latitude = resultSet.getDouble("latitude");
+
+                Coordinates coordinate = new Coordinates(longitude,latitude);
+                favouriteCoordinates.add(coordinate);
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return favouriteCoordinates;
+    }
+
+    public boolean addCoordinatesToFavorite(Coordinates coordinates){
+        try{
+            this.stmt = c.createStatement();
+            StringBuilder s = new StringBuilder();
+            s.append("INSERT INTO FAVORITECOORDINATES(longitude,latitude) VALUES(");
+            s.append(coordinates.getLon()+",");
+            s.append(coordinates.getLat()+")");
+
+            stmt.execute(s.toString());
+            return true;
+
+        } catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean removeCoordinatesFromFavorite(Coordinates coordinates){
+        //todo hay que comprobar si al intentar borrar algo que no existe da error, en teoría no deberia
+        //por tanto, se debe ver si la ciudad estaba en la bbdd o no
+
+        try{
+            this.stmt = c.createStatement();
+            StringBuilder s = new StringBuilder();
+            s.append("DELETE FROM FAVORITECOORDINATES WHERE longitude =");
+            s.append(coordinates.getLon()+" AND latitude =");
+            s.append(coordinates.getLat());
+            stmt.execute(s.toString());
+            return true;
+
+        } catch (Exception e){
+            //e.printStackTrace();
+            return false;
+        }
+    }
+
+    //CERRAR CONEXIÓN
 
     public void closeConnection(){
         try{

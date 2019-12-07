@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public abstract class Weather {
+
     String city;
     Coordinates coordinates;
     double temperature;

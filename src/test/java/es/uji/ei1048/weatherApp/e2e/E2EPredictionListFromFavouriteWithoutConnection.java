@@ -12,8 +12,8 @@ public class E2EPredictionListFromFavouriteWithoutConnection extends  E2ETestBed
     public void predictionOfFavouritePlacesWithoutConnectionAndDataLessThan3Days(){
 
         //Given: lista de favoritos
-        List<String> favouriteCities =  weatherAppFacade.getListOfFauvoriteCities();
-        List<Double[]> favouriteCoordinates =  weatherAppFacade.getListOfFauvoriteCoordinates();
+        List<String> favouriteCities =  weatherAppFacade.getListOfFavouriteCities();
+        List<Double[]> favouriteCoordinates =  weatherAppFacade.getListOfFavouriteCoordinates();
 
 
         //When: entro en la aplicación, hay conexión y datos de menos de XXX
@@ -29,8 +29,8 @@ public class E2EPredictionListFromFavouriteWithoutConnection extends  E2ETestBed
     public void predictionOfFavouritePlacesWithoutConnectionAndWithoutDataLessThan3Days(){
 
         //Given: lista de favoritos
-        List<String> favouriteCities =  weatherAppFacade.getListOfFauvoriteCities();
-        List<Double[]> favouriteCoordinates =  weatherAppFacade.getListOfFauvoriteCoordinates();
+        List<String> favouriteCities =  weatherAppFacade.getListOfFavouriteCities();
+        List<Double[]> favouriteCoordinates =  weatherAppFacade.getListOfFavouriteCoordinates();
 
 
         //When: entro en la aplicación, hay conexión, pero no datos de menos de XXX en la BBDD

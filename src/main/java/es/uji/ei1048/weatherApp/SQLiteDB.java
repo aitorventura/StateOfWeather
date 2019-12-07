@@ -116,7 +116,7 @@ public class SQLiteDB {
     }
 
 
-    public void addCurrentWatherToTheDataBase(CurrentWeather currentWeather){
+    public void addCurrentWeatherToTheDataBase(CurrentWeather currentWeather){
         try{
             this.stmt = c.createStatement();
             StringBuilder s = new StringBuilder();
@@ -139,18 +139,6 @@ public class SQLiteDB {
 
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

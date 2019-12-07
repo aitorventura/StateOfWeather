@@ -3,6 +3,7 @@ package es.uji.ei1048.weatherApp;
 import java.time.LocalDateTime;
 
 public class CurrentWeather extends Weather {
+
     double minTemperature;
     double maxTemperature;
 

@@ -13,8 +13,6 @@ public class CurrentWeatherUsingCity {
         this.sqLiteDB = new SQLiteDB();
         this.openWeatherMap = new OpenWeatherMap();
 
-
-
     }
 
     public CurrentWeather giveMeTheCurrentWeatherUsingACity(String city){
@@ -31,7 +29,7 @@ public class CurrentWeatherUsingCity {
         if(currentWeather == null){
             throw new NotValidCityException();
         } else {
-            sqLiteDB.addCurrentWatherToTheDataBase(currentWeather);
+            sqLiteDB.addCurrentWeatherToTheDataBase(currentWeather);
             return  currentWeather;
 
 

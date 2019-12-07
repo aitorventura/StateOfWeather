@@ -11,8 +11,9 @@ public class WeatherAppFacade {
     CurrentWeatherUsingCity currentWeatherUsingCity;
     CurrentWeatherUsingCoordinates currentWeatherUsingCoordinates;
     Map<String, Coordinates> listOfLabels;
-    List<String> listOfFauvoriteCities;
-    List<Double[]> listOfFauvoriteCoordinates;   //No sé que estrucutra de datos es mejor para poner un vector de dos doubles
+    WeatherOfFavoritePlaces weatherFromFavoritePlaces;
+   // List<String> listOfFavouriteCities;
+   // List<Double[]> listOfFavouriteCoordinates;   //No sé que estrucutra de datos es mejor para poner un vector de dos doubles
 
 
     public WeatherAppFacade(){
@@ -76,22 +77,22 @@ public class WeatherAppFacade {
     }
 
 
+    //TODO cambiar
 
-
-    public List<Double[]> getListOfFauvoriteCoordinates() {
-        return listOfFauvoriteCoordinates;
+    public List<Double[]> getListOfFavouriteCoordinates() {
+        throw new NotImplementedException();
     }
 
-    public void setListOfFauvoriteCoordinates(List<Double[]> listOfFauvoriteCoordinates) {
-        this.listOfFauvoriteCoordinates = listOfFauvoriteCoordinates;
+    public void setListOfFavouriteCoordinates(List<Double[]> listOfFavouriteCoordinates) {
+        //this.listOfFavouriteCoordinates = listOfFavouriteCoordinates;
     }
 
-    public List<String> getListOfFauvoriteCities() {
-        return listOfFauvoriteCities;
+    public List<String> getListOfFavouriteCities() {
+        throw new NotImplementedException();
     }
 
-    public void setListOfFauvoriteCities(List<String> listOfFauvoriteCities) {
-        this.listOfFauvoriteCities = listOfFauvoriteCities;
+    public void setListOfFavouriteCities(List<String> listOfFavouriteCities) {
+        //this.listOfFavouriteCities = listOfFavouriteCities;
     }
 
 }

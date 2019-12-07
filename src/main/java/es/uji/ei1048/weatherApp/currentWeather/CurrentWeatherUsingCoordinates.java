@@ -3,7 +3,6 @@ package es.uji.ei1048.weatherApp.currentWeather;
 import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.OpenWeatherMap;
 import es.uji.ei1048.weatherApp.SQLiteDB;
-import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
 
 public class CurrentWeatherUsingCoordinates {
@@ -31,7 +30,7 @@ public class CurrentWeatherUsingCoordinates {
         if (currentWeather == null) {
             throw new NotValidCoordinatesException();
         } else {
-            sqLiteDB.addCurrentWatherToTheDataBase(currentWeather);
+            sqLiteDB.addCurrentWeatherToTheDataBase(currentWeather);
             return currentWeather;
 
 

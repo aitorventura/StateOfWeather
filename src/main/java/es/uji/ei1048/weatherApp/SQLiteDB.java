@@ -13,34 +13,48 @@ public class SQLiteDB {
 
     public SQLiteDB(){
          //try connect to DB
+
+    }
+
+    public void open(){
         try{
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:StateOfWeatherDataBase.db");
         } catch (Exception e){
-            System.out.println("Error " + e.getMessage());
+            e.printStackTrace();
         }
+
     }
+
+    public void close() throws Exception{
+        c.close();
+
+    }
+
 
     //CONSULTATIONS TO ADMIN CURRENT WEATHER
 
     public void removeOldCurrentWeathers(){
         try{
+            this.open();
             this.stmt = c.createStatement();
             stmt.execute("DELETE FROM CurrentWeather " +
-                             "WHERE city IN (SELECT city " +
+                             "WHERE dateOfConsultation IN (SELECT dateOfConsultation " +
                                               "FROM CurrentWeather " +
                                                 "WHERE ((julianday('now') - julianday( dateOfConsultation)) * 24 * 60) > 60)");
 
-
+            this.close();
         } catch (Exception e){
 
         }
+
 
     }
 
     public CurrentWeather giveMeTheCurrentWeather(String city){
         CurrentWeather currentWeather = new CurrentWeather();
         try{
+            this.open();
             this.stmt = c.createStatement();
             ResultSet resultSet = stmt.executeQuery("SELECT * FROM CurrentWeather WHERE city = '"+ city + "'");
 
@@ -58,6 +72,7 @@ public class SQLiteDB {
                  Timestamp ts = Timestamp.valueOf(s.toString());
                 currentWeather.setDateOfConsultation(ts);
 
+                this.close();
                 return currentWeather;
 
         } catch (Exception e){
@@ -81,6 +96,8 @@ public class SQLiteDB {
         CurrentWeather currentWeather = new CurrentWeather();
 
         try{
+            this.open();
+
             this.stmt = c.createStatement();
 
             StringBuilder query = new StringBuilder();
@@ -105,6 +122,7 @@ public class SQLiteDB {
             Timestamp ts = Timestamp.valueOf(s.toString());
             currentWeather.setDateOfConsultation(ts);
 
+            this.close();
 
             return currentWeather;
 
@@ -139,6 +157,160 @@ public class SQLiteDB {
 
 
     }
+
+
+
+    //CONSULTATIONS TO ADMIN PREDICTION WEATHER
+
+    public void removeOldPredicionWeathers(){
+        try{
+            this.open();
+
+            this.stmt = c.createStatement();
+            stmt.execute("DELETE FROM PredictionWeather WHERE date IN (SELECT date FROM PredictionWeather WHERE ((julianday('now', 'start of day') - julianday(date , 'start of day')) ) >=  0)");
+            this.close();
+
+        } catch (Exception e){
+
+        }
+
+    }
+
+    public List<PredictionWeather> giveMeTheListOfPredictionWeather(String city){
+
+
+        PredictionWeather predictionWeather;
+        try{
+            this.open();
+
+            this.stmt = c.createStatement();
+
+
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM PredictionWeather WHERE city = '"+ city + "'");
+            ArrayList<PredictionWeather> list = new ArrayList<>();
+
+            while(resultSet.next()) {
+                predictionWeather = new PredictionWeather();
+                predictionWeather.setCity(city);
+                Coordinates coordinates = new Coordinates(resultSet.getDouble("longitude"), resultSet.getDouble("latitude"));
+                predictionWeather.setCoordinates(coordinates);
+                predictionWeather.setTemperature(resultSet.getDouble("temperature"));
+
+                predictionWeather.setHumidty(resultSet.getDouble("humidity"));
+                predictionWeather.setPreassure(resultSet.getDouble("pressure"));
+
+                StringBuilder s = new StringBuilder(resultSet.getString("dateOfConsultation"));
+                s.append(".00");
+                Timestamp ts = Timestamp.valueOf(s.toString());
+                predictionWeather.setPredictionDate(ts);
+
+                list.add(predictionWeather);
+
+            }
+            this.close();
+
+            return list;
+
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+
+
+
+
+    }
+
+    public List<PredictionWeather> giveMeTheListOfPredictionWeatherUsingCoordinates(double lon, double lat){
+
+        BigDecimal newLon = new BigDecimal(lon);
+        newLon = newLon.setScale(2, RoundingMode.DOWN);
+
+        BigDecimal newLat = new BigDecimal(lat);
+        newLat = newLat.setScale(2, RoundingMode.DOWN);
+
+        StringBuilder query = new StringBuilder();
+        query.append("SELECT * FROM PredictionWeather WHERE longitude = ");
+        query.append(newLon);
+        query.append(" AND latitude = ");
+        query.append(newLat);
+
+
+
+        PredictionWeather predictionWeather;
+        try{
+            this.open();
+            this.stmt = c.createStatement();
+            ResultSet resultSet = stmt.executeQuery(query.toString());
+            ArrayList<PredictionWeather> list = new ArrayList<>();
+
+            while(resultSet.next()) {
+                predictionWeather = new PredictionWeather();
+                predictionWeather.setCity(resultSet.getString("city"));
+                Coordinates coordinates = new Coordinates(resultSet.getDouble("longitude"), resultSet.getDouble("latitude"));
+                predictionWeather.setCoordinates(coordinates);
+                predictionWeather.setTemperature(resultSet.getDouble("temperature"));
+
+                predictionWeather.setHumidty(resultSet.getDouble("humidity"));
+                predictionWeather.setPreassure(resultSet.getDouble("pressure"));
+
+                StringBuilder s = new StringBuilder(resultSet.getString("dateOfConsultation"));
+                s.append(".00");
+                Timestamp ts = Timestamp.valueOf(s.toString());
+                predictionWeather.setPredictionDate(ts);
+
+                list.add(predictionWeather);
+
+            }
+            this.close();
+
+            return list;
+
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+
+
+
+    }
+
+    public void addPredictionWeatherToTheDataBase(PredictionWeather predictionWeather){
+
+       try{
+           this.open();
+           this.stmt = c.createStatement();
+           StringBuilder s = new StringBuilder();
+           s.append("INSERT INTO PredictionWeather VALUES(");
+           s.append(predictionWeather.getCoordinates().getLon() + ",");
+           s.append(predictionWeather.getCoordinates().getLat() + ", '");
+           s.append(predictionWeather.getPredictionDate() + "' , '");
+           s.append(predictionWeather.getCity() + " ',");
+           s.append(predictionWeather.getTemperature() + ",");
+           s.append(predictionWeather.getHumidty() + ",");
+           s.append(predictionWeather.getPreassure() + ")");
+
+
+           stmt.execute(s.toString());
+           this.close();
+
+       } catch (Exception e){
+
+        e.printStackTrace();
+       }
+   }
+
+
+
+
+
+
+
+
+
+
 
 
     //CONSULTATIONS TO ADMIN FAVORITECITY

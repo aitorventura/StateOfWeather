@@ -10,7 +10,7 @@ public abstract class Weather {
     double temperature;
     double humidty;
     double preassure;
-    Timestamp dateOfConsultation;
+
 
 
     public String getCity() {
@@ -53,12 +53,6 @@ public abstract class Weather {
         this.preassure = preassure;
     }
 
-    public Timestamp getDateOfConsultation() {
-        return dateOfConsultation;
-    }
 
-    public void setDateOfConsultation(Timestamp dateOfConsultation) {
-        this.dateOfConsultation = dateOfConsultation;
-    }
 
 }

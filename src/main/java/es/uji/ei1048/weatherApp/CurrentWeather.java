@@ -1,11 +1,13 @@
 package es.uji.ei1048.weatherApp;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class CurrentWeather extends Weather {
 
     double minTemperature;
     double maxTemperature;
+    Timestamp dateOfConsultation;
 
 
     public double getMinTemperature() {
@@ -22,6 +24,14 @@ public class CurrentWeather extends Weather {
 
     public void setMaxTemperature(double maxTemperature) {
         this.maxTemperature = maxTemperature;
+    }
+
+    public Timestamp getDateOfConsultation() {
+        return dateOfConsultation;
+    }
+
+    public void setDateOfConsultation(Timestamp dateOfConsultation) {
+        this.dateOfConsultation = dateOfConsultation;
     }
 
 

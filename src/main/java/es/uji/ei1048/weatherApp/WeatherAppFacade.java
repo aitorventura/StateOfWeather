@@ -1,9 +1,6 @@
 package es.uji.ei1048.weatherApp;
 
-import es.uji.ei1048.weatherApp.controllerWeather.CurrentWeatherUsingCity;
-import es.uji.ei1048.weatherApp.controllerWeather.CurrentWeatherUsingCoordinates;
-import es.uji.ei1048.weatherApp.controllerWeather.FavouriteCities;
-import es.uji.ei1048.weatherApp.controllerWeather.FavouriteCoordinates;
+import es.uji.ei1048.weatherApp.controllerWeather.*;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.HashMap;
@@ -16,13 +13,19 @@ public class WeatherAppFacade {
     Map<String, Coordinates> listOfLabels;
     FavouriteCities favouriteCities;
     FavouriteCoordinates favouriteCoordinates;
+    PredictionWeatherUsingCity predictionWeatherUsingCity;
+    PredictionWeatherUsingCoordinates predictionWeatherUsingCoordinates;
+
     //si acaso añadir un Map de coordenadas y ciudades favoritas
 
     public WeatherAppFacade(){
+        SQLiteDB dataBase = new SQLiteDB();
         this.currentWeatherUsingCity = new CurrentWeatherUsingCity();
         this.currentWeatherUsingCoordinates = new CurrentWeatherUsingCoordinates();
         this.favouriteCities = new FavouriteCities();
         this.favouriteCoordinates = new FavouriteCoordinates();
+        this.predictionWeatherUsingCity = new PredictionWeatherUsingCity();
+        this.predictionWeatherUsingCoordinates = new PredictionWeatherUsingCoordinates();
     }
 
     public CurrentWeather currentWeatherCity(String city){
@@ -34,11 +37,11 @@ public class WeatherAppFacade {
     }
 
     public List<PredictionWeather> previsionOfWeatherCity(String city){
-        throw new NotImplementedException();
+        return predictionWeatherUsingCity.giveMeThePredictionToThisCity(city);
     }
 
     public List<PredictionWeather> previsionOfWeatherCoordinates(Coordinates coordinates){
-        throw new NotImplementedException();
+        return predictionWeatherUsingCoordinates.giveMeThePredictionToTheseCoordinates(coordinates);
     }
 
     public boolean addLabel(String label, Coordinates coordinates) {

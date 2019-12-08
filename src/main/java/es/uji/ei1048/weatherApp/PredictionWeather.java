@@ -1,17 +1,18 @@
 package es.uji.ei1048.weatherApp;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class PredictionWeather extends Weather{
 
-    LocalDateTime predictionDate;
+    Timestamp predictionDate;
 
 
-    public LocalDateTime getPredictionDate() {
+    public Timestamp getPredictionDate() {
         return predictionDate;
     }
 
-    public void setPredictionDate(LocalDateTime predictionDate) {
+    public void setPredictionDate(Timestamp predictionDate) {
         this.predictionDate = predictionDate;
     }
 

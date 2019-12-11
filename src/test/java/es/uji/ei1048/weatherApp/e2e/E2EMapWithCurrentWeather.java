@@ -1,9 +1,8 @@
 package es.uji.ei1048.weatherApp.e2e;
 
 import es.uji.ei1048.weatherApp.Coordinates;
+import es.uji.ei1048.weatherApp.exceptions.NoConnectionException;
 import org.junit.Test;
-
-import java.util.List;
 
 public class E2EMapWithCurrentWeather extends  E2ETestBed{
 
@@ -27,7 +26,7 @@ public class E2EMapWithCurrentWeather extends  E2ETestBed{
 
 
 
-    @Test
+    @Test(expected = NoConnectionException.class)
     public void mapWithCurrentWeatherAndOffline(){
 
         //Given: coordenadas y datos que quiero ver
@@ -41,7 +40,7 @@ public class E2EMapWithCurrentWeather extends  E2ETestBed{
         //TODO: No hay conexión
 
 
-        //Then: se muestra el mapa mostrando el tipo de datos pedido
+        //Then: se lanza yba excepción diciendo que no hay conexión
 
     }
 

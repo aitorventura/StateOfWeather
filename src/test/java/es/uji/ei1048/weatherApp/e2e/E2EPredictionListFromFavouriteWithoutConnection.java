@@ -1,9 +1,7 @@
 package es.uji.ei1048.weatherApp.e2e;
 
-import es.uji.ei1048.weatherApp.exceptions.NoDataInTheDatabaseAndOffline;
+import es.uji.ei1048.weatherApp.exceptions.NoDataInTheDatabaseAndOfflineException;
 import org.junit.Test;
-
-import java.util.List;
 
 public class E2EPredictionListFromFavouriteWithoutConnection extends  E2ETestBed {
 
@@ -26,7 +24,7 @@ public class E2EPredictionListFromFavouriteWithoutConnection extends  E2ETestBed
     }
 
 
-    @Test(expected = NoDataInTheDatabaseAndOffline.class)
+    @Test(expected = NoDataInTheDatabaseAndOfflineException.class)
     public void predictionOfFavouritePlacesWithoutConnectionAndWithoutDataLessThan3Days(){
 
         //Given: lista de favoritos

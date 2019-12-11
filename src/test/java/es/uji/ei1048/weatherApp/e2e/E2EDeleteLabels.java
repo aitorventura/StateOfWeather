@@ -40,7 +40,7 @@ public class E2EDeleteLabels  extends  E2ETestBed {
 
     @Test
     public void deleteInvalidLabelFromCoordinates(){
-        //Given: coordenadas válidas
+        //Given: etiqueta inválida
         String nameOfLabel = "ñññ";
 
 
@@ -50,6 +50,7 @@ public class E2EDeleteLabels  extends  E2ETestBed {
 
         //Then
         assertFalse(result);
+
     }
 
 }

@@ -17,19 +17,20 @@ public class E2EAddCityToFavorites extends E2ETestBed {
     @Override
     public void setUp() throws Exception {
         super.setUp();
-        weatherAppFacade.addCityToFavorites("Castellón de la Plana");
-
     }
 
 
     @Test
     public void addValidCityToFavorites(){
+
+        //nos aseguramos de que la ciudad no esté en favoritos
+        weatherAppFacade.deleteCityFromFavorites("Valencia");
+
         //Given: ciudad válida
         String city = "Valencia";
 
         //When: añado una ciudad que existe a favoritos
         boolean added = weatherAppFacade.addCityToFavorites(city);
-
 
         //Then se añade correctamente a favoritos
         assertTrue(added);
@@ -38,16 +39,33 @@ public class E2EAddCityToFavorites extends E2ETestBed {
 
     @Test
     public void addExistentCityToFavorites(){
+
+        //nos aseguramos de que ya está la ciudad en favoritos
+        weatherAppFacade.addCityToFavorites("Castellón de la Plana");
+
         //Given: ciudad ya añadida en favoritos
         String city = "Castellón de la Plana";
 
         //When : intento añadir una ciudad ya presente en favoritos
         boolean added = weatherAppFacade.addCityToFavorites(city);
 
-
         //Then no se añade a favoritos
         assertFalse(added);
 
     }
 
+
+    @Test
+    public void addFakeCityToFavorites(){
+
+        //Given: ciudad no válida en favoritos
+        String city = "asñdksañ";
+
+        //When : intento añadir una ciudad que no existe en favoritos
+        boolean added = weatherAppFacade.addCityToFavorites(city);
+
+        //Then no se añade a favoritos
+        assertFalse(added);
+
+    }
 }

@@ -25,8 +25,11 @@ public class FavouriteCoordinates {
 
     public boolean addCoordinatesToFavourite(Coordinates coordinates){
 
-        if(coordinates.getLon() < 180 && coordinates.getLon() > -180){
-            if(coordinates.getLat() < 90 && coordinates.getLat() > -90){
+        double lat = coordinates.getLat();
+        double lon = coordinates.getLon();
+
+        if(lon < 180 && lon > -180){
+            if(lat < 90 && lat > -90){
                 return sqLiteDB.addCoordinatesToFavorite(coordinates);
             }
         }

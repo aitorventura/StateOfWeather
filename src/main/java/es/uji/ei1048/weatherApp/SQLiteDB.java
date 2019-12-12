@@ -303,16 +303,6 @@ public class SQLiteDB {
    }
 
 
-
-
-
-
-
-
-
-
-
-
     //CONSULTATIONS TO ADMIN FAVORITECITY
 
     public List<String> listFavoriteCities(){
@@ -337,14 +327,20 @@ public class SQLiteDB {
 
     public boolean addCityToFavorite(String city){
         try{
+
+            this.open();
+
             this.stmt = c.createStatement();
-            stmt.execute("INSERT INTO FAVORITECITY(city) VALUES('"+ city+ "')");
+            stmt.execute("INSERT INTO FAVORITECITY(city) VALUES('"+ city.toUpperCase()+ "')");
+
+            this.close();
             return true;
 
         } catch (Exception e){
-            e.printStackTrace();
-            return false;
+           //e.printStackTrace();
+            System.out.println("No se ha podido añadir la ciudad a favoritos (ya está en la BBDD)");
         }
+        return false;
     }
 
     public boolean removeCityFromFavorite(String city){
@@ -352,14 +348,44 @@ public class SQLiteDB {
         //por tanto, se debe ver si la ciudad estaba en la bbdd o no
 
         try{
-            this.stmt = c.createStatement();
-            stmt.execute("DELETE FROM FAVORITECITY WHERE CITY = '"+ city+ "'");
-            return true;
+            if(this.existsCity(city)){
+                this.open();
+
+                this.stmt = c.createStatement();
+                stmt.execute("DELETE FROM FAVORITECITY WHERE city = '"+ city.toUpperCase()+ "'");
+
+                this.close();
+                return true;
+            }
 
         } catch (Exception e){
             e.printStackTrace();
-            return false;
         }
+
+        return false;
+    }
+
+    private boolean existsCity(String city){
+
+        String existingCity = null;
+
+        try {
+            this.open();
+            this.stmt = c.createStatement();
+
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM FAVORITECITY WHERE city = '"+city.toUpperCase()+"'");
+
+            while (resultSet.next()){
+                existingCity = resultSet.getString("city");
+            }
+
+            this.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return existingCity != null;
     }
 
     //CONSULTATIONS TO ADMIN FAVORITECOORDINATES
@@ -369,6 +395,8 @@ public class SQLiteDB {
         List<Coordinates> favouriteCoordinates = new ArrayList<>();
 
         try{
+            this.open();
+
             this.stmt = c.createStatement();
             ResultSet resultSet = stmt.executeQuery("SELECT * FROM FavoriteCoordinates");
 
@@ -379,6 +407,9 @@ public class SQLiteDB {
                 Coordinates coordinate = new Coordinates(longitude,latitude);
                 favouriteCoordinates.add(coordinate);
             }
+
+            this.close();
+
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -388,6 +419,7 @@ public class SQLiteDB {
 
     public boolean addCoordinatesToFavorite(Coordinates coordinates){
         try{
+            this.open();
             this.stmt = c.createStatement();
             StringBuilder s = new StringBuilder();
             s.append("INSERT INTO FAVORITECOORDINATES(longitude,latitude) VALUES(");
@@ -395,10 +427,13 @@ public class SQLiteDB {
             s.append(coordinates.getLat()+")");
 
             stmt.execute(s.toString());
+
+            this.close();
             return true;
 
         } catch (Exception e){
-            e.printStackTrace();
+            System.out.println("Error al intentar añadir una coordenada a favoritos en la BBDD");
+            //e.printStackTrace();
             return false;
         }
     }
@@ -408,15 +443,22 @@ public class SQLiteDB {
         //por tanto, se debe ver si la ciudad estaba en la bbdd o no
 
         try{
+
+            this.open();
+
             this.stmt = c.createStatement();
             StringBuilder s = new StringBuilder();
             s.append("DELETE FROM FAVORITECOORDINATES WHERE longitude =");
             s.append(coordinates.getLon()+" AND latitude =");
             s.append(coordinates.getLat());
             stmt.execute(s.toString());
+
+            this.close();
+
             return true;
 
         } catch (Exception e){
+            System.out.println("Error al intentar borrar una coordenada de favoritos en la BBDD");
             //e.printStackTrace();
             return false;
         }

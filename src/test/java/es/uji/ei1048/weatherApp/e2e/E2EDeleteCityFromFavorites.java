@@ -15,13 +15,15 @@ public class E2EDeleteCityFromFavorites extends  E2ETestBed {
     @Override
     public void setUp() throws Exception {
         super.setUp();
-        weatherAppFacade.addCityToFavorites("Valencia");
-
     }
 
 
     @Test
     public void deleteExistentCityOfFavorites(){
+
+        //nos aseguramos de que la ciudad está en favoritos
+        weatherAppFacade.addCityToFavorites("Valencia");
+
         //Given: ciudad presente en favoritos
         String city = "Valencia";
 

@@ -10,23 +10,26 @@ import java.util.Map;
 public class WeatherAppFacade {
     CurrentWeatherUsingCity currentWeatherUsingCity;
     CurrentWeatherUsingCoordinates currentWeatherUsingCoordinates;
-    Map<String, Coordinates> listOfLabels;
+    //Map<String, Coordinates> listOfLabels;
+    SavedLabels savedLabels;
     FavouriteCities favouriteCities;
     FavouriteCoordinates favouriteCoordinates;
     PredictionWeatherUsingCity predictionWeatherUsingCity;
     PredictionWeatherUsingCoordinates predictionWeatherUsingCoordinates;
 
-    //si acaso añadir un Map de coordenadas y ciudades favoritas
-
     public WeatherAppFacade(){
         SQLiteDB dataBase = new SQLiteDB();
         this.currentWeatherUsingCity = new CurrentWeatherUsingCity();
         this.currentWeatherUsingCoordinates = new CurrentWeatherUsingCoordinates();
+        this.savedLabels = new SavedLabels();
         this.favouriteCities = new FavouriteCities();
         this.favouriteCoordinates = new FavouriteCoordinates();
         this.predictionWeatherUsingCity = new PredictionWeatherUsingCity();
         this.predictionWeatherUsingCoordinates = new PredictionWeatherUsingCoordinates();
     }
+
+
+    //CURRENT WEATHER AND PREVISION
 
     public CurrentWeather currentWeatherCity(String city){
         return currentWeatherUsingCity.giveMeTheCurrentWeatherUsingACity(city);
@@ -44,19 +47,28 @@ public class WeatherAppFacade {
         return predictionWeatherUsingCoordinates.giveMeThePredictionToTheseCoordinates(coordinates);
     }
 
+
+    //LABELS
+
+    //añade una etiqueta
     public boolean addLabel(String label, Coordinates coordinates) {
-        throw new NotImplementedException();
+        return savedLabels.addLabel(label, coordinates);
     }
 
 
-
-    //Devuelve el elemento que ha borrado o null si no existía
-    public boolean deleteLabel(String nameOfLabel) {
-        //Se debe controlar que se borre el elemento pedido
-        throw new NotImplementedException();
-
-        //return listOfLabels.remove(nameOfLabel);
+    //borra la etiqueta elegida
+    public boolean deleteLabel(String label) {
+        return savedLabels.deleteLabel(label);
     }
+
+    //lista de etiquetas (no nos hace falta en teoría
+   /* public Map<String, Coordinates> getLabels(){
+        return savedLabels.getLabels();
+    }*/
+
+   public CurrentWeather currentWeatherOfLabel(String label) {
+       throw new NotImplementedException();
+   }
 
     //TODO deberíamos poner un max de favoritos?
 
@@ -82,9 +94,6 @@ public class WeatherAppFacade {
         return weatherOfFavouriteCities;
     }
 
-   /* public void setListOfFavouriteCities(List<String> listOfFavouriteCities) {
-        this.listOfFavouriteCities = listOfFavouriteCities;
-    }*/
 
     //FAVOURITE COORDINATES
 
@@ -108,11 +117,8 @@ public class WeatherAppFacade {
         return weatherOfFavouriteCoordinates;
     }
 
-    /*public void setListOfFavouriteCoordinates(List<Double[]> listOfFavouriteCoordinates) {
-        this.listOfFavouriteCoordinates = listOfFavouriteCoordinates;
-    }*/
 
-    //PREDICTION OF FAVOURITE CITIES AND COORDENATES
+      //PREDICTION OF FAVOURITE CITIES AND COORDENATES
 
     //todo implementar el controlador
     public Map<String, List<PredictionWeather>> predictionOfFavouriteCities() {

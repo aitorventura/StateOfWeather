@@ -28,6 +28,16 @@ public class Coordinates {
         this.lon = lon;
     }
 
+    public boolean areValid(){
+
+        if(lon < 180 && lon > -180) {
+            if (lat < 90 && lat > -90) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     @Override
     public boolean equals(Object obj) {

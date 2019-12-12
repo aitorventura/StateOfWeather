@@ -1,11 +1,14 @@
 package es.uji.ei1048.weatherApp;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class SQLiteDB {
     Connection c = null;
@@ -310,6 +313,8 @@ public class SQLiteDB {
         List<String> favouriteCities = new ArrayList<>();
 
         try{
+            this.open();
+
             this.stmt = c.createStatement();
             ResultSet resultSet = stmt.executeQuery("SELECT * FROM FavoriteCity");
 
@@ -318,6 +323,9 @@ public class SQLiteDB {
                 favouriteCities.add(city);
                 System.out.println(city);
             }
+
+            this.close();
+
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -375,9 +383,9 @@ public class SQLiteDB {
 
             ResultSet resultSet = stmt.executeQuery("SELECT * FROM FAVORITECITY WHERE city = '"+city.toUpperCase()+"'");
 
-            while (resultSet.next()){
+            //while (resultSet.next()){
                 existingCity = resultSet.getString("city");
-            }
+            //}
 
             this.close();
 
@@ -439,8 +447,8 @@ public class SQLiteDB {
     }
 
     public boolean removeCoordinatesFromFavorite(Coordinates coordinates){
-        //todo hay que comprobar si al intentar borrar algo que no existe da error, en teoría no deberia
-        //por tanto, se debe ver si la ciudad estaba en la bbdd o no
+
+        //todo cambiar la comprobación de si existe la coordenada en la BBDD del controlador, hacerla aquí
 
         try{
 
@@ -463,6 +471,109 @@ public class SQLiteDB {
             return false;
         }
     }
+
+
+    //LABELS
+
+    public boolean addLabel(String label, Coordinates coordinates){
+
+        try{
+            this.open();
+
+            this.stmt = c.createStatement();
+            StringBuilder s = new StringBuilder();
+            s.append("INSERT INTO LABELS(label,longitude,latitude) VALUES(");
+            s.append("'"+label+"',");
+            s.append(coordinates.getLon()+",");
+            s.append(coordinates.getLat()+")");
+
+            stmt.execute(s.toString());
+            this.close();
+
+            return true;
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean removeLabel(String label){
+
+        try{
+            if(this.existsLabel(label)){
+                this.open();
+
+                this.stmt = c.createStatement();
+                StringBuilder s = new StringBuilder();
+                s.append("DELETE FROM LABELS WHERE label = '"+label+"'");
+                stmt.execute(s.toString());
+
+                this.close();
+                return true;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    private boolean existsLabel(String label){
+
+        String existingLabel = null;
+
+        try{
+            this.open();
+            this.stmt = c.createStatement();
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM LABELS WHERE label = '"+label+"'");
+
+            existingLabel = resultSet.getString("label");
+
+            this.close();
+        }catch (Exception e){
+            System.out.println("error al encontrar label");
+            e.printStackTrace();
+        }
+
+        return existingLabel != null;
+    }
+
+
+    public Coordinates getCoordinatesOfLabel(String label){
+
+        Coordinates coordinates = null;
+
+        try{
+            this.open();
+
+            this.stmt = c.createStatement();
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM LABELS WHERE label = '"+label+"'");
+
+            resultSet.getString("label");
+            double longitude = resultSet.getDouble("longitude");
+            double latitude = resultSet.getDouble("latitude");
+            coordinates = new Coordinates(longitude,latitude);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return coordinates;
+    }
+
+    /*public Map<String, Coordinates> getLabels(){
+
+        try{
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+*/
 
     //CERRAR CONEXIÓN
 

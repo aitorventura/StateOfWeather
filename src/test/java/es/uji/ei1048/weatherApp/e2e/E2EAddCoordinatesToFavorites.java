@@ -14,12 +14,6 @@ public class E2EAddCoordinatesToFavorites extends E2ETestBed {
         super();
     }
 
-    @Override
-    public void setUp() throws Exception {
-        super.setUp();
-    }
-
-
     @Test
     public void addValidCoordinatesToFavorites(){
         //Given: coordenadas válidas

@@ -15,20 +15,25 @@ public class SavedLabels {
         this.sqLiteDB = new SQLiteDB();
     }
 
-    public Map<String, Coordinates> getLabels() {
+    public Map<String, Coordinates> getAllLabels() {
         throw new NotImplementedException();
     }
 
     public boolean deleteLabel(String label) {
-        throw new NotImplementedException();
+        return sqLiteDB.removeLabel(label);
     }
 
     public boolean addLabel(String label, Coordinates coordinates) {
-        throw new NotImplementedException();
+
+        if (coordinates.areValid()){
+            return sqLiteDB.addLabel(label, coordinates);
+        }
+
+        return false;
     }
 
     public Coordinates getCoordinatesOfLabel(String label) {
-        throw new NotImplementedException();
+        return sqLiteDB.getCoordinatesOfLabel(label);
     }
 
 

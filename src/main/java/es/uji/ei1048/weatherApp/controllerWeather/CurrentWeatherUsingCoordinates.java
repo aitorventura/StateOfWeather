@@ -17,23 +17,23 @@ public class CurrentWeatherUsingCoordinates {
     }
 
     public CurrentWeather giveMeTheCurrentWeatherUsingACoordenates(double lon, double lat) {
-        sqLiteDB.removeOldCurrentWeathers();
+
+        sqLiteDB.removeOldCurrentWeathers(); //borra todos los datos obsoletos
 
         CurrentWeather currentWeather = sqLiteDB.giveMeTheCurrentWeather(lon, lat);
 
-        if (currentWeather == null) {
+        if (currentWeather == null) { //si las coordenadas NO están en la BBDD
             currentWeather = this.openWeatherMap.giveMeTheCurrentWeatherUsingCoordinates(lon, lat);
         } else {
-            return currentWeather;
+            return currentWeather; //si las coordenadas están en la BBDD
         }
 
-        if (currentWeather == null) {
+        //TODO nos podríamos ahorrar esta comprobación si al principio creamos la coordenada y ejectumanos su método areValid()
+        if (currentWeather == null) { //si no existe la coordenada
             throw new NotValidCoordinatesException();
-        } else {
+        } else { //si existe, se añade
             sqLiteDB.addCurrentWeatherToTheDataBase(currentWeather);
             return currentWeather;
-
-
         }
 
     }

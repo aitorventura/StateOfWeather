@@ -17,6 +17,9 @@ public class E2EAddLabels extends E2ETestBed {
         String newLabel = "UJI";
         Coordinates coordinates = new Coordinates(lon, lat);
 
+        //nos aseguramos de que la etiqueta no está en Labels
+        weatherAppFacade.deleteLabel(newLabel);
+
 
         //When : añado una nueva etiqueta
         boolean result = weatherAppFacade.addLabel(newLabel, coordinates);

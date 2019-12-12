@@ -2,8 +2,6 @@ package es.uji.ei1048.weatherApp.controllerWeather;
 
 import es.uji.ei1048.weatherApp.Coordinates;
 import es.uji.ei1048.weatherApp.SQLiteDB;
-import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 
@@ -25,29 +23,25 @@ public class FavouriteCoordinates {
 
     public boolean addCoordinatesToFavourite(Coordinates coordinates){
 
-        double lat = coordinates.getLat();
-        double lon = coordinates.getLon();
-
-        if(lon < 180 && lon > -180){
-            if(lat < 90 && lat > -90){
-                return sqLiteDB.addCoordinatesToFavorite(coordinates);
-            }
+        if(coordinates.areValid()){
+            return sqLiteDB.addCoordinatesToFavorite(coordinates);
         }
 
         return false;
-        //throw new NotValidCoordinatesException(); //TODO lanzar excepción o devolver false? por ahora solo devuelve false
     }
 
     public boolean removeCoordinatesFromFavourite(Coordinates coordinates){
        // throw new NotImplementedException();
 
-        List<Coordinates> coodinatesFav = sqLiteDB.listFavoriteCoordinates();
+        if(coordinates.areValid()){
+            List<Coordinates> coodinatesFav = sqLiteDB.listFavoriteCoordinates();
 
-        //TODO se dejará así si también tenemos que devolver false cuando la coordenada no existe
-        //yo prefiero quitarlo, se puede hacer en la vista una lista un botón para borrar un sitio
-        //por tanto, siempre existirá en la bbdd y sino existe nos da igual también
-        if(coodinatesFav.contains(coordinates)){
-            return sqLiteDB.removeCoordinatesFromFavorite(coordinates);
+            //TODO se dejará así si también tenemos que devolver false cuando la coordenada no existe
+            //yo prefiero quitarlo, se puede hacer en la vista una lista un botón para borrar un sitio
+            //por tanto, siempre existirá en la bbdd y sino existe nos da igual también
+            if(coodinatesFav.contains(coordinates)){
+                return sqLiteDB.removeCoordinatesFromFavorite(coordinates);
+            }
         }
 
         return false;

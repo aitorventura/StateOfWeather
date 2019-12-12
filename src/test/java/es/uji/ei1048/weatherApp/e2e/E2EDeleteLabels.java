@@ -20,6 +20,8 @@ public class E2EDeleteLabels  extends  E2ETestBed {
         double lat = -0.071089;
         Coordinates coordinates = new Coordinates(lon, lat);
         String newLabel = "UJI";
+
+        //nos aseguramos de que la etiqueta está en Labels
         weatherAppFacade.addLabel(newLabel, coordinates);
 
     }
@@ -28,10 +30,10 @@ public class E2EDeleteLabels  extends  E2ETestBed {
     @Test
     public void deleteValidLabelFromCoordinates(){
         //Given: etiqueta válida
-        String nameOfLabel = "UJI";
+        String label = "UJI";
 
         //When: borro la etiqueta válida y que quiero borrar
-        boolean result = weatherAppFacade.deleteLabel(nameOfLabel);
+        boolean result = weatherAppFacade.deleteLabel(label);
 
         //Then
         assertTrue(result);

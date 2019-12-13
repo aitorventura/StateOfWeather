@@ -165,6 +165,19 @@ public class SQLiteDB {
 
     //CONSULTATIONS TO ADMIN PREDICTION WEATHER
 
+    public void removeAllPredictions(){
+        try{
+            this.open();
+
+            this.stmt = c.createStatement();
+            stmt.execute("DELETE FROM PredictionWeather");
+            this.close();
+
+        } catch (Exception e){
+
+        }
+    }
+
     public void removeOldPredicionWeathers(){
         try{
             this.open();
@@ -308,6 +321,7 @@ public class SQLiteDB {
 
     //CONSULTATIONS TO ADMIN FAVORITECITY
 
+
     public List<String> listFavoriteCities(){
 
         List<String> favouriteCities = new ArrayList<>();
@@ -397,6 +411,8 @@ public class SQLiteDB {
     }
 
     //CONSULTATIONS TO ADMIN FAVORITECOORDINATES
+
+
 
     public List<Coordinates> listFavoriteCoordinates(){
 

@@ -16,6 +16,8 @@ public class WeatherAppFacade {
     FavouriteCoordinates favouriteCoordinates;
     PredictionWeatherUsingCity predictionWeatherUsingCity;
     PredictionWeatherUsingCoordinates predictionWeatherUsingCoordinates;
+    PredictionFavouriteCities predictionFavouriteCities;
+    PredictionFavouriteCoordinates predictionFavouriteCoordinates;
 
     public WeatherAppFacade(){
         SQLiteDB dataBase = new SQLiteDB();
@@ -26,6 +28,8 @@ public class WeatherAppFacade {
         this.favouriteCoordinates = new FavouriteCoordinates();
         this.predictionWeatherUsingCity = new PredictionWeatherUsingCity();
         this.predictionWeatherUsingCoordinates = new PredictionWeatherUsingCoordinates();
+        this.predictionFavouriteCities = new PredictionFavouriteCities();
+        this.predictionFavouriteCoordinates = new PredictionFavouriteCoordinates();
     }
 
 
@@ -84,7 +88,9 @@ public class WeatherAppFacade {
         return favouriteCities.removeCityFromFavourite(city);
     }
 
-    public Map<String,CurrentWeather> getListOfFavouriteCities() {
+
+    //Comento porque no se usa
+   /* public Map<String,CurrentWeather> getListOfFavouriteCities() {
 
         List<String> listOfFavoriteCities = favouriteCities.getFavouriteCities();
         Map<String,CurrentWeather> weatherOfFavouriteCities = new HashMap<>();
@@ -93,7 +99,7 @@ public class WeatherAppFacade {
             weatherOfFavouriteCities.put(city,currentWeatherUsingCity.giveMeTheCurrentWeatherUsingACity(city));
         }
         return weatherOfFavouriteCities;
-    }
+    }*/
 
 
     //FAVOURITE COORDINATES
@@ -106,7 +112,8 @@ public class WeatherAppFacade {
         return favouriteCoordinates.removeCoordinatesFromFavourite(coordinates);
     }
 
-    public Map<Coordinates, CurrentWeather> getWeatherOfFavouriteCoordinates() {
+    //Comento el método porque creo que no se usa
+    /*public Map<Coordinates, CurrentWeather> getWeatherOfFavouriteCoordinates() {
 
         List<Coordinates> favoriteCoordinates =favouriteCoordinates.getFavouriteCoordinates();
         Map<Coordinates,CurrentWeather> weatherOfFavouriteCoordinates = new HashMap<>();
@@ -116,17 +123,16 @@ public class WeatherAppFacade {
         }
 
         return weatherOfFavouriteCoordinates;
-    }
+    }*/
 
 
       //PREDICTION OF FAVOURITE CITIES AND COORDENATES
 
-    //todo implementar el controlador
     public Map<String, List<PredictionWeather>> predictionOfFavouriteCities() {
-        throw new NotImplementedException();
+        return predictionFavouriteCities.giveMeThePredictionsOfMyFavoriteCities();
     }
 
     public Map<Coordinates,List<PredictionWeather>> predictionOfFavouriteCoordenates() {
-        throw new NotImplementedException();
+        return predictionFavouriteCoordinates.giveMeThePredictionsOfMyFavoriteCoordinates();
     }
 }

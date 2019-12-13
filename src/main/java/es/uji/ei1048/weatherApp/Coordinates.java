@@ -39,7 +39,7 @@ public class Coordinates {
     }
 
 
-    @Override
+   @Override
     public boolean equals(Object obj) {
 
         try{
@@ -53,4 +53,5 @@ public class Coordinates {
         }
 
     }
+
 }

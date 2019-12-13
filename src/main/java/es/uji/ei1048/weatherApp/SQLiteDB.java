@@ -1,5 +1,6 @@
 package es.uji.ei1048.weatherApp;
 
+import es.uji.ei1048.weatherApp.interfaces.IStore;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.math.BigDecimal;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class SQLiteDB {
+public class SQLiteDB implements IStore {
     Connection c = null;
     Statement stmt = null;
 
@@ -591,19 +592,7 @@ public class SQLiteDB {
     }
 */
 
-    //CERRAR CONEXIÓN
-
-    public void closeConnection(){
-        try{
-            c.close();
-
-        } catch (Exception e){
-            System.out.println("Error " + e.getMessage());
-        }
 
 
-
-
-    }
 
 }

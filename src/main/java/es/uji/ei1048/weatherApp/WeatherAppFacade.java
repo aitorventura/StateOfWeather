@@ -8,19 +8,18 @@ import java.util.List;
 import java.util.Map;
 
 public class WeatherAppFacade {
-    CurrentWeatherUsingCity currentWeatherUsingCity;
-    CurrentWeatherUsingCoordinates currentWeatherUsingCoordinates;
+    private final CurrentWeatherUsingCity currentWeatherUsingCity;
+    private final CurrentWeatherUsingCoordinates currentWeatherUsingCoordinates;
     //Map<String, Coordinates> listOfLabels;
-    SavedLabels savedLabels;
-    FavouriteCities favouriteCities;
-    FavouriteCoordinates favouriteCoordinates;
-    PredictionWeatherUsingCity predictionWeatherUsingCity;
-    PredictionWeatherUsingCoordinates predictionWeatherUsingCoordinates;
-    PredictionFavouriteCities predictionFavouriteCities;
-    PredictionFavouriteCoordinates predictionFavouriteCoordinates;
+    private final SavedLabels savedLabels;
+    private final FavouriteCities favouriteCities;
+    private final FavouriteCoordinates favouriteCoordinates;
+    private final PredictionWeatherUsingCity predictionWeatherUsingCity;
+    private final PredictionWeatherUsingCoordinates predictionWeatherUsingCoordinates;
+    private final PredictionFavouriteCities predictionFavouriteCities;
+    private final PredictionFavouriteCoordinates predictionFavouriteCoordinates;
 
     public WeatherAppFacade(){
-        SQLiteDB dataBase = new SQLiteDB();
         this.currentWeatherUsingCity = new CurrentWeatherUsingCity();
         this.currentWeatherUsingCoordinates = new CurrentWeatherUsingCoordinates();
         this.savedLabels = new SavedLabels();
@@ -135,4 +134,8 @@ public class WeatherAppFacade {
     public Map<Coordinates,List<PredictionWeather>> predictionOfFavouriteCoordenates() {
         return predictionFavouriteCoordinates.giveMeThePredictionsOfMyFavoriteCoordinates();
     }
+
+
+    //TODO abrir mapa fisico y buscar tiempo por etiqueta
+
 }

@@ -14,8 +14,9 @@ import java.util.Map;
 
 import com.google.gson.*;
 import com.google.gson.reflect.*;
+import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
-public class OpenWeatherMap {
+public class OpenWeatherMap implements IWeatherService {
 
     private String API_KEY = "142886e6af3947dd437c5dc91db51abb";
 
@@ -189,6 +190,11 @@ public class OpenWeatherMap {
 
         return getPredictionWeathers(urlStringCoordinates);
 
+
+    }
+
+    @Override
+    public void openWeatherMap(Coordinates coordinates, String typeOfMap) {
 
     }
 

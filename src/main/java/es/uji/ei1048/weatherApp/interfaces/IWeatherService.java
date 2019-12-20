@@ -1,4 +1,5 @@
 package es.uji.ei1048.weatherApp.interfaces;
+
 import es.uji.ei1048.weatherApp.Coordinates;
 import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.PredictionWeather;

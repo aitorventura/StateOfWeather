@@ -5,12 +5,14 @@ import es.uji.ei1048.weatherApp.OpenWeatherMap;
 import es.uji.ei1048.weatherApp.PredictionWeather;
 import es.uji.ei1048.weatherApp.SQLiteDB;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
+import es.uji.ei1048.weatherApp.interfaces.IStore;
+import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
 import java.util.List;
 
 public class PredictionWeatherUsingCity {
-    private SQLiteDB sqLiteDB;
-    private OpenWeatherMap openWeatherMap;
+    private IStore sqLiteDB;
+    private IWeatherService openWeatherMap;
 
 
     public PredictionWeatherUsingCity(){

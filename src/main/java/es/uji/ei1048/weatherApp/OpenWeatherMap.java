@@ -124,6 +124,7 @@ public class OpenWeatherMap implements IWeatherService {
             JsonObject cityData = (JsonObject) objcity;
 
             JsonElement nameJson = (JsonElement) cityData.get("name");
+
             JsonElement coordinates = (JsonElement) cityData.get("coord");
 
             Object coordObj = parser.parse(coordinates.toString());
@@ -136,7 +137,7 @@ public class OpenWeatherMap implements IWeatherService {
             for (int i = 0; i < lista.size(); i++) {
                 PredictionWeather p = new PredictionWeather();
                 p.setCoordinates(new Coordinates(Double.parseDouble(longitude.toString()), Double.parseDouble(latitude.toString())));
-                p.setCity(nameJson.toString());
+                p.setCity(name);
 
                 JsonElement object = lista.get(i);
 

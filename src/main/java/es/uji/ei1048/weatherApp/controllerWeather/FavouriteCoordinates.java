@@ -2,13 +2,18 @@ package es.uji.ei1048.weatherApp.controllerWeather;
 
 import es.uji.ei1048.weatherApp.Coordinates;
 import es.uji.ei1048.weatherApp.SQLiteDB;
+import es.uji.ei1048.weatherApp.interfaces.IStore;
+import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
 import java.util.List;
 
 public class FavouriteCoordinates {
 
-    private SQLiteDB sqLiteDB;
-    //private List<Coordinates> listOfFavouriteCoordinates;
+    private IStore sqLiteDB;
+
+    public FavouriteCoordinates(IStore iStore){
+        this.sqLiteDB = iStore;
+    }
 
     public FavouriteCoordinates(){
         this.sqLiteDB = new SQLiteDB();

@@ -4,15 +4,22 @@ import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.OpenWeatherMap;
 import es.uji.ei1048.weatherApp.SQLiteDB;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
+import es.uji.ei1048.weatherApp.interfaces.IStore;
+import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
 public class CurrentWeatherUsingCity {
-    private SQLiteDB sqLiteDB;
-    private OpenWeatherMap openWeatherMap;
+    private IStore sqLiteDB;
+    private IWeatherService openWeatherMap;
 
     public CurrentWeatherUsingCity(){
         this.sqLiteDB = new SQLiteDB();
         this.openWeatherMap = new OpenWeatherMap();
 
+    }
+
+    public CurrentWeatherUsingCity(IStore iStore, IWeatherService iWeatherService){
+        this.sqLiteDB = iStore;
+        this.openWeatherMap = iWeatherService;
     }
 
     public CurrentWeather giveMeTheCurrentWeatherUsingACity(String city){
@@ -31,8 +38,6 @@ public class CurrentWeatherUsingCity {
         } else {
             sqLiteDB.addCurrentWeatherToTheDataBase(currentWeather); //si existe, se añade a la BBDD
             return  currentWeather;
-
-
         }
 
     }

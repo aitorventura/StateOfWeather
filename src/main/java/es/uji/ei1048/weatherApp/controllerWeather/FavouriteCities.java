@@ -4,6 +4,8 @@ import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.OpenWeatherMap;
 import es.uji.ei1048.weatherApp.SQLiteDB;
 import es.uji.ei1048.weatherApp.Weather;
+import es.uji.ei1048.weatherApp.interfaces.IStore;
+import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 import org.omg.CORBA.Current;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -11,14 +13,19 @@ import java.util.List;
 
 public class FavouriteCities {
 
-    private SQLiteDB sqLiteDB;
-    private OpenWeatherMap openWeatherMap;
+    private IStore sqLiteDB;
+    private IWeatherService openWeatherMap;
 
     public FavouriteCities(){
-
         this.sqLiteDB = new SQLiteDB();
         this.openWeatherMap = new OpenWeatherMap();
     }
+
+    public FavouriteCities(IStore iStore, IWeatherService iWeatherService){
+        this.sqLiteDB = iStore;
+        this.openWeatherMap = iWeatherService;
+    }
+
 
     public List<String> getFavouriteCities(){
         return sqLiteDB.listFavoriteCities();

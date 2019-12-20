@@ -1,6 +1,7 @@
 package es.uji.ei1048.weatherApp;
 
 import es.uji.ei1048.weatherApp.controllerWeather.*;
+import es.uji.ei1048.weatherApp.interfaces.IStore;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.HashMap;
@@ -10,7 +11,6 @@ import java.util.Map;
 public class WeatherAppFacade {
     private final CurrentWeatherUsingCity currentWeatherUsingCity;
     private final CurrentWeatherUsingCoordinates currentWeatherUsingCoordinates;
-    //Map<String, Coordinates> listOfLabels;
     private final SavedLabels savedLabels;
     private final FavouriteCities favouriteCities;
     private final FavouriteCoordinates favouriteCoordinates;
@@ -30,6 +30,7 @@ public class WeatherAppFacade {
         this.predictionFavouriteCities = new PredictionFavouriteCities();
         this.predictionFavouriteCoordinates = new PredictionFavouriteCoordinates();
     }
+
 
 
     //CURRENT WEATHER AND PREVISION
@@ -137,5 +138,20 @@ public class WeatherAppFacade {
 
 
     //TODO abrir mapa fisico y buscar tiempo por etiqueta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

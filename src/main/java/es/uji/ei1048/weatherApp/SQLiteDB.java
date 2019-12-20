@@ -299,6 +299,7 @@ public class SQLiteDB implements IStore {
        try{
            this.open();
            this.stmt = c.createStatement();
+           System.out.println(predictionWeather.getCity());
            StringBuilder s = new StringBuilder();
            s.append("INSERT INTO PredictionWeather VALUES(");
            s.append(predictionWeather.getCoordinates().getLon() + ",");
@@ -308,6 +309,7 @@ public class SQLiteDB implements IStore {
            s.append(predictionWeather.getTemperature() + ",");
            s.append(predictionWeather.getHumidty() + ",");
            s.append(predictionWeather.getPreassure() + ")");
+
 
 
            stmt.execute(s.toString());
@@ -405,7 +407,7 @@ public class SQLiteDB implements IStore {
             this.close();
 
         }catch (Exception e){
-            e.printStackTrace();
+            //no esta la ciudad
         }
 
         return existingCity != null;
@@ -510,7 +512,7 @@ public class SQLiteDB implements IStore {
             return true;
 
         }catch (Exception e){
-            e.printStackTrace();
+           //La label ya esta
         }
         return false;
     }
@@ -550,8 +552,7 @@ public class SQLiteDB implements IStore {
 
             this.close();
         }catch (Exception e){
-            System.out.println("error al encontrar label");
-            e.printStackTrace();
+            //No esta la label
         }
 
         return existingLabel != null;

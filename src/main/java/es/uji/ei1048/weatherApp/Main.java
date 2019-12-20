@@ -17,7 +17,12 @@ public class Main {
         sqLiteDB.removeCityFromFavorite("Valencia");
         sqLiteDB.listFavoriteCities();
 
-        sqLiteDB.closeConnection();
+        try {
+            sqLiteDB.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
 
     }
 }

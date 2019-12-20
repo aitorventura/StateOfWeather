@@ -6,6 +6,7 @@ import es.uji.ei1048.weatherApp.PredictionWeather;
 import java.util.List;
 
 public interface IStore {
+
     public void open();
 
     public void close() throws Exception;

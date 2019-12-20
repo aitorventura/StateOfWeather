@@ -3,16 +3,22 @@ package es.uji.ei1048.weatherApp.controllerWeather;
 import es.uji.ei1048.weatherApp.Coordinates;
 import es.uji.ei1048.weatherApp.Label;
 import es.uji.ei1048.weatherApp.SQLiteDB;
+import es.uji.ei1048.weatherApp.interfaces.IStore;
+import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Map;
 
 public class SavedLabels {
 
-    private SQLiteDB sqLiteDB;
+    private IStore sqLiteDB;
 
     public SavedLabels() {
         this.sqLiteDB = new SQLiteDB();
+    }
+
+    public SavedLabels(IStore iStore, IWeatherService iWeatherService){
+        this.sqLiteDB = iStore;
     }
 
     public Map<String, Coordinates> getAllLabels() {

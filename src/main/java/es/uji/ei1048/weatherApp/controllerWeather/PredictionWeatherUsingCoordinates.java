@@ -3,18 +3,23 @@ package es.uji.ei1048.weatherApp.controllerWeather;
 import es.uji.ei1048.weatherApp.*;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
+import es.uji.ei1048.weatherApp.interfaces.IStore;
+import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
 import java.util.List;
 
 public class PredictionWeatherUsingCoordinates {
-    private SQLiteDB sqLiteDB;
-    private OpenWeatherMap openWeatherMap;
-
+    private IStore sqLiteDB;
+    private IWeatherService openWeatherMap;
 
     public PredictionWeatherUsingCoordinates(){
         this.sqLiteDB = new SQLiteDB();
         this.openWeatherMap = new OpenWeatherMap();
 
+    }
+    public PredictionWeatherUsingCoordinates(IStore iStore, IWeatherService iWeatherService){
+        this.sqLiteDB = iStore;
+        this.openWeatherMap = iWeatherService;
     }
 
 

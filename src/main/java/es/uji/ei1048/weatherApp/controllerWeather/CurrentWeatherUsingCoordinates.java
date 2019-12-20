@@ -4,17 +4,23 @@ import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.OpenWeatherMap;
 import es.uji.ei1048.weatherApp.SQLiteDB;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
+import es.uji.ei1048.weatherApp.interfaces.IStore;
+import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
 public class CurrentWeatherUsingCoordinates {
-    private SQLiteDB sqLiteDB;
-    private OpenWeatherMap openWeatherMap;
+    private IStore sqLiteDB;
+    private IWeatherService openWeatherMap;
 
     public CurrentWeatherUsingCoordinates() {
         this.sqLiteDB = new SQLiteDB();
         this.openWeatherMap = new OpenWeatherMap();
-
-
     }
+
+    public CurrentWeatherUsingCoordinates(IStore iStore, IWeatherService iWeatherService){
+        this.sqLiteDB = iStore;
+        this.openWeatherMap = iWeatherService;
+    }
+
 
     public CurrentWeather giveMeTheCurrentWeatherUsingACoordenates(double lon, double lat) {
 

@@ -16,8 +16,6 @@ public class SQLiteDB implements IStore {
     Statement stmt = null;
 
     public SQLiteDB(){
-         //try connect to DB
-
     }
 
     public void open(){
@@ -317,7 +315,7 @@ public class SQLiteDB implements IStore {
 
        } catch (Exception e){
 
-        e.printStackTrace();
+
        }
    }
 

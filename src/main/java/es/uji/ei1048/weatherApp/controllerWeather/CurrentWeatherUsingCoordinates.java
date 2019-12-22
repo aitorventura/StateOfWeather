@@ -19,6 +19,7 @@ public class CurrentWeatherUsingCoordinates {
     public CurrentWeatherUsingCoordinates(IStore iStore, IWeatherService iWeatherService){
         this.sqLiteDB = iStore;
         this.openWeatherMap = iWeatherService;
+
     }
 
 

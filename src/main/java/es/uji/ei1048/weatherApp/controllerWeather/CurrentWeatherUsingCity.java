@@ -32,8 +32,8 @@ public class CurrentWeatherUsingCity {
         } else {
             return currentWeather; //si existe en la BBDD, se devuelve el dato
         }
-
-        if(currentWeather == null){ //si sigue sin existir, la ciudad no es válida
+        //TODO; Cambiar el nombre de la excepción para hacerla global
+        if(currentWeather == null){ //si sigue sin existir, la ciudad no es válida o no hay conexión
             throw new NotValidCityException();
         } else {
             sqLiteDB.addCurrentWeatherToTheDataBase(currentWeather); //si existe, se añade a la BBDD

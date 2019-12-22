@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="es.uji.es.ei1048.weatherApp.integrationTest.TestPredictionWeatherUsingCity" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-12-22T13:10:57" hostname="LAPTOP-6MQV1T7I" time="0.573">
+  <properties/>
+  <testcase name="validPredictionWeatherConsultationUsingACityWithoutDataInTheBBDDWithoutConnection" classname="es.uji.es.ei1048.weatherApp.integrationTest.TestPredictionWeatherUsingCity" time="0.557"/>
+  <testcase name="validPredictionWeatherConsultationUsingACityWithDataInTheDB" classname="es.uji.es.ei1048.weatherApp.integrationTest.TestPredictionWeatherUsingCity" time="0.012"/>
+  <testcase name="validPredictionWeatherConsultationUsingACityWithoutDataInTheBBDDWithConnection" classname="es.uji.es.ei1048.weatherApp.integrationTest.TestPredictionWeatherUsingCity" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -21,7 +21,10 @@ public class PredictionWeatherUsingCity {
 
     }
 
-
+    public PredictionWeatherUsingCity(IStore sqLiteDB, IWeatherService openWeatherMap) {
+        this.sqLiteDB = sqLiteDB;
+        this.openWeatherMap = openWeatherMap;
+    }
 
     public List<PredictionWeather> giveMeThePredictionToThisCity(String city){
 

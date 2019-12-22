@@ -14,6 +14,7 @@ import java.util.Map;
 
 import com.google.gson.*;
 import com.google.gson.reflect.*;
+import es.uji.ei1048.weatherApp.exceptions.NoDataInTheDatabaseAndOfflineException;
 import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
 public class OpenWeatherMap implements IWeatherService {
@@ -81,6 +82,7 @@ public class OpenWeatherMap implements IWeatherService {
         } catch (IOException e) {
             System.out.println(e.getMessage());
             currentWeather = null;
+            //throw new NoDataInTheDatabaseAndOfflineException();
         }
         return currentWeather;
     }

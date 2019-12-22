@@ -37,7 +37,6 @@ public class TestFavouriteCoordinates {
     @Test
     public void addCoordinatesWhichNotExists() {
 
-
         boolean result = favouriteCoordinates.addCoordinatesToFavourite(new Coordinates(-500, 58821));
 
         verify(store, times(0)).addCoordinatesToFavorite(new Coordinates(-500, 58821));
@@ -48,12 +47,11 @@ public class TestFavouriteCoordinates {
     }
 
     @Test
-    public void addCoordinatesWhichExistAndArentInTheDB() {
+    public void addCoordinatesWhichExistAndArenotInTheDB() {
+
         when(store.addCoordinatesToFavorite(new Coordinates(39.9945711, -0.071089))).thenReturn(true);
 
-
         boolean result = favouriteCoordinates.addCoordinatesToFavourite(new Coordinates(39.9945711, -0.071089));
-
 
         verify(store, times(1)).addCoordinatesToFavorite(new Coordinates(39.9945711, -0.071089));
 
@@ -63,11 +61,10 @@ public class TestFavouriteCoordinates {
 
     @Test
     public void addCoordinatesWhichExistAndAreInTheDB() {
+
         when(store.addCoordinatesToFavorite(new Coordinates(39.9945711, -0.071089))).thenReturn(false);
 
-
         boolean result = favouriteCoordinates.addCoordinatesToFavourite(new Coordinates(39.9945711, -0.071089));
-
 
         verify(store, times(1)).addCoordinatesToFavorite(new Coordinates(39.9945711, -0.071089));
 

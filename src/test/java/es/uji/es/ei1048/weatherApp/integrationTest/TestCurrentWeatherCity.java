@@ -35,7 +35,7 @@ public class TestCurrentWeatherCity {
         //Hay datos en la BBDD
         @Test
         public void validCurrentWeatherConsultationUsingACityWithDataInTheBBDD() {
-        CurrentWeather currentWeather = new CurrentWeather();
+                CurrentWeather currentWeather = new CurrentWeather();
                 //when(store.giveMeTheCurrentWeather(anyString())).thenThrow(SQLException.class);
                 when(store.giveMeTheCurrentWeather(anyString())).thenReturn(currentWeather);
                 when(store.giveMeTheCurrentWeather("Castellón de la Plana")).thenReturn(currentWeather);

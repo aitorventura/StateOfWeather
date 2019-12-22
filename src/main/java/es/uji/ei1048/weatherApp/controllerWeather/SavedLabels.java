@@ -17,6 +17,10 @@ public class SavedLabels {
         this.sqLiteDB = new SQLiteDB();
     }
 
+    public SavedLabels(IStore sqLiteDB) {
+        this.sqLiteDB = sqLiteDB;
+    }
+
     public SavedLabels(IStore iStore, IWeatherService iWeatherService){
         this.sqLiteDB = iStore;
     }

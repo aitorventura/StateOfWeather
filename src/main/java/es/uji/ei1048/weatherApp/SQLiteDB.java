@@ -510,7 +510,7 @@ public class SQLiteDB implements IStore {
             return true;
 
         }catch (Exception e){
-           //La label ya esta
+           //La etiqueta ya está
         }
         return false;
     }

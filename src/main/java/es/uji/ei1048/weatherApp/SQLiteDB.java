@@ -16,20 +16,20 @@ public class SQLiteDB implements IStore {
     Connection c = null;
     Statement stmt = null;
 
-    public SQLiteDB(){
+    public SQLiteDB() {
     }
 
-    public void open(){
-        try{
+    public void open() {
+        try {
             Class.forName("org.sqlite.JDBC");
             c = DriverManager.getConnection("jdbc:sqlite:StateOfWeatherDataBase.db");
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
 
-    public void close() throws Exception{
+    public void close() throws Exception {
         c.close();
 
     }
@@ -37,48 +37,48 @@ public class SQLiteDB implements IStore {
 
     //CONSULTATIONS TO ADMIN CURRENT WEATHER
 
-    public void removeOldCurrentWeathers(){
-        try{
+    public void removeOldCurrentWeathers() {
+        try {
             this.open();
             this.stmt = c.createStatement();
             stmt.execute("DELETE FROM CurrentWeather " +
-                             "WHERE dateOfConsultation IN (SELECT dateOfConsultation " +
-                                              "FROM CurrentWeather " +
-                                                "WHERE ((julianday('now') - julianday( dateOfConsultation)) * 24 * 60) > 60)");
+                    "WHERE dateOfConsultation IN (SELECT dateOfConsultation " +
+                    "FROM CurrentWeather " +
+                    "WHERE ((julianday('now') - julianday( dateOfConsultation)) * 24 * 60) > 60)");
 
             this.close();
-        } catch (Exception e){
+        } catch (Exception e) {
 
         }
 
 
     }
 
-    public CurrentWeather giveMeTheCurrentWeather(String city){
+    public CurrentWeather giveMeTheCurrentWeather(String city) {
         CurrentWeather currentWeather = new CurrentWeather();
-        try{
+        try {
             this.open();
             this.stmt = c.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM CurrentWeather WHERE city = '"+ city + "'");
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM CurrentWeather WHERE city = '" + city + "'");
 
-                currentWeather.setCity(city);
-                Coordinates coordinates = new Coordinates(resultSet.getDouble("longitude"), resultSet.getDouble("latitude"));
-                currentWeather.setCoordinates(coordinates);
-                currentWeather.setTemperature(resultSet.getDouble("temperature"));
-                currentWeather.setMaxTemperature(resultSet.getDouble("maxTemperature"));
-                currentWeather.setMinTemperature(resultSet.getDouble("minTemperature"));
-                currentWeather.setHumidty(resultSet.getDouble("humidity"));
-                currentWeather.setPreassure(resultSet.getDouble("pressure"));
+            currentWeather.setCity(city);
+            Coordinates coordinates = new Coordinates(resultSet.getDouble("longitude"), resultSet.getDouble("latitude"));
+            currentWeather.setCoordinates(coordinates);
+            currentWeather.setTemperature(resultSet.getDouble("temperature"));
+            currentWeather.setMaxTemperature(resultSet.getDouble("maxTemperature"));
+            currentWeather.setMinTemperature(resultSet.getDouble("minTemperature"));
+            currentWeather.setHumidty(resultSet.getDouble("humidity"));
+            currentWeather.setPreassure(resultSet.getDouble("pressure"));
 
-                StringBuilder s = new StringBuilder(resultSet.getString("dateOfConsultation"));
-                s.append(".00");
-                 Timestamp ts = Timestamp.valueOf(s.toString());
-                currentWeather.setDateOfConsultation(ts);
+            StringBuilder s = new StringBuilder(resultSet.getString("dateOfConsultation"));
+            s.append(".00");
+            Timestamp ts = Timestamp.valueOf(s.toString());
+            currentWeather.setDateOfConsultation(ts);
 
-                this.close();
-                return currentWeather;
+            this.close();
+            return currentWeather;
 
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
@@ -87,7 +87,7 @@ public class SQLiteDB implements IStore {
     }
 
 
-    public CurrentWeather giveMeTheCurrentWeather(double lon, double lat){
+    public CurrentWeather giveMeTheCurrentWeather(double lon, double lat) {
 
         BigDecimal newLon = new BigDecimal(lon);
         newLon = newLon.setScale(2, RoundingMode.DOWN);
@@ -98,7 +98,7 @@ public class SQLiteDB implements IStore {
 
         CurrentWeather currentWeather = new CurrentWeather();
 
-        try{
+        try {
             this.open();
 
             this.stmt = c.createStatement();
@@ -130,18 +130,18 @@ public class SQLiteDB implements IStore {
             return currentWeather;
 
 
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
 
     }
 
-    public void addCurrentWeatherToTheDataBase(CurrentWeather currentWeather){
-        try{
+    public void addCurrentWeatherToTheDataBase(CurrentWeather currentWeather) {
+        try {
             this.stmt = c.createStatement();
             StringBuilder s = new StringBuilder();
-            s.append("INSERT INTO CURRENTWEATHER VALUES('" + currentWeather.getCity()+ "',");
+            s.append("INSERT INTO CURRENTWEATHER VALUES('" + currentWeather.getCity() + "',");
             s.append(currentWeather.getCoordinates().getLon() + ",");
             s.append(currentWeather.getCoordinates().getLat() + ",");
             s.append(currentWeather.getTemperature() + ",");
@@ -153,7 +153,7 @@ public class SQLiteDB implements IStore {
 
             stmt.execute(s.toString());
 
-        } catch (Exception e){
+        } catch (Exception e) {
 
             e.printStackTrace();
         }
@@ -162,50 +162,49 @@ public class SQLiteDB implements IStore {
     }
 
 
-
     //CONSULTATIONS TO ADMIN PREDICTION WEATHER
 
-    public void removeAllPredictions(){
-        try{
+    public void removeAllPredictions() {
+        try {
             this.open();
 
             this.stmt = c.createStatement();
             stmt.execute("DELETE FROM PredictionWeather");
             this.close();
 
-        } catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
 
-    public void removeOldPredicionWeathers(){
-        try{
+    public void removeOldPredicionWeathers() {
+        try {
             this.open();
 
             this.stmt = c.createStatement();
             stmt.execute("DELETE FROM PredictionWeather WHERE date IN (SELECT date FROM PredictionWeather WHERE ((julianday('now', 'start of day') - julianday(date , 'start of day')) ) >=  0)");
             this.close();
 
-        } catch (Exception e){
+        } catch (Exception e) {
 
         }
 
     }
 
-    public List<PredictionWeather> giveMeTheListOfPredictionWeather(String city){
+    public List<PredictionWeather> giveMeTheListOfPredictionWeather(String city) {
 
 
         PredictionWeather predictionWeather;
-        try{
+        try {
             this.open();
 
             this.stmt = c.createStatement();
 
 
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM PredictionWeather WHERE city = '"+ city + "'");
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM PredictionWeather WHERE city = '" + city + "'");
             ArrayList<PredictionWeather> list = new ArrayList<>();
 
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 predictionWeather = new PredictionWeather();
                 predictionWeather.setCity(city);
                 Coordinates coordinates = new Coordinates(resultSet.getDouble("longitude"), resultSet.getDouble("latitude"));
@@ -227,18 +226,15 @@ public class SQLiteDB implements IStore {
 
             return list;
 
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
 
 
-
-
-
     }
 
-    public List<PredictionWeather> giveMeTheListOfPredictionWeatherUsingCoordinates(double lon, double lat){
+    public List<PredictionWeather> giveMeTheListOfPredictionWeatherUsingCoordinates(double lon, double lat) {
 
         BigDecimal newLon = new BigDecimal(lon);
         newLon = newLon.setScale(2, RoundingMode.DOWN);
@@ -253,15 +249,14 @@ public class SQLiteDB implements IStore {
         query.append(newLat);
 
 
-
         PredictionWeather predictionWeather;
-        try{
+        try {
             this.open();
             this.stmt = c.createStatement();
             ResultSet resultSet = stmt.executeQuery(query.toString());
             ArrayList<PredictionWeather> list = new ArrayList<>();
 
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 predictionWeather = new PredictionWeather();
                 predictionWeather.setCity(resultSet.getString("city"));
                 Coordinates coordinates = new Coordinates(resultSet.getDouble("longitude"), resultSet.getDouble("latitude"));
@@ -283,58 +278,55 @@ public class SQLiteDB implements IStore {
 
             return list;
 
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
 
 
-
-
     }
 
-    public void addPredictionWeatherToTheDataBase(PredictionWeather predictionWeather){
+    public void addPredictionWeatherToTheDataBase(PredictionWeather predictionWeather) {
 
-       try{
-           this.open();
-           this.stmt = c.createStatement();
-           System.out.println(predictionWeather.getCity());
-           StringBuilder s = new StringBuilder();
-           s.append("INSERT INTO PredictionWeather VALUES(");
-           s.append(predictionWeather.getCoordinates().getLon() + ",");
-           s.append(predictionWeather.getCoordinates().getLat() + ", '");
-           s.append(predictionWeather.getPredictionDate() + "' , '");
-           s.append(predictionWeather.getCity() + " ',");
-           s.append(predictionWeather.getTemperature() + ",");
-           s.append(predictionWeather.getHumidty() + ",");
-           s.append(predictionWeather.getPreassure() + ")");
-
-
-
-           stmt.execute(s.toString());
-           this.close();
-
-       } catch (Exception e){
+        try {
+            this.open();
+            this.stmt = c.createStatement();
+            System.out.println(predictionWeather.getCity());
+            StringBuilder s = new StringBuilder();
+            s.append("INSERT INTO PredictionWeather VALUES(");
+            s.append(predictionWeather.getCoordinates().getLon() + ",");
+            s.append(predictionWeather.getCoordinates().getLat() + ", '");
+            s.append(predictionWeather.getPredictionDate() + "' , '");
+            s.append(predictionWeather.getCity() + " ',");
+            s.append(predictionWeather.getTemperature() + ",");
+            s.append(predictionWeather.getHumidty() + ",");
+            s.append(predictionWeather.getPreassure() + ")");
 
 
-       }
-   }
+            stmt.execute(s.toString());
+            this.close();
+
+        } catch (Exception e) {
+
+
+        }
+    }
 
 
     //CONSULTATIONS TO ADMIN FAVORITECITY
 
 
-    public List<String> listFavoriteCities() throws ThereAreNoFavouriteCities{
+    public List<String> listFavoriteCities() throws ThereAreNoFavouriteCities {
 
         List<String> favouriteCities = new ArrayList<>();
 
-        try{
+        try {
             this.open();
 
             this.stmt = c.createStatement();
             ResultSet resultSet = stmt.executeQuery("SELECT * FROM FavoriteCity");
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 String city = resultSet.getString("city");
                 favouriteCities.add(city);
                 System.out.println(city);
@@ -342,55 +334,61 @@ public class SQLiteDB implements IStore {
 
             this.close();
 
-        } catch (Exception e){
+        } catch (Exception e) {
 
             return null;
         }
 
+        //TODO: Esto es una prueba a ver si salta la excepción, pero no - Parece que no lo hace
+        if (favouriteCities.size() == 0 || favouriteCities == null) {
+            throw new ThereAreNoFavouriteCities();
+        }
         return favouriteCities;
+
+
     }
 
-    public boolean addCityToFavorite(String city){
-        try{
+    public boolean addCityToFavorite(String city) {
+        try {
 
             this.open();
 
             this.stmt = c.createStatement();
-            stmt.execute("INSERT INTO FAVORITECITY(city) VALUES('"+ city.toUpperCase()+ "')");
+            stmt.execute("INSERT INTO FAVORITECITY(city) VALUES('" + city.toUpperCase() + "')");
 
             this.close();
             return true;
 
-        } catch (Exception e){
-           //e.printStackTrace();
+        } catch (Exception e) {
+            //e.printStackTrace();
             System.out.println("No se ha podido añadir la ciudad a favoritos (ya está en la BBDD)");
         }
         return false;
     }
 
-    public boolean removeCityFromFavorite(String city){
+    public boolean removeCityFromFavorite(String city) {
         //todo hay que comprobar si al intentar borrar algo que no existe da error, en teoría no deberia
         //por tanto, se debe ver si la ciudad estaba en la bbdd o no
 
-        try{
-            if(this.existsCity(city)){
+        try {
+            if (this.existsCity(city)) {
                 this.open();
 
                 this.stmt = c.createStatement();
-                stmt.execute("DELETE FROM FAVORITECITY WHERE city = '"+ city.toUpperCase()+ "'");
+                stmt.execute("DELETE FROM FAVORITECITY WHERE city = '" + city.toUpperCase() + "'");
 
                 this.close();
                 return true;
             }
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         return false;
     }
 
-    private boolean existsCity(String city){
+    private boolean existsCity(String city) {
 
         String existingCity = null;
 
@@ -398,15 +396,15 @@ public class SQLiteDB implements IStore {
             this.open();
             this.stmt = c.createStatement();
 
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM FAVORITECITY WHERE city = '"+city.toUpperCase()+"'");
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM FAVORITECITY WHERE city = '" + city.toUpperCase() + "'");
 
             //while (resultSet.next()){
-                existingCity = resultSet.getString("city");
+            existingCity = resultSet.getString("city");
             //}
 
             this.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             //no esta la ciudad
         }
 
@@ -416,67 +414,66 @@ public class SQLiteDB implements IStore {
     //CONSULTATIONS TO ADMIN FAVORITECOORDINATES
 
 
-
-    public List<Coordinates> listFavoriteCoordinates(){
+    public List<Coordinates> listFavoriteCoordinates() {
 
         List<Coordinates> favouriteCoordinates = new ArrayList<>();
 
-        try{
+        try {
             this.open();
 
             this.stmt = c.createStatement();
             ResultSet resultSet = stmt.executeQuery("SELECT * FROM FavoriteCoordinates");
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 double longitude = resultSet.getDouble("longitude");
                 double latitude = resultSet.getDouble("latitude");
 
-                Coordinates coordinate = new Coordinates(longitude,latitude);
+                Coordinates coordinate = new Coordinates(longitude, latitude);
                 favouriteCoordinates.add(coordinate);
             }
 
             this.close();
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         return favouriteCoordinates;
     }
 
-    public boolean addCoordinatesToFavorite(Coordinates coordinates){
-        try{
+    public boolean addCoordinatesToFavorite(Coordinates coordinates) {
+        try {
             this.open();
             this.stmt = c.createStatement();
             StringBuilder s = new StringBuilder();
             s.append("INSERT INTO FAVORITECOORDINATES(longitude,latitude) VALUES(");
-            s.append(coordinates.getLon()+",");
-            s.append(coordinates.getLat()+")");
+            s.append(coordinates.getLon() + ",");
+            s.append(coordinates.getLat() + ")");
 
             stmt.execute(s.toString());
 
             this.close();
             return true;
 
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error al intentar añadir una coordenada a favoritos en la BBDD");
             //e.printStackTrace();
             return false;
         }
     }
 
-    public boolean removeCoordinatesFromFavorite(Coordinates coordinates){
+    public boolean removeCoordinatesFromFavorite(Coordinates coordinates) {
 
         //todo cambiar la comprobación de si existe la coordenada en la BBDD del controlador, hacerla aquí
 
-        try{
+        try {
 
             this.open();
 
             this.stmt = c.createStatement();
             StringBuilder s = new StringBuilder();
             s.append("DELETE FROM FAVORITECOORDINATES WHERE longitude =");
-            s.append(coordinates.getLon()+" AND latitude =");
+            s.append(coordinates.getLon() + " AND latitude =");
             s.append(coordinates.getLat());
             stmt.execute(s.toString());
 
@@ -484,7 +481,7 @@ public class SQLiteDB implements IStore {
 
             return true;
 
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Error al intentar borrar una coordenada de favoritos en la BBDD");
             //e.printStackTrace();
             return false;
@@ -494,64 +491,64 @@ public class SQLiteDB implements IStore {
 
     //LABELS
 
-    public boolean addLabel(String label, Coordinates coordinates){
+    public boolean addLabel(String label, Coordinates coordinates) {
 
-        try{
+        try {
             this.open();
 
             this.stmt = c.createStatement();
             StringBuilder s = new StringBuilder();
             s.append("INSERT INTO LABELS(label,longitude,latitude) VALUES(");
-            s.append("'"+label+"',");
-            s.append(coordinates.getLon()+",");
-            s.append(coordinates.getLat()+")");
+            s.append("'" + label + "',");
+            s.append(coordinates.getLon() + ",");
+            s.append(coordinates.getLat() + ")");
 
             stmt.execute(s.toString());
             this.close();
 
             return true;
 
-        }catch (Exception e){
-           //La etiqueta ya está
+        } catch (Exception e) {
+            //La etiqueta ya está
         }
         return false;
     }
 
-    public boolean removeLabel(String label){
+    public boolean removeLabel(String label) {
 
-        try{
-            if(this.existsLabel(label)){
+        try {
+            if (this.existsLabel(label)) {
                 this.open();
 
                 this.stmt = c.createStatement();
                 StringBuilder s = new StringBuilder();
-                s.append("DELETE FROM LABELS WHERE label = '"+label+"'");
+                s.append("DELETE FROM LABELS WHERE label = '" + label + "'");
                 stmt.execute(s.toString());
 
                 this.close();
                 return true;
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         return false;
     }
 
-    private boolean existsLabel(String label){
+    private boolean existsLabel(String label) {
 
         String existingLabel = null;
 
-        try{
+        try {
             this.open();
             this.stmt = c.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM LABELS WHERE label = '"+label+"'");
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM LABELS WHERE label = '" + label + "'");
 
             existingLabel = resultSet.getString("label");
 
             this.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             //No esta la label
         }
 
@@ -559,28 +556,28 @@ public class SQLiteDB implements IStore {
     }
 
     //TODO: Revisar creado por @Zayda
-    public Map<String, Coordinates> getLabels(){
+    public Map<String, Coordinates> getLabels() {
 
         Map<String, Coordinates> labels = new HashMap<>();
 
-        try{
+        try {
             this.open();
 
             this.stmt = c.createStatement();
             ResultSet resultSet = stmt.executeQuery("SELECT * FROM Labels");
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 double longitude = resultSet.getDouble("longitude");
                 double latitude = resultSet.getDouble("latitude");
                 String label = resultSet.getString("label");    //TODO: Revisar
 
-                Coordinates coordinate = new Coordinates(longitude,latitude);
+                Coordinates coordinate = new Coordinates(longitude, latitude);
                 labels.put(label, coordinate);
             }
 
             this.close();
 
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -588,22 +585,22 @@ public class SQLiteDB implements IStore {
 
     }
 
-    public Coordinates getCoordinatesOfLabel(String label){
+    public Coordinates getCoordinatesOfLabel(String label) {
 
         Coordinates coordinates = null;
 
-        try{
+        try {
             this.open();
 
             this.stmt = c.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM LABELS WHERE label = '"+label+"'");
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM LABELS WHERE label = '" + label + "'");
 
             resultSet.getString("label");
             double longitude = resultSet.getDouble("longitude");
             double latitude = resultSet.getDouble("latitude");
-            coordinates = new Coordinates(longitude,latitude);
+            coordinates = new Coordinates(longitude, latitude);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -621,8 +618,6 @@ public class SQLiteDB implements IStore {
         }
     }
 */
-
-
 
 
 }

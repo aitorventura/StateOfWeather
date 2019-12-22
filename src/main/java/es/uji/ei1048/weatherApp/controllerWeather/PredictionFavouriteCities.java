@@ -37,7 +37,9 @@ public class PredictionFavouriteCities {
 
             List<String> favoriteCities = sqLiteDB.listFavoriteCities();
 
-            if (favoriteCities == null){
+            //TODO: No entiendo por qué si he puesto esto aquí, que significa que no hay favoritos que lanze la excepción,
+            // luego en TestPredictionFavouriteCities por qué si pongo expected = ThereAreNoFavouriteCities @Zayda
+            if (favoriteCities == null || favoriteCities.size() == 0){
                 throw new ThereAreNoFavouriteCities();
             }
 

@@ -1,13 +1,13 @@
 package es.uji.ei1048.weatherApp;
 
 import es.uji.ei1048.weatherApp.interfaces.IStore;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -556,6 +556,35 @@ public class SQLiteDB implements IStore {
         return existingLabel != null;
     }
 
+    //TODO: Revisar creado por @Zayda
+    public Map<String, Coordinates> getLabels(){
+
+        Map<String, Coordinates> labels = new HashMap<>();
+
+        try{
+            this.open();
+
+            this.stmt = c.createStatement();
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM Labels");
+
+            while (resultSet.next()){
+                double longitude = resultSet.getDouble("longitude");
+                double latitude = resultSet.getDouble("latitude");
+                String label = resultSet.getString("label");    //TODO: Revisar
+
+                Coordinates coordinate = new Coordinates(longitude,latitude);
+                labels.put(label, coordinate);
+            }
+
+            this.close();
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return labels;
+
+    }
 
     public Coordinates getCoordinatesOfLabel(String label){
 

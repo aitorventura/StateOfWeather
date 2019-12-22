@@ -4,6 +4,7 @@ import es.uji.ei1048.weatherApp.Coordinates;
 import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.PredictionWeather;
 import java.util.List;
+import java.util.Map;
 
 public interface IStore {
 
@@ -68,5 +69,7 @@ public interface IStore {
 
 
     public Coordinates getCoordinatesOfLabel(String label);
+
+    public Map<String, Coordinates> getLabels();
 
 }

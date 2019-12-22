@@ -58,8 +58,11 @@ public class TestLabels {
     @Test(expected = NotValidCoordinatesException.class)
     public void addLabelWithInvalidCoordinates() {
         Coordinates coordinates = new Coordinates(-500, 58821);
-     
+        when(store.addLabel(anyString(), any(Coordinates.class))).thenReturn(false);
+
         boolean result = savedLabels.addLabel("UJI", coordinates);
+
+        verify(savedLabels, times(1)).addLabel("UJI", coordinates);
         verify(store, times(0)).addLabel(anyString(), coordinates);
 
         Assert.assertFalse(result);

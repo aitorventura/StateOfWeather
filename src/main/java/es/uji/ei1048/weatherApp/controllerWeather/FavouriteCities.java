@@ -3,11 +3,9 @@ package es.uji.ei1048.weatherApp.controllerWeather;
 import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.OpenWeatherMap;
 import es.uji.ei1048.weatherApp.SQLiteDB;
-import es.uji.ei1048.weatherApp.Weather;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
-import org.omg.CORBA.Current;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 
 import java.util.List;
 

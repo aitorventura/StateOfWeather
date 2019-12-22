@@ -29,7 +29,7 @@ public class E2EAddLabels extends E2ETestBed {
 
     }
 
-    @Test
+    @Test(expected = NotValidCoordinatesException.class)
     public void addInvalidCoordinates(){
         //Given: coordenadas válidas
         double lon =  395.9733;

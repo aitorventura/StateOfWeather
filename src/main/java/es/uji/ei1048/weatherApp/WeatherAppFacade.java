@@ -1,6 +1,9 @@
 package es.uji.ei1048.weatherApp;
 
 import es.uji.ei1048.weatherApp.controllerWeather.*;
+import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
+import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
+import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -19,7 +22,7 @@ public class WeatherAppFacade {
     private final PredictionFavouriteCities predictionFavouriteCities;
     private final PredictionFavouriteCoordinates predictionFavouriteCoordinates;
 
-    public WeatherAppFacade(){
+    public WeatherAppFacade() {
         this.currentWeatherUsingCity = new CurrentWeatherUsingCity();
         this.currentWeatherUsingCoordinates = new CurrentWeatherUsingCoordinates();
         this.savedLabels = new SavedLabels();
@@ -32,22 +35,22 @@ public class WeatherAppFacade {
     }
 
 
-
     //CURRENT WEATHER AND PREVISION
 
-    public CurrentWeather currentWeatherCity(String city){
+    public CurrentWeather currentWeatherCity(String city) {
         return currentWeatherUsingCity.giveMeTheCurrentWeatherUsingACity(city);
     }
 
-    public CurrentWeather currentWeatherCoordinates(Coordinates coordinates ){
+    public CurrentWeather currentWeatherCoordinates(Coordinates coordinates) {
         return currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordenates(coordinates.getLon(), coordinates.getLat());
     }
 
-    public List<PredictionWeather> previsionOfWeatherCity(String city){
+    public List<PredictionWeather> previsionOfWeatherCity(String city) throws  NotValidCityException{
+
         return predictionWeatherUsingCity.giveMeThePredictionToThisCity(city);
     }
 
-    public List<PredictionWeather> previsionOfWeatherCoordinates(Coordinates coordinates){
+    public List<PredictionWeather> previsionOfWeatherCoordinates(Coordinates coordinates) {
         return predictionWeatherUsingCoordinates.giveMeThePredictionToTheseCoordinates(coordinates);
     }
 
@@ -55,8 +58,10 @@ public class WeatherAppFacade {
     //LABELS
 
     //añade una etiqueta
-    public boolean addLabel(String label, Coordinates coordinates) {
+    public boolean addLabel(String label, Coordinates coordinates) throws NotValidCoordinatesException{
+
         return savedLabels.addLabel(label, coordinates);
+
     }
 
 
@@ -70,21 +75,21 @@ public class WeatherAppFacade {
         return savedLabels.getAllLabels();
     }*/
 
-   public CurrentWeather currentWeatherOfLabel(String label) {
-       //TODO si no encuentra la etiqueta devolverá null, no se comprueba
-       throw new NotImplementedException();
-   }
+    public CurrentWeather currentWeatherOfLabel(String label) {
+        //TODO si no encuentra la etiqueta devolverá null, no se comprueba
+        throw new NotImplementedException();
+    }
 
     //TODO deberíamos poner un max de favoritos?
 
     //FAVOURITE CITIES
 
-    public boolean addCityToFavorites(String city){
+    public boolean addCityToFavorites(String city) {
         return favouriteCities.addCityToFavourite(city);
     }
 
 
-    public boolean deleteCityFromFavorites(String city){
+    public boolean deleteCityFromFavorites(String city) {
         return favouriteCities.removeCityFromFavourite(city);
     }
 
@@ -104,11 +109,11 @@ public class WeatherAppFacade {
 
     //FAVOURITE COORDINATES
 
-    public boolean addCoordinatesToFavorites(Coordinates coordinates){
+    public boolean addCoordinatesToFavorites(Coordinates coordinates) {
         return favouriteCoordinates.addCoordinatesToFavourite(coordinates);
     }
 
-    public boolean deleteCoordinatesFromFavorites(Coordinates coordinates){
+    public boolean deleteCoordinatesFromFavorites(Coordinates coordinates) {
         return favouriteCoordinates.removeCoordinatesFromFavourite(coordinates);
     }
 
@@ -126,32 +131,20 @@ public class WeatherAppFacade {
     }*/
 
 
-      //PREDICTION OF FAVOURITE CITIES AND COORDENATES
+    //PREDICTION OF FAVOURITE CITIES AND COORDENATES
 
-    public Map<String, List<PredictionWeather>> predictionOfFavouriteCities() {
-        return predictionFavouriteCities.giveMeThePredictionsOfMyFavoriteCities();
+    public Map<String, List<PredictionWeather>> predictionOfFavouriteCities() throws  NotValidCityException{
+
+            return predictionFavouriteCities.giveMeThePredictionsOfMyFavoriteCities();
+
     }
 
-    public Map<Coordinates,List<PredictionWeather>> predictionOfFavouriteCoordenates() {
+    public Map<Coordinates, List<PredictionWeather>> predictionOfFavouriteCoordenates() {
         return predictionFavouriteCoordinates.giveMeThePredictionsOfMyFavoriteCoordinates();
     }
 
 
     //TODO abrir mapa fisico y buscar tiempo por etiqueta
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

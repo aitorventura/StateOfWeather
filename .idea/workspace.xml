@@ -2,13 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6369ad6-7b0f-4944-9b9f-66c9be50eb5f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/exceptions/ThereAreNoFavouriteCities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/exceptions/ThereAreNoFavouriteCoordinates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StateOfWeatherDataBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/StateOfWeatherDataBase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/es/uji/ei1048/weatherApp/SQLiteDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/es/uji/ei1048/weatherApp/SQLiteDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/es/uji/ei1048/weatherApp/WeatherAppFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/es/uji/ei1048/weatherApp/WeatherAppFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/es/uji/ei1048/weatherApp/e2e/E2EAddLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/es/uji/ei1048/weatherApp/e2e/E2EAddLabels.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/es/uji/ei1048/weatherApp/e2e/E2EPredictionListFromFavouriteWithConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/es/uji/ei1048/weatherApp/e2e/E2EPredictionListFromFavouriteWithConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/es.uji.es.ei1048.weatherApp.integrationTest.TestCurrentWeatherCity.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/es.uji.es.ei1048.weatherApp.integrationTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/es.uji.es.ei1048.weatherApp.integrationTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-es.uji.es.ei1048.weatherApp.integrationTest.TestCurrentWeatherCity.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/SQLiteDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/SQLiteDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/FavouriteCities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/FavouriteCities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/interfaces/IStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/interfaces/IStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/ei1048/weatherApp/e2e/E2EAddLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/ei1048/weatherApp/e2e/E2EAddLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/ei1048/weatherApp/e2e/E2EPredictionListFromFavouriteWithConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/ei1048/weatherApp/e2e/E2EPredictionListFromFavouriteWithConnection.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,19 +120,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.TestCurrentWeatherCity">
+  <component name="RunManager" selected="Gradle.E2EPredictionListFromFavouriteWithConnection">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCurrentWeatherCity" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="E2EPredictionListFromFavouriteWithConnection" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;es.uji.es.ei1048.weatherApp.integrationTest.TestCurrentWeatherCity&quot;" />
+        <option name="scriptParameters" value="--tests &quot;es.uji.ei1048.weatherApp.e2e.E2EPredictionListFromFavouriteWithConnection&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -119,12 +147,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestCurrentWeatherCoordinates" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestLabels" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;es.uji.es.ei1048.weatherApp.integrationTest.TestCurrentWeatherCoordinates&quot;" />
+        <option name="scriptParameters" value="--tests &quot;es.uji.es.ei1048.weatherApp.integrationTest.TestLabels&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -139,12 +167,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestFavouriteCities" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestPredictionFavouriteCities" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;es.uji.es.ei1048.weatherApp.integrationTest.TestFavouriteCities&quot;" />
+        <option name="scriptParameters" value="--tests &quot;es.uji.es.ei1048.weatherApp.integrationTest.TestPredictionFavouriteCities&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -159,12 +187,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestFavouriteCoordinates" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestPredictionWeatherUsingCity" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;es.uji.es.ei1048.weatherApp.integrationTest.TestFavouriteCoordinates&quot;" />
+        <option name="scriptParameters" value="--tests &quot;es.uji.es.ei1048.weatherApp.integrationTest.TestPredictionWeatherUsingCity&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -218,19 +246,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.TestFavouriteCities" />
-      <item itemvalue="Gradle.TestFavouriteCoordinates" />
+      <item itemvalue="Gradle.TestLabels" />
+      <item itemvalue="Gradle.TestPredictionFavouriteCities" />
+      <item itemvalue="Gradle.TestPredictionWeatherUsingCity" />
       <item itemvalue="Gradle.TestPredictionWeatherUsingCoordinates" />
-      <item itemvalue="Gradle.TestCurrentWeatherCoordinates" />
-      <item itemvalue="Gradle.TestCurrentWeatherCity" />
+      <item itemvalue="Gradle.E2EPredictionListFromFavouriteWithConnection" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestCurrentWeatherCity" />
-        <item itemvalue="Gradle.TestCurrentWeatherCoordinates" />
-        <item itemvalue="Gradle.TestFavouriteCities" />
-        <item itemvalue="Gradle.TestFavouriteCoordinates" />
+        <item itemvalue="Gradle.E2EPredictionListFromFavouriteWithConnection" />
+        <item itemvalue="Gradle.TestPredictionFavouriteCities" />
         <item itemvalue="Gradle.TestPredictionWeatherUsingCoordinates" />
+        <item itemvalue="Gradle.TestPredictionWeatherUsingCity" />
+        <item itemvalue="Gradle.TestLabels" />
       </list>
     </recent_temporary>
   </component>

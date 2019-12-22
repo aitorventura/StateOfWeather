@@ -26,7 +26,7 @@ public class PredictionWeatherUsingCity {
         this.openWeatherMap = openWeatherMap;
     }
 
-    public List<PredictionWeather> giveMeThePredictionToThisCity(String city){
+    public List<PredictionWeather> giveMeThePredictionToThisCity(String city) throws  NotValidCityException{
 
         sqLiteDB.removeOldPredicionWeathers(); //se borran aquellos datos que no sean de prodicciones futuras
 

@@ -3,6 +3,8 @@ package es.uji.ei1048.weatherApp.e2e;
 import es.uji.ei1048.weatherApp.Coordinates;
 import es.uji.ei1048.weatherApp.PredictionWeather;
 import es.uji.ei1048.weatherApp.SQLiteDB;
+import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
+import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
 import org.junit.Test;
 
 import java.util.List;
@@ -26,8 +28,12 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
 
     }
 
+
+
+    //TODO: He añadido el throws porque ya no sé qué hacer para que la prueba pase
+
     @Test
-    public void predictionOfFavouritePlacesWithConnectionAndDataLessThan1Hour(){
+    public void predictionOfFavouritePlacesWithConnectionAndDataLessThan1Hour() throws Exception {
 
         //Given: hay datos de la lista de favoritos en la bbdd
         List<String> favoriteCities = sqLiteDB.listFavoriteCities();
@@ -71,7 +77,7 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
 
 
     @Test
-    public void predictionOfFavouritePlacesWithConnectionAndWithoutDataLessThan1Hour(){
+    public void predictionOfFavouritePlacesWithConnectionAndWithoutDataLessThan1Hour() throws NotValidCityException{
 
         //Given: no hay datos
         sqLiteDB.removeAllPredictions();
@@ -79,7 +85,7 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
 
         //When: entro en la aplicación, hay conexión, pero no datos de menos de XXX en la BBDD
         Map<String, List<PredictionWeather>> predictionOfFavouriteCities = weatherAppFacade.predictionOfFavouriteCities();
-        Map<Coordinates, List<PredictionWeather>> predictionOfFavouroteCoordinates = weatherAppFacade.predictionOfFavouriteCoordenates();
+        Map<Coordinates, List<PredictionWeather>> predictionOfFavouriteCoordinates = weatherAppFacade.predictionOfFavouriteCoordenates();
 
 
         //Then: se muestran los datos
@@ -95,10 +101,10 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
             assertTrue(3 == predictionOfFavouriteCities.get(s).size());
         }
 
-        assertTrue(numberOfFavoritesCoordinates == predictionOfFavouroteCoordinates.size());
+        assertTrue(numberOfFavoritesCoordinates == predictionOfFavouriteCoordinates.size());
 
-        for (Coordinates coordinates: predictionOfFavouroteCoordinates.keySet()){
-            assertTrue(3 == predictionOfFavouroteCoordinates.get(coordinates).size());
+        for (Coordinates coordinates: predictionOfFavouriteCoordinates.keySet()){
+            assertTrue(3 == predictionOfFavouriteCoordinates.get(coordinates).size());
         }
 
     }

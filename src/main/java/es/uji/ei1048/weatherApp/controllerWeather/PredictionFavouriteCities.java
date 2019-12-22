@@ -3,6 +3,8 @@ package es.uji.ei1048.weatherApp.controllerWeather;
 import es.uji.ei1048.weatherApp.PredictionWeather;
 import es.uji.ei1048.weatherApp.SQLiteDB;
 import es.uji.ei1048.weatherApp.WeatherAppFacade;
+import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
+import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
@@ -16,45 +18,43 @@ public class PredictionFavouriteCities {
     private PredictionWeatherUsingCity predictor;
     //private List<Coordinates> listOfFavouriteCoordinates;
 
-    public PredictionFavouriteCities(){
+    public PredictionFavouriteCities() {
         this.predictor = new PredictionWeatherUsingCity();
         this.sqLiteDB = new SQLiteDB();
     }
-    public PredictionFavouriteCities(IStore iStore){
+
+    public PredictionFavouriteCities(IStore iStore) {
         this.predictor = new PredictionWeatherUsingCity();
         this.sqLiteDB = iStore;
     }
 
 
-
-    public Map<String, List<PredictionWeather>> giveMeThePredictionsOfMyFavoriteCities(){
+    public Map<String, List<PredictionWeather>> giveMeThePredictionsOfMyFavoriteCities() throws NotValidCityException, ThereAreNoFavouriteCities {
 
         Map<String, List<PredictionWeather>> weatherOfFavorites = new HashMap<>();
 
-        List<String> favoriteCities = sqLiteDB.listFavoriteCities();
+        try {
 
-        for(String city: favoriteCities){
-            List<PredictionWeather> listPrediction = predictor.giveMeThePredictionToThisCity(city);
-            weatherOfFavorites.put(city, listPrediction);
+            List<String> favoriteCities = sqLiteDB.listFavoriteCities();
+
+            if (favoriteCities == null){
+                throw new ThereAreNoFavouriteCities();
+            }
+
+            for (String city : favoriteCities) {
+
+                List<PredictionWeather> listPrediction = predictor.giveMeThePredictionToThisCity(city);
+                weatherOfFavorites.put(city, listPrediction);
+
+            }
+            return weatherOfFavorites;
+        } catch (ThereAreNoFavouriteCities ex) {
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-
         return weatherOfFavorites;
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

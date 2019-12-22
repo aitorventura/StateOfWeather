@@ -1,5 +1,6 @@
 package es.uji.ei1048.weatherApp;
 
+import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 
 import java.math.BigDecimal;
@@ -323,7 +324,7 @@ public class SQLiteDB implements IStore {
     //CONSULTATIONS TO ADMIN FAVORITECITY
 
 
-    public List<String> listFavoriteCities(){
+    public List<String> listFavoriteCities() throws ThereAreNoFavouriteCities{
 
         List<String> favouriteCities = new ArrayList<>();
 
@@ -342,7 +343,8 @@ public class SQLiteDB implements IStore {
             this.close();
 
         } catch (Exception e){
-            e.printStackTrace();
+
+            return null;
         }
 
         return favouriteCities;

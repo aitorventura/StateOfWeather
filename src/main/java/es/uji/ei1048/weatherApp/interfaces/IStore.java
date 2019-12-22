@@ -3,6 +3,8 @@ package es.uji.ei1048.weatherApp.interfaces;
 import es.uji.ei1048.weatherApp.Coordinates;
 import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.PredictionWeather;
+import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
+
 import java.util.List;
 import java.util.Map;
 
@@ -42,7 +44,7 @@ public interface IStore {
     //CONSULTATIONS TO ADMIN FAVORITECITY
 
 
-    public List<String> listFavoriteCities();
+    public List<String> listFavoriteCities() throws ThereAreNoFavouriteCities;
 
     public boolean addCityToFavorite(String city);
 

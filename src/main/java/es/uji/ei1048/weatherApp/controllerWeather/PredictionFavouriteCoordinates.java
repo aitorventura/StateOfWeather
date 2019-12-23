@@ -3,6 +3,8 @@ package es.uji.ei1048.weatherApp.controllerWeather;
 import es.uji.ei1048.weatherApp.Coordinates;
 import es.uji.ei1048.weatherApp.PredictionWeather;
 import es.uji.ei1048.weatherApp.SQLiteDB;
+import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
+import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCoordinates;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
@@ -31,14 +33,25 @@ public class PredictionFavouriteCoordinates {
 
         Map<Coordinates, List<PredictionWeather>> weatherOfFavorites = new HashMap<>();
 
-        List<Coordinates> favoriteCities = sqLiteDB.listFavoriteCoordinates();
+        try {
 
-        for (Coordinates coordinates : favoriteCities) {
-            List<PredictionWeather> listPrediction = predictor.giveMeThePredictionToTheseCoordinates(coordinates);
-            weatherOfFavorites.put(coordinates, listPrediction);
+
+            List<Coordinates> favoriteCoordinates = sqLiteDB.listFavoriteCoordinates();
+
+            if(favoriteCoordinates == null || favoriteCoordinates.size() == 0){
+                throw new ThereAreNoFavouriteCoordinates();
+            }
+
+
+            for (Coordinates coordinates : favoriteCoordinates) {
+                List<PredictionWeather> listPrediction = predictor.giveMeThePredictionToTheseCoordinates(coordinates);
+                weatherOfFavorites.put(coordinates, listPrediction);
+            }
+        }catch (ThereAreNoFavouriteCoordinates ex) {
+            throw new ThereAreNoFavouriteCoordinates();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-
         return weatherOfFavorites;
 
     }

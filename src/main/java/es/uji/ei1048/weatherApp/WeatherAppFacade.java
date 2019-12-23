@@ -21,6 +21,7 @@ public class WeatherAppFacade {
     private final PredictionWeatherUsingCoordinates predictionWeatherUsingCoordinates;
     private final PredictionFavouriteCities predictionFavouriteCities;
     private final PredictionFavouriteCoordinates predictionFavouriteCoordinates;
+    private final OpenAMap openAMap;
 
     public WeatherAppFacade() {
         this.currentWeatherUsingCity = new CurrentWeatherUsingCity();
@@ -32,6 +33,7 @@ public class WeatherAppFacade {
         this.predictionWeatherUsingCoordinates = new PredictionWeatherUsingCoordinates();
         this.predictionFavouriteCities = new PredictionFavouriteCities();
         this.predictionFavouriteCoordinates = new PredictionFavouriteCoordinates();
+        this.openAMap = new OpenAMap();
     }
 
 
@@ -143,8 +145,13 @@ public class WeatherAppFacade {
         return predictionFavouriteCoordinates.giveMeThePredictionsOfMyFavoriteCoordinates();
     }
 
+    // MAP
+    public void openTheMap(String typeOfMeterologicalPhenomenon){
+        openAMap.openAMapWithThisPhenomenon(typeOfMeterologicalPhenomenon); //EX : temperature
 
-    //TODO abrir mapa fisico y buscar tiempo por etiqueta
+    }
+
+    //TODO  buscar tiempo por etiqueta
 
 
 }

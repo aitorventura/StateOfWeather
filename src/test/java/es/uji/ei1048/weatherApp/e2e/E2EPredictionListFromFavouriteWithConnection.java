@@ -83,6 +83,7 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
         sqLiteDB.removeAllPredictions();
 
 
+
         //When: entro en la aplicación, hay conexión, pero no datos de menos de XXX en la BBDD
         Map<String, List<PredictionWeather>> predictionOfFavouriteCities = weatherAppFacade.predictionOfFavouriteCities();
         Map<Coordinates, List<PredictionWeather>> predictionOfFavouriteCoordinates = weatherAppFacade.predictionOfFavouriteCoordenates();

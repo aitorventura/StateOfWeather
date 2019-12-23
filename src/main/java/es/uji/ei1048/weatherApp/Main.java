@@ -1,27 +1,23 @@
 package es.uji.ei1048.weatherApp;
 
+import es.uji.ei1048.weatherApp.controllerWeather.OpenAMap;
+
 public class Main {
     public static void main(String[] args){
-        SQLiteDB sqLiteDB = new SQLiteDB();
+        double lon = -4.1968;
+        double lat = 40.220478;
 
-        System.out.println("SOLO DEBERÍA ESTAR CASTELLÓN EN FAVORITOS");
-        sqLiteDB.listFavoriteCities();
+        //Zoom predeterminado para la página
+        int zoom = 6;
 
-        System.out.println();
-        System.out.println("CASTELLÓN Y VALENCIA EN FAV");
-        sqLiteDB.addCityToFavorite("Valencia");
-        sqLiteDB.listFavoriteCities();
 
-        System.out.println();
-        System.out.println("SOLO DEBERÍA ESTAR CASTELLÓN EN FAVORITOS");
-        sqLiteDB.removeCityFromFavorite("Valencia");
-        sqLiteDB.listFavoriteCities();
+        //Mostrar ciudades o no
+        boolean ciudades = true;
 
-        try {
-            sqLiteDB.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        String url = "https://openweathermap.org/weathermap?basemap=map&cities=" + ciudades + "&layer=" + "temperature" + "&lat=" + lat + "&lon=" + lon + "&zoom=" + zoom;
+
+
+        OpenAMap.goToURL(url);
 
 
     }

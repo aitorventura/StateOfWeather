@@ -3,7 +3,6 @@ package es.uji.ei1048.weatherApp;
 import es.uji.ei1048.weatherApp.controllerWeather.*;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 import java.util.Map;
@@ -41,7 +40,7 @@ public class WeatherAppFacade {
     }
 
     public CurrentWeather currentWeatherCoordinates(Coordinates coordinates) {
-        return currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordenates(coordinates.getLon(), coordinates.getLat());
+        return currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordinates(coordinates.getLon(), coordinates.getLat());
     }
 
     public List<PredictionWeather> previsionOfWeatherCity(String city) throws  NotValidCityException{
@@ -123,7 +122,7 @@ public class WeatherAppFacade {
         Map<Coordinates,CurrentWeather> weatherOfFavouriteCoordinates = new HashMap<>();
 
         for(Coordinates coordinates : favoriteCoordinates){
-            weatherOfFavouriteCoordinates.put(coordinates,currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordenates(coordinates.getLon(),coordinates.getLat()));
+            weatherOfFavouriteCoordinates.put(coordinates,currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordinates(coordinates.getLon(),coordinates.getLat()));
         }
 
         return weatherOfFavouriteCoordinates;

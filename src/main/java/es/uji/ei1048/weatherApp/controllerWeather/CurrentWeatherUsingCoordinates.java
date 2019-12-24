@@ -1,8 +1,10 @@
 package es.uji.ei1048.weatherApp.controllerWeather;
 
+import es.uji.ei1048.weatherApp.Coordinates;
 import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.OpenWeatherMap;
 import es.uji.ei1048.weatherApp.SQLiteDB;
+import es.uji.ei1048.weatherApp.exceptions.NoConnectionException;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
@@ -23,7 +25,15 @@ public class CurrentWeatherUsingCoordinates {
     }
 
 
-    public CurrentWeather giveMeTheCurrentWeatherUsingACoordenates(double lon, double lat) {
+    //TODO tal vez sería mejor cambiar el método para que se le pasara directamente un objeto Coordinate
+    //es como está en el resto de controladores
+    public CurrentWeather giveMeTheCurrentWeatherUsingACoordinates(double lon, double lat) {
+
+        //comprobación para saber si son válidas las coordenadas
+        Coordinates coordinates = new Coordinates(lon, lat);
+        if(!coordinates.areValid()){
+            throw new NotValidCoordinatesException();
+        }
 
         sqLiteDB.removeOldCurrentWeathers(); //borra todos los datos obsoletos
 
@@ -31,17 +41,15 @@ public class CurrentWeatherUsingCoordinates {
 
         if (currentWeather == null) { //si las coordenadas NO están en la BBDD
             currentWeather = this.openWeatherMap.giveMeTheCurrentWeatherUsingCoordinates(lon, lat);
+            if (currentWeather == null){ //no hay conexión
+                throw  new NoConnectionException();
+            }
         } else {
             return currentWeather; //si las coordenadas están en la BBDD
         }
 
-        //TODO nos podríamos ahorrar esta comprobación si al principio creamos la coordenada y ejectumanos su método areValid()
-        if (currentWeather == null) { //si no existe la coordenada
-            throw new NotValidCoordinatesException();
-        } else { //si existe, se añade
-            sqLiteDB.addCurrentWeatherToTheDataBase(currentWeather);
-            return currentWeather;
-        }
+        sqLiteDB.addCurrentWeatherToTheDataBase(currentWeather);
+        return currentWeather;
 
     }
 }

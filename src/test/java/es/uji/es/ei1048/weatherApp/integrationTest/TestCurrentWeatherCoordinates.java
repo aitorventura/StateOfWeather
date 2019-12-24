@@ -5,6 +5,7 @@ import es.uji.ei1048.weatherApp.CurrentWeather;
 
 import es.uji.ei1048.weatherApp.controllerWeather.CurrentWeatherUsingCoordinates;
 
+import es.uji.ei1048.weatherApp.exceptions.NoConnectionException;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
@@ -45,7 +46,7 @@ public class TestCurrentWeatherCoordinates {
         when(store.giveMeTheCurrentWeather( anyDouble(), anyDouble())).thenReturn(currentWeather);
         when(store.giveMeTheCurrentWeather( 39.9945711, -0.071089)).thenReturn(currentWeather);
 
-        currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordenates(39.9945711, -0.071089);
+        currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordinates(39.9945711, -0.071089);
 
         verify(store, times(1)).removeOldCurrentWeathers();
         verify(store, times(1)).giveMeTheCurrentWeather(39.9945711, -0.071089);
@@ -54,7 +55,7 @@ public class TestCurrentWeatherCoordinates {
 
     }
 
-    //La ciudad no está en la BBDD con conexión
+    //Las coordenadas no están en la BBDD con conexión
     @Test
     public void validCurrentWeatherConsultationUsingACoordinatesWithoutDataInTheBBDDWithConnection() {
         CurrentWeather currentWeather = new CurrentWeather();
@@ -62,7 +63,7 @@ public class TestCurrentWeatherCoordinates {
         when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(anyDouble(), anyDouble())).thenReturn(null);
         when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(39.9945711, -0.071089)).thenReturn(currentWeather);
 
-        currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordenates(39.9945711, -0.071089);
+        currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordinates(39.9945711, -0.071089);
 
         verify(store, times(1)).removeOldCurrentWeathers();
         verify(store, times(1)).giveMeTheCurrentWeather(39.9945711, -0.071089);
@@ -70,16 +71,16 @@ public class TestCurrentWeatherCoordinates {
         verify(store, times(1)).addCurrentWeatherToTheDataBase(any(CurrentWeather.class));
     }
 
-    //La ciudad no está en la BBDD SIN conexión
+    //Las coordenadas no están en la BBDD SIN conexión
     //TODO Mirar las excepciones
-    @Test(expected = NotValidCoordinatesException.class)
+    @Test(expected = NoConnectionException.class)
     public void validCurrentWeatherConsultationUsingACoordinatesWithoutDataInTheBBDDWithoutConnection() {
         CurrentWeather currentWeather = new CurrentWeather();
         when(store.giveMeTheCurrentWeather(anyString())).thenReturn(null);
         when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(anyDouble(), anyDouble())).thenReturn(null);
         when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(39.9945711, -0.071089)).thenReturn(null);
 
-        currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordenates(39.9945711, -0.071089);
+        currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordinates(39.9945711, -0.071089);
 
         verify(store, times(1)).removeOldCurrentWeathers();
         verify(store, times(1)).giveMeTheCurrentWeather(39.9945711, -0.071089);

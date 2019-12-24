@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6369ad6-7b0f-4944-9b9f-66c9be50eb5f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StateOfWeatherDataBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/StateOfWeatherDataBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/SQLiteDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/SQLiteDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/WeatherAppFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/WeatherAppFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/SQLiteDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/SQLiteDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/interfaces/IStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/interfaces/IStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -110,8 +100,8 @@
       <file leaf-file-name="TestLabels.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1024">
-              <caret line="170" column="10" selection-start-line="170" selection-start-column="10" selection-end-line="170" selection-end-column="10" />
+            <state relative-caret-position="316">
+              <caret line="166" column="59" selection-start-line="166" selection-start-column="59" selection-end-line="166" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -211,7 +201,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -539,14 +529,11 @@
       <option name="presentableId" value="Default" />
       <updated>1576175125991</updated>
       <workItem from="1576175127653" duration="15744000" />
-      <workItem from="1577183737788" duration="5002000" />
+      <workItem from="1577183737788" duration="5244000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestLabels - 2019.12.24 at 12h 33m 58s.xml">
-      <configuration name="TestLabels" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TestLabels - 2019.12.24 at 12h 34m 21s.xml">
       <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
@@ -574,9 +561,12 @@
     <history-entry file="TestLabels - 2019.12.24 at 12h 55m 25s.xml">
       <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TestLabels - 2019.12.24 at 12h 59m 09s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25800000" />
+    <option name="totallyTimeSpent" value="26042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -860,8 +850,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1024">
-          <caret line="170" column="10" selection-start-line="170" selection-start-column="10" selection-end-line="170" selection-end-column="10" />
+        <state relative-caret-position="316">
+          <caret line="166" column="59" selection-start-line="166" selection-start-column="59" selection-end-line="166" selection-end-column="59" />
         </state>
       </provider>
     </entry>

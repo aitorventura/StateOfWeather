@@ -164,14 +164,10 @@ public class TestLabels {
         verify(weatherService, times(1)).giveMeTheCurrentWeatherUsingCoordinates(lon,lat);
     }
 
+    //TODO si se lanzara una excepción por no tener conexión si que haría falta este método
     //Buscar una etiqueta que existe en la BBDD y el tiempo actual NO está en la BBDD (SIN conexión)
-    @Test
+  /*  @Test
     public void getValidLabelWithoutCurrentWeatherInDBWithoutConnection() {
-
-        /*double lon = 39.9945711;
-        double lat = -0.071089;
-        Coordinates coordinates = new Coordinates(lon, lat);
-        CurrentWeather currentWeather = new CurrentWeather();*/
 
         when(store.getCoordinatesOfLabel("UJI")).thenReturn(coordinates);
         when(store.giveMeTheCurrentWeather(lon,lat)).thenReturn(null);
@@ -183,5 +179,5 @@ public class TestLabels {
         verify(store, times(1)).giveMeTheCurrentWeather(lon,lat);
         verify(weatherService, times(1)).giveMeTheCurrentWeatherUsingCoordinates(lon,lat);
     }
-
+*/
 }

@@ -1,9 +1,11 @@
 package es.uji.es.ei1048.weatherApp.integrationTest;
 
 import es.uji.ei1048.weatherApp.Coordinates;
+import es.uji.ei1048.weatherApp.CurrentWeather;
 import es.uji.ei1048.weatherApp.controllerWeather.SavedLabels;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
+import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -16,17 +18,33 @@ public class TestLabels {
 
     SavedLabels savedLabels;
     IStore store;
+    IWeatherService weatherService;
+
+    double lon;
+    double lat;
+    Coordinates coordinates;
+    CurrentWeather currentWeather;
 
     @Before
     public void setUp() throws Exception {
         store = mock(IStore.class);
-        savedLabels = new SavedLabels(store);
+        weatherService = mock(IWeatherService.class);
+        savedLabels = new SavedLabels(store, weatherService);
+
+        lon = 39.9945711;
+        lat = -0.071089;
+        coordinates = new Coordinates(lon, lat);
+
+        currentWeather = new CurrentWeather();
     }
 
     @After
     public void tearDown() throws Exception {
         store = null;
+        weatherService = null;
         savedLabels = null;
+        coordinates = null;
+        currentWeather = null;
     }
 
     //Añadir una nueva etiqueta que no está en la BBDD con coordenadas válidas
@@ -91,4 +109,79 @@ public class TestLabels {
 
         Assert.assertFalse(result);
     }
+
+    //Buscar una etiqueta que NO existe en la BBDD
+    @Test
+    public void getInvalidLabel() {
+
+        when(store.getCoordinatesOfLabel(anyString())).thenReturn(null);
+
+        savedLabels.getCurrentWeatherOfLabel(anyString());
+
+        verify(store, times(1)).getCoordinatesOfLabel(anyString());
+        verify(store, times(0)).giveMeTheCurrentWeather(anyDouble(),anyDouble());
+        verify(weatherService, times(0)).giveMeTheCurrentWeatherUsingCoordinates(anyDouble(),anyDouble());
+
+    }
+
+    //Buscar una etiqueta que existe en la BBDD y el tiempo actual también está en la BBDD
+    @Test
+    public void getValidLabelWithCurrentWeatherInDB() {
+
+        /*double lon = 39.9945711;
+        double lat = -0.071089;
+        Coordinates coordinates = new Coordinates(lon, lat);
+        CurrentWeather currentWeather = new CurrentWeather();*/
+
+        when(store.getCoordinatesOfLabel("UJI")).thenReturn(coordinates);
+        when(store.giveMeTheCurrentWeather(lon,lat)).thenReturn(currentWeather);
+
+        savedLabels.getCurrentWeatherOfLabel("UJI");
+
+        verify(store, times(1)).getCoordinatesOfLabel("UJI");
+        verify(store, times(1)).giveMeTheCurrentWeather(lon,lat);
+        verify(weatherService, times(0)).giveMeTheCurrentWeatherUsingCoordinates(anyDouble(),anyDouble());
+
+    }
+
+    //Buscar una etiqueta que existe en la BBDD y el tiempo actual NO está en la BBDD (CON conexión)
+    @Test
+    public void getValidLabelWithoutCurrentWeatherInDBWithConnection() {
+
+        /*double lon = 39.9945711;
+        double lat = -0.071089;
+        Coordinates coordinates = new Coordinates(lon, lat);
+        CurrentWeather currentWeather = new CurrentWeather();*/
+
+        when(store.getCoordinatesOfLabel("UJI")).thenReturn(coordinates);
+        when(store.giveMeTheCurrentWeather(lon,lat)).thenReturn(null);
+        when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(lon,lat)).thenReturn(currentWeather);
+
+        savedLabels.getCurrentWeatherOfLabel("UJI");
+
+        verify(store, times(1)).getCoordinatesOfLabel("UJI");
+        verify(store, times(1)).giveMeTheCurrentWeather(lon,lat);
+        verify(weatherService, times(1)).giveMeTheCurrentWeatherUsingCoordinates(lon,lat);
+    }
+
+    //Buscar una etiqueta que existe en la BBDD y el tiempo actual NO está en la BBDD (SIN conexión)
+    @Test
+    public void getValidLabelWithoutCurrentWeatherInDBWithoutConnection() {
+
+        /*double lon = 39.9945711;
+        double lat = -0.071089;
+        Coordinates coordinates = new Coordinates(lon, lat);
+        CurrentWeather currentWeather = new CurrentWeather();*/
+
+        when(store.getCoordinatesOfLabel("UJI")).thenReturn(coordinates);
+        when(store.giveMeTheCurrentWeather(lon,lat)).thenReturn(null);
+        when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(lon,lat)).thenReturn(null);
+
+        savedLabels.getCurrentWeatherOfLabel("UJI");
+
+        verify(store, times(1)).getCoordinatesOfLabel("UJI");
+        verify(store, times(1)).giveMeTheCurrentWeather(lon,lat);
+        verify(weatherService, times(1)).giveMeTheCurrentWeatherUsingCoordinates(lon,lat);
+    }
+
 }

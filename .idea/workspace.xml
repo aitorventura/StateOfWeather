@@ -2,30 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6369ad6-7b0f-4944-9b9f-66c9be50eb5f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/OpenAMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCoordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StateOfWeatherDataBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/StateOfWeatherDataBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/SQLiteDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/SQLiteDB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/WeatherAppFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/WeatherAppFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/FavouriteCities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/FavouriteCities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCoordinates.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCoordinates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/interfaces/IStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/interfaces/IStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/es/uji/ei1048/weatherApp/e2e/E2EAddLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/es/uji/ei1048/weatherApp/e2e/E2EAddLabels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/es/uji/ei1048/weatherApp/e2e/E2EPredictionListFromFavouriteWithConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/es/uji/ei1048/weatherApp/e2e/E2EPredictionListFromFavouriteWithConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/classes/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/SQLiteDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/SQLiteDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCoordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCoordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/ei1048/weatherApp/e2e/E2EPredictionListFromFavouriteWithConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/ei1048/weatherApp/e2e/E2EPredictionListFromFavouriteWithConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/interfaces/IStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/interfaces/IStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,20 +47,20 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="WeatherAppFacade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="149" column="94" selection-start-line="149" selection-start-column="94" selection-end-line="149" selection-end-column="94" />
+            <state relative-caret-position="63">
+              <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="OpenWeatherMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/OpenWeatherMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="384">
               <caret line="198" column="10" selection-start-line="198" selection-end-line="199" />
               <folding>
                 <element signature="method#jsonToMap#0;class#OpenWeatherMap#0" />
@@ -86,23 +76,78 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/OpenAMap.java">
+      <file leaf-file-name="CurrentWeatherUsingCoordinates.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/CurrentWeatherUsingCoordinates.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" column="30" selection-start-line="8" selection-start-column="7" selection-end-line="21" selection-end-column="30" />
+            <state relative-caret-position="-233">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CurrentWeatherUsingCity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/CurrentWeatherUsingCity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-170">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SavedLabels.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1020#1021#0" expanded="true" />
+                <element signature="e#1070#1071#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/Main.java">
+      <file leaf-file-name="TestLabels.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="1024">
+              <caret line="170" column="10" selection-start-line="170" selection-start-column="10" selection-end-line="170" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestCurrentWeatherCity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestCurrentWeatherCity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-245">
+              <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestCurrentWeatherCoordinates.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestCurrentWeatherCoordinates.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="64" column="101" selection-start-line="19" selection-start-column="13" selection-end-line="64" selection-end-column="101" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SQLiteDB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/SQLiteDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="584" column="32" selection-start-line="584" selection-start-column="32" selection-end-line="584" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IStore.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/interfaces/IStore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
             </state>
           </provider>
         </entry>
@@ -120,10 +165,23 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>predictio</find>
+      <find>sys</find>
+      <find>getCo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="6304699595215" />
+        <entry key="$PROJECT_DIR$/.gradle" value="0" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3243327270" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2641258053" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="3060804313" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -135,8 +193,12 @@
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCoordinates.java" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCities.java" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/OpenAMap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/interfaces/IStore.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/SQLiteDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.java" />
+        <option value="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java" />
       </list>
     </option>
   </component>
@@ -150,9 +212,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectId" id="1Uvo11GXLrsh4T3SEb9olEy5PYW" />
   <component name="ProjectLevelVcsManager">
@@ -163,7 +226,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,6 +272,24 @@
               <item name="StateOfWeather" type="b2602c69:ProjectViewProjectNode" />
               <item name="StateOfWeather" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="weatherApp" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StateOfWeather" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StateOfWeather" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="weatherApp" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StateOfWeather" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StateOfWeather" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -240,6 +320,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -265,7 +347,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.TestLabels">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="es.uji.ei1048.weatherApp.Main" />
       <module name="StateOfWeather_main" />
@@ -276,57 +358,98 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
+      <method>
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in StateOfWeather_test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StateOfWeather_test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in StateOfWeather_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StateOfWeather_test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="es.uji.ei1048.weatherApp.e2e in StateOfWeather_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestFavouriteCoordinates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StateOfWeather_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="es.uji.ei1048.weatherApp.e2e.*" />
+          <option name="PATTERN" value="es.uji.es.ei1048.weatherApp.integrationTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="es.uji.ei1048.weatherApp.e2e" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="es.uji.es.ei1048.weatherApp.integrationTest" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.es.ei1048.weatherApp.integrationTest.TestFavouriteCoordinates" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestLabels" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StateOfWeather_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.es.ei1048.weatherApp.integrationTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="es.uji.es.ei1048.weatherApp.integrationTest" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.es.ei1048.weatherApp.integrationTest.TestLabels" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestPredictionFavouriteCities" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StateOfWeather_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="es.uji.es.ei1048.weatherApp.integrationTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="es.uji.es.ei1048.weatherApp.integrationTest" />
+      <option name="MAIN_CLASS_NAME" value="es.uji.es.ei1048.weatherApp.integrationTest.TestPredictionFavouriteCities" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+      <method>
         <option name="Make" enabled="true" />
       </method>
     </configuration>
@@ -338,38 +461,60 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="es.uji.es.ei1048.weatherApp.integrationTest" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
-    <configuration default="true" type="TestNG">
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
-      <method v="2">
+      <method>
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.es.uji.ei1048.weatherApp.e2e in StateOfWeather_test" />
       <item itemvalue="JUnit.es.uji.es.ei1048.weatherApp.integrationTest in StateOfWeather_test" />
-      <item itemvalue="JUnit.All in StateOfWeather_test" />
-      <item itemvalue="JUnit.All in StateOfWeather_test (1)" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.TestFavouriteCoordinates" />
+      <item itemvalue="JUnit.TestLabels" />
+      <item itemvalue="JUnit.TestPredictionFavouriteCities" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.All in StateOfWeather_test (1)" />
-        <item itemvalue="JUnit.All in StateOfWeather_test" />
+        <item itemvalue="JUnit.TestLabels" />
+        <item itemvalue="JUnit.TestPredictionFavouriteCities" />
+        <item itemvalue="JUnit.TestFavouriteCoordinates" />
         <item itemvalue="JUnit.es.uji.es.ei1048.weatherApp.integrationTest in StateOfWeather_test" />
-        <item itemvalue="JUnit.es.uji.ei1048.weatherApp.e2e in StateOfWeather_test" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -394,74 +539,79 @@
       <option name="presentableId" value="Default" />
       <updated>1576175125991</updated>
       <workItem from="1576175127653" duration="15744000" />
+      <workItem from="1577183737788" duration="5002000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestPredictionFavouriteCities - 2019.12.23 at 02h 06m 09s.xml">
-      <configuration name="TestPredictionFavouriteCities" configurationId="JUnit" />
+    <history-entry file="TestLabels - 2019.12.24 at 12h 33m 58s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestPredictionFavouriteCities - 2019.12.23 at 02h 07m 02s.xml">
-      <configuration name="TestPredictionFavouriteCities" configurationId="JUnit" />
+    <history-entry file="TestLabels - 2019.12.24 at 12h 34m 21s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestPredictionFavouriteCities - 2019.12.23 at 02h 07m 38s.xml">
-      <configuration name="TestPredictionFavouriteCities" configurationId="JUnit" />
+    <history-entry file="TestLabels - 2019.12.24 at 12h 35m 37s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="es_uji_ei1048_weatherApp_e2e_in_StateOfWeather_test - 2019.12.23 at 02h 07m 52s.xml">
-      <configuration name="es.uji.ei1048.weatherApp.e2e in StateOfWeather_test" configurationId="JUnit" />
+    <history-entry file="TestLabels - 2019.12.24 at 12h 36m 23s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="es_uji_es_ei1048_weatherApp_integrationTest_in_StateOfWeather_test - 2019.12.23 at 02h 08m 00s.xml">
-      <configuration name="es.uji.es.ei1048.weatherApp.integrationTest in StateOfWeather_test" configurationId="JUnit" />
+    <history-entry file="TestLabels - 2019.12.24 at 12h 43m 29s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="es_uji_es_ei1048_weatherApp_integrationTest_in_StateOfWeather_test - 2019.12.23 at 02h 10m 48s.xml">
-      <configuration name="es.uji.es.ei1048.weatherApp.integrationTest in StateOfWeather_test" configurationId="JUnit" />
+    <history-entry file="TestLabels - 2019.12.24 at 12h 48m 20s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="es_uji_es_ei1048_weatherApp_integrationTest_in_StateOfWeather_test - 2019.12.23 at 02h 11m 21s.xml">
-      <configuration name="es.uji.es.ei1048.weatherApp.integrationTest in StateOfWeather_test" configurationId="JUnit" />
+    <history-entry file="TestLabels - 2019.12.24 at 12h 50m 56s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_StateOfWeather_test - 2019.12.23 at 02h 11m 44s.xml">
-      <configuration name="All in StateOfWeather_test" configurationId="JUnit" />
+    <history-entry file="TestLabels - 2019.12.24 at 12h 51m 55s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_StateOfWeather_test - 2019.12.23 at 02h 21m 07s.xml">
-      <configuration name="All in StateOfWeather_test" configurationId="JUnit" />
+    <history-entry file="TestLabels - 2019.12.24 at 12h 52m 25s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_StateOfWeather_test_(1) - 2019.12.23 at 02h 22m 42s.xml">
-      <configuration name="All in StateOfWeather_test (1)" configurationId="JUnit" />
+    <history-entry file="TestLabels - 2019.12.24 at 12h 55m 25s.xml">
+      <configuration name="TestLabels" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20798000" />
+    <option name="totallyTimeSpent" value="25800000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3142415" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25416037" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Gradle" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,26 +635,46 @@
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2533">
+          <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="149" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/OpenWeatherMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3366">
+          <caret line="198" column="10" selection-start-line="198" selection-end-line="199" />
+          <folding>
+            <element signature="method#jsonToMap#0;class#OpenWeatherMap#0" />
+            <element signature="method#giveMeTheCurrentWeatherUsingACity#0;class#OpenWeatherMap#0" />
+            <element signature="method#giveMeTheCurrentWeatherUsingCoordinates#0;class#OpenWeatherMap#0" />
+            <element signature="method#getCurrentWeather#0;class#OpenWeatherMap#0" />
+            <element signature="method#giveMeTheListOfPredictionsUsingACity#0;class#OpenWeatherMap#0" />
+            <element signature="method#getPredictionWeathers#0;class#OpenWeatherMap#0" />
+            <element signature="method#giveMeTheListOfPredictionsUsingCoordinates#0;class#OpenWeatherMap#0" />
+            <element signature="method#giveMeOnlyThePredictionsOf3Days#0;class#OpenWeatherMap#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/StateOfWeatherDataBase.db">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1269" />
@@ -514,13 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestFavouriteCities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -545,13 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCoordinates.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestFavouriteCoordinates.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -559,23 +715,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCoordinates.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCoordinates.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/FavouriteCoordinates.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -583,20 +723,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestOpenAMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/CurrentWeatherUsingCoordinates.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestOpenAMap.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -604,44 +731,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/CurrentWeatherUsingCity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/OpenAMap.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-214">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="141">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestFavouriteCities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="-1372">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="56" column="39" lean-forward="true" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCoordinates.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="358">
           <caret line="41" column="59" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionFavouriteCities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="-2">
           <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCoordinates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/WeatherAppFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="149" column="94" selection-start-line="149" selection-start-column="94" selection-end-line="149" selection-end-column="94" />
+        <state relative-caret-position="63">
+          <caret line="78" column="31" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/interfaces/IStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/SQLiteDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="584" column="32" selection-start-line="584" selection-start-column="32" selection-end-line="584" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/OpenWeatherMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="384">
           <caret line="198" column="10" selection-start-line="198" selection-end-line="199" />
           <folding>
             <element signature="method#jsonToMap#0;class#OpenWeatherMap#0" />
@@ -656,20 +819,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/OpenAMap.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/CurrentWeatherUsingCoordinates.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="30" selection-start-line="8" selection-start-column="7" selection-end-line="21" selection-end-column="30" />
+        <state relative-caret-position="-233">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/CurrentWeatherUsingCity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestCurrentWeatherCity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-245">
+          <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestCurrentWeatherCoordinates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="64" column="101" selection-start-line="19" selection-start-column="13" selection-end-line="64" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestLabels.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="1024">
+          <caret line="170" column="10" selection-start-line="170" selection-start-column="10" selection-end-line="170" selection-end-column="10" />
         </state>
       </provider>
     </entry>

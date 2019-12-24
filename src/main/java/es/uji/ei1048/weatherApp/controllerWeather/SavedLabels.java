@@ -1,11 +1,10 @@
 package es.uji.ei1048.weatherApp.controllerWeather;
 
-import es.uji.ei1048.weatherApp.Coordinates;
-import es.uji.ei1048.weatherApp.Label;
-import es.uji.ei1048.weatherApp.SQLiteDB;
+import es.uji.ei1048.weatherApp.*;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 //import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Map;
@@ -13,18 +12,21 @@ import java.util.Map;
 public class SavedLabels {
 
     private IStore sqLiteDB;
+    private IWeatherService weatherService;
 
     public SavedLabels() {
         this.sqLiteDB = new SQLiteDB();
+        this.weatherService = new OpenWeatherMap();
     }
 
-    public SavedLabels(IStore sqLiteDB) {
+    public SavedLabels(IStore sqLiteDB, IWeatherService weatherService) {
         this.sqLiteDB = sqLiteDB;
+        this.weatherService = weatherService;
     }
 
-    public SavedLabels(IStore iStore, IWeatherService iWeatherService){
+   /* public SavedLabels(IStore iStore, IWeatherService iWeatherService){
         this.sqLiteDB = iStore;
-    }
+    }*/
 
     //TODO: Revisar, cambiado por @Zayda
     public Map<String, Coordinates> getAllLabels() {
@@ -45,9 +47,34 @@ public class SavedLabels {
         //return false;
     }
 
-    public Coordinates getCoordinatesOfLabel(String label) {
-        return sqLiteDB.getCoordinatesOfLabel(label);
+    public CurrentWeather getCurrentWeatherOfLabel(String label){
+
+        Coordinates coordinates = sqLiteDB.getCoordinatesOfLabel(label);
+
+        if (coordinates == null){
+            //TODO se podría lanzar una excepción, pero por ahora se devuelve null
+            //en este punto no encuenta la etiqueta que se ha pedido
+            return null;
+        }
+
+        //no hace falta comprobar si las coordenadas son válidas, si están en la BBDD se han comprobado antes
+        double lon = coordinates.getLon();
+        double lat = coordinates.getLat();
+
+        CurrentWeather currentWeatherOfLabel = sqLiteDB.giveMeTheCurrentWeather(lon, lat);
+
+        if(currentWeatherOfLabel == null){ //el tiempo no está en la BBDD
+            currentWeatherOfLabel = weatherService.giveMeTheCurrentWeatherUsingCoordinates(lon, lat);
+           /* if(currentWeatherOfLabel == null){
+                //thow NotConnectionException
+            }*/
+        }
+
+        return currentWeatherOfLabel;
     }
 
+   /* public Coordinates getCoordinatesOfLabel(String label) {
+        return sqLiteDB.getCoordinatesOfLabel(label);
+    }*/
 
 }

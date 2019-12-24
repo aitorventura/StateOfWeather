@@ -53,8 +53,6 @@ public interface IStore {
 
     //CONSULTATIONS TO ADMIN FAVORITECOORDINATES
 
-
-
     public List<Coordinates> listFavoriteCoordinates();
 
     public boolean addCoordinatesToFavorite(Coordinates coordinates);
@@ -67,8 +65,6 @@ public interface IStore {
     public boolean addLabel(String label, Coordinates coordinates);
 
     public boolean removeLabel(String label);
-
-
 
     public Coordinates getCoordinatesOfLabel(String label);
 

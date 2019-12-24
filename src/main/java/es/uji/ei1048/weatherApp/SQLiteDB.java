@@ -536,25 +536,6 @@ public class SQLiteDB implements IStore {
         return false;
     }
 
-    private boolean existsLabel(String label) {
-
-        String existingLabel = null;
-
-        try {
-            this.open();
-            this.stmt = c.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM LABELS WHERE label = '" + label + "'");
-
-            existingLabel = resultSet.getString("label");
-
-            this.close();
-        } catch (Exception e) {
-            //No esta la label
-        }
-
-        return existingLabel != null;
-    }
-
     //TODO: Revisar creado por @Zayda
     public Map<String, Coordinates> getLabels() {
 
@@ -605,6 +586,25 @@ public class SQLiteDB implements IStore {
         }
 
         return coordinates;
+    }
+
+    private boolean existsLabel(String label) {
+
+        String existingLabel = null;
+
+        try {
+            this.open();
+            this.stmt = c.createStatement();
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM LABELS WHERE label = '" + label + "'");
+
+            existingLabel = resultSet.getString("label");
+
+            this.close();
+        } catch (Exception e) {
+            //No esta la label
+        }
+
+        return existingLabel != null;
     }
 
     /*public Map<String, Coordinates> getLabels(){

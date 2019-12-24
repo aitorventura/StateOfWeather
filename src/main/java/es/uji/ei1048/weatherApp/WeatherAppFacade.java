@@ -3,11 +3,8 @@ package es.uji.ei1048.weatherApp;
 import es.uji.ei1048.weatherApp.controllerWeather.*;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
-import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
-import es.uji.ei1048.weatherApp.interfaces.IStore;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -79,10 +76,10 @@ public class WeatherAppFacade {
 
     public CurrentWeather currentWeatherOfLabel(String label) {
         //TODO si no encuentra la etiqueta devolverá null, no se comprueba
-        throw new NotImplementedException();
+        // mejor una excepción?
+        //throw new NotImplementedException();
+        return savedLabels.getCurrentWeatherOfLabel(label);
     }
-
-    //TODO deberíamos poner un max de favoritos?
 
     //FAVOURITE CITIES
 

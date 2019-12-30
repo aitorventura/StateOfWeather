@@ -1,12 +1,11 @@
 package es.uji.es.ei1048.weatherApp.integrationTest;
 
 
-import es.uji.ei1048.weatherApp.CurrentWeather;
+import es.uji.ei1048.weatherApp.model.CurrentWeather;
 
 import es.uji.ei1048.weatherApp.controllerWeather.CurrentWeatherUsingCoordinates;
 
 import es.uji.ei1048.weatherApp.exceptions.NoConnectionException;
-import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 import org.junit.After;

@@ -1,4 +1,4 @@
-package es.uji.ei1048.weatherApp;
+package es.uji.ei1048.weatherApp.model;
 
 public class Coordinates {
     private double lon;

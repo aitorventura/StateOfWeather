@@ -1,6 +1,6 @@
 package es.uji.ei1048.weatherApp.e2e;
 
-import es.uji.ei1048.weatherApp.Coordinates;
+import es.uji.ei1048.weatherApp.model.Coordinates;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;

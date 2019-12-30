@@ -1,9 +1,9 @@
 package es.uji.ei1048.weatherApp.controllerWeather;
 
-import es.uji.ei1048.weatherApp.Coordinates;
-import es.uji.ei1048.weatherApp.CurrentWeather;
-import es.uji.ei1048.weatherApp.OpenWeatherMap;
-import es.uji.ei1048.weatherApp.SQLiteDB;
+import es.uji.ei1048.weatherApp.model.Coordinates;
+import es.uji.ei1048.weatherApp.model.CurrentWeather;
+import es.uji.ei1048.weatherApp.model.OpenWeatherMap;
+import es.uji.ei1048.weatherApp.model.SQLiteDB;
 import es.uji.ei1048.weatherApp.exceptions.NoConnectionException;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
 import es.uji.ei1048.weatherApp.interfaces.IStore;

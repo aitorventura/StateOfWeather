@@ -1,6 +1,6 @@
 package es.uji.ei1048.weatherApp.e2e;
 
-import es.uji.ei1048.weatherApp.CurrentWeather;
+import es.uji.ei1048.weatherApp.model.CurrentWeather;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
 import org.junit.Test;
 

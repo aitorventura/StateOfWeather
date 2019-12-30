@@ -6,8 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uji.ei1048.weatherApp.view.MainControllerView">
    <children>
       <Pane prefHeight="97.0" prefWidth="800.0" style="-fx-background-color: #274a2a;">
          <children>
@@ -58,34 +57,34 @@
                         <Font name="Calibri" size="16.0" />
                      </font>
                   </Text>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="228.0" text="Choose a place" textAlignment="CENTER" GridPane.columnIndex="1">
+                  <Button fx:id="buttonCurrentPredictionWeather" mnemonicParsing="false" onAction="#handleButtonCurrentPredictionWeather" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: #274a2a;" text="Choose a place" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1">
                      <font>
-                        <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="228.0" text="Choose a place" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="buttonFavourites" mnemonicParsing="false" onAction="#handleButtonFavourites" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: #274a2a;" text="Manage list" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="228.0" text="Manage list" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="buttonSavedLabels" mnemonicParsing="false" onAction="#handleButtonSavedLabels" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: #274a2a;" text="Manage list" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
-                        <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="228.0" text="Manage list" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <Button fx:id="buttonOpenMap" mnemonicParsing="false" onAction="#handleButtonOpenMap" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: #274a2a;" text="Choose a map" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="228.0" text="Choose a map" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Button fx:id="buttonCurrentPredictionWeather1" mnemonicParsing="false" onAction="#handleButtonCurrentPredictionWeather" prefHeight="25.0" prefWidth="228.0" style="-fx-background-color: #274a2a;" text="Choose a place" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                        <Font name="Calibri Bold" size="16.0" />
                      </font>
                   </Button>
                </children>
             </GridPane>
-            <Text fill="WHITE" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What do tou want to do?" textAlignment="CENTER" wrappingWidth="712.0">
+            <Text fill="WHITE" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What do you want to do?" textAlignment="CENTER" wrappingWidth="712.0">
                <font>
                   <Font name="Berlin Sans FB" size="46.0" />
                </font>

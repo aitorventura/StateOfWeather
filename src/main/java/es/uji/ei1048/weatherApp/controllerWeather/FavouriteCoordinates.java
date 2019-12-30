@@ -1,9 +1,8 @@
 package es.uji.ei1048.weatherApp.controllerWeather;
 
-import es.uji.ei1048.weatherApp.Coordinates;
-import es.uji.ei1048.weatherApp.SQLiteDB;
+import es.uji.ei1048.weatherApp.model.Coordinates;
+import es.uji.ei1048.weatherApp.model.SQLiteDB;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
-import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
 import java.util.List;
 

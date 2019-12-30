@@ -1,4 +1,4 @@
-package es.uji.ei1048.weatherApp;
+package es.uji.ei1048.weatherApp.model;
 
 import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
@@ -6,7 +6,6 @@ import es.uji.ei1048.weatherApp.interfaces.IStore;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.*;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

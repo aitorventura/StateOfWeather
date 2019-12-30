@@ -1,12 +1,10 @@
 package es.uji.ei1048.weatherApp.controllerWeather;
 
-import es.uji.ei1048.weatherApp.PredictionWeather;
-import es.uji.ei1048.weatherApp.SQLiteDB;
-import es.uji.ei1048.weatherApp.WeatherAppFacade;
+import es.uji.ei1048.weatherApp.model.PredictionWeather;
+import es.uji.ei1048.weatherApp.model.SQLiteDB;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
 import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
-import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
 import java.util.HashMap;
 import java.util.List;

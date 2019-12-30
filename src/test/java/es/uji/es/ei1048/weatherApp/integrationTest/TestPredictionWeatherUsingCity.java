@@ -1,6 +1,6 @@
 package es.uji.es.ei1048.weatherApp.integrationTest;
 
-import es.uji.ei1048.weatherApp.PredictionWeather;
+import es.uji.ei1048.weatherApp.model.PredictionWeather;
 
 import es.uji.ei1048.weatherApp.controllerWeather.PredictionWeatherUsingCity;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;

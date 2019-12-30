@@ -1,9 +1,7 @@
 package es.uji.es.ei1048.weatherApp.integrationTest;
 
-import es.uji.ei1048.weatherApp.Coordinates;
-import es.uji.ei1048.weatherApp.controllerWeather.PredictionFavouriteCities;
+import es.uji.ei1048.weatherApp.model.Coordinates;
 import es.uji.ei1048.weatherApp.controllerWeather.PredictionFavouriteCoordinates;
-import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
 import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCoordinates;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 import org.junit.After;

@@ -1,11 +1,8 @@
 package es.uji.es.ei1048.weatherApp.integrationTest;
 
-import es.uji.ei1048.weatherApp.Coordinates;
-import es.uji.ei1048.weatherApp.CurrentWeather;
-import es.uji.ei1048.weatherApp.controllerWeather.FavouriteCities;
+import es.uji.ei1048.weatherApp.model.Coordinates;
 import es.uji.ei1048.weatherApp.controllerWeather.FavouriteCoordinates;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
-import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -14,7 +11,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 

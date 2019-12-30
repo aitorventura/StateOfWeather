@@ -1,4 +1,4 @@
-package es.uji.ei1048.weatherApp;
+package es.uji.ei1048.weatherApp.model;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -14,7 +14,6 @@ import java.util.Map;
 
 import com.google.gson.*;
 import com.google.gson.reflect.*;
-import es.uji.ei1048.weatherApp.exceptions.NoDataInTheDatabaseAndOfflineException;
 import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 
 public class OpenWeatherMap implements IWeatherService {

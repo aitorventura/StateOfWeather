@@ -1,25 +1,16 @@
 package es.uji.es.ei1048.weatherApp.integrationTest;
 
-import es.uji.ei1048.weatherApp.Coordinates;
-import es.uji.ei1048.weatherApp.PredictionWeather;
 import es.uji.ei1048.weatherApp.controllerWeather.PredictionFavouriteCities;
-import es.uji.ei1048.weatherApp.controllerWeather.PredictionWeatherUsingCity;
-import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
 import es.uji.ei1048.weatherApp.exceptions.ThereAreNoFavouriteCities;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
-import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 

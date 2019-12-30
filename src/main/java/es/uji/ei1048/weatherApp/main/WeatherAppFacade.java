@@ -1,5 +1,8 @@
-package es.uji.ei1048.weatherApp;
+package es.uji.ei1048.weatherApp.main;
 
+import es.uji.ei1048.weatherApp.model.Coordinates;
+import es.uji.ei1048.weatherApp.model.CurrentWeather;
+import es.uji.ei1048.weatherApp.model.PredictionWeather;
 import es.uji.ei1048.weatherApp.controllerWeather.*;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;

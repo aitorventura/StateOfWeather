@@ -1,10 +1,12 @@
 package es.uji.ei1048.weatherApp.controllerWeather;
 
-import es.uji.ei1048.weatherApp.*;
+import es.uji.ei1048.weatherApp.model.Coordinates;
+import es.uji.ei1048.weatherApp.model.CurrentWeather;
+import es.uji.ei1048.weatherApp.model.OpenWeatherMap;
+import es.uji.ei1048.weatherApp.model.SQLiteDB;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
 import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 //import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Map;

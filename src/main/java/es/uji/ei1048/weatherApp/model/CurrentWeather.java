@@ -1,7 +1,6 @@
-package es.uji.ei1048.weatherApp;
+package es.uji.ei1048.weatherApp.model;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 public class CurrentWeather extends Weather {
 
@@ -34,5 +33,17 @@ public class CurrentWeather extends Weather {
         this.dateOfConsultation = dateOfConsultation;
     }
 
-
+    @Override
+    public String toString() {
+        return "CurrentWeather{" +
+                "minTemperature=" + minTemperature +
+                ", maxTemperature=" + maxTemperature +
+                ", dateOfConsultation=" + dateOfConsultation +
+                ", city='" + city + '\'' +
+                ", coordinates=" + coordinates +
+                ", temperature=" + temperature +
+                ", humidty=" + humidty +
+                ", preassure=" + preassure +
+                '}';
+    }
 }

@@ -1,7 +1,4 @@
-package es.uji.ei1048.weatherApp;
-
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+package es.uji.ei1048.weatherApp.model;
 
 public abstract class Weather {
 
@@ -52,7 +49,5 @@ public abstract class Weather {
     public void setPreassure(double preassure) {
         this.preassure = preassure;
     }
-
-
 
 }

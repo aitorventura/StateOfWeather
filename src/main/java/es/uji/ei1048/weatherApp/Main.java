@@ -1,6 +1,6 @@
 package es.uji.ei1048.weatherApp;
 
-import es.uji.ei1048.weatherApp.controllerWeather.OpenAMap;
+/*import es.uji.ei1048.weatherApp.controllerWeather.OpenAMap;
 
 public class Main {
     public static void main(String[] args){
@@ -22,3 +22,4 @@ public class Main {
 
     }
 }
+*/

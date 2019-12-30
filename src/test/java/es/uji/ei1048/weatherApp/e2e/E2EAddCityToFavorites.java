@@ -1,8 +1,5 @@
 package es.uji.ei1048.weatherApp.e2e;
 
-import es.uji.ei1048.weatherApp.WeatherAppFacade;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;

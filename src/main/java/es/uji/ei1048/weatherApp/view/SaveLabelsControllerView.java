@@ -2,9 +2,10 @@ package es.uji.ei1048.weatherApp.view;
 
 import es.uji.ei1048.weatherApp.main.HelperControllerMain;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 
-import java.awt.*;
 
 public class SaveLabelsControllerView {
 

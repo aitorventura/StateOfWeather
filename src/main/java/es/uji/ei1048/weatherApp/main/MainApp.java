@@ -1,9 +1,7 @@
 package es.uji.ei1048.weatherApp.main;
 import es.uji.ei1048.weatherApp.model.CurrentWeather;
-import es.uji.ei1048.weatherApp.view.CurrentWeatherControllerView;
-import es.uji.ei1048.weatherApp.view.MainControllerView;
-import es.uji.ei1048.weatherApp.view.CurrentPredictionWeatherControllerView;
-import es.uji.ei1048.weatherApp.view.SaveLabelsControllerView;
+import es.uji.ei1048.weatherApp.model.PredictionWeather;
+import es.uji.ei1048.weatherApp.view.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public class MainApp extends Application{
 
@@ -18,10 +17,12 @@ public class MainApp extends Application{
     private Stage currentPredictionWeatherStage;
     private Stage currentWeatherStage;
     private Stage savedLabelsStage;
+    private Stage predictionWeatherStage;
     private AnchorPane mainAppPane;
     private AnchorPane currentPredicitionWeatherPane;
     private AnchorPane currentWeatherPane;
     private AnchorPane savedLabelsPane;
+    private AnchorPane predictionWeatherPane;
 
     private MainControllerView controllerView;
     private HelperControllerMain helperControllerMain;
@@ -123,7 +124,7 @@ public class MainApp extends Application{
             currentWeatherStage.setScene(scene);
 
             CurrentWeatherControllerView controller = loader.getController();
-            controller.setCurrentWeather(currentWeather);
+           // controller.setCurrentWeather(currentWeather);
             //controller.setTextDataCurrentWeather();
 
             // Show the dialog and wait until the user closes it
@@ -159,5 +160,32 @@ public class MainApp extends Application{
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void initPrintPredictionWeather(List<PredictionWeather> predictionWeatherList){
+        try {
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("../view/PredictionWeatherView.fxml"));
+            predictionWeatherPane = (AnchorPane) loader.load();
+            predictionWeatherStage = new Stage();
+            predictionWeatherStage.setTitle("CurrentWeatherView");
+            predictionWeatherStage.initOwner(primaryStage);
+            predictionWeatherStage.setResizable(false);
+            Scene scene = new Scene(currentWeatherPane);
+            predictionWeatherStage.setScene(scene);
+
+            PredictionWeatherControllerView controller = loader.getController();
+            controller.setListPredictionWeather(predictionWeatherList);
+            //controller.setTextDataCurrentWeather();
+
+            // Show the dialog and wait until the user closes it
+            predictionWeatherStage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

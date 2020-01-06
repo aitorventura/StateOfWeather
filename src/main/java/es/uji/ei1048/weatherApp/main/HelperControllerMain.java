@@ -2,7 +2,10 @@ package es.uji.ei1048.weatherApp.main;
 
 import es.uji.ei1048.weatherApp.model.Coordinates;
 import es.uji.ei1048.weatherApp.model.CurrentWeather;
+import es.uji.ei1048.weatherApp.model.PredictionWeather;
 import javafx.application.Platform;
+
+import java.util.List;
 
 public class HelperControllerMain {
 
@@ -36,13 +39,36 @@ public class HelperControllerMain {
         return weatherAppFacade.currentWeatherCoordinates(coordinates);
     }
 
+    public List<PredictionWeather> getPredictionWeatherOfCoordinates(Coordinates coordinates){
+        return weatherAppFacade.previsionOfWeatherCoordinates(coordinates);
+    }
+
+    public List<PredictionWeather> getPredictionWeatherOfCity(String city){
+        return weatherAppFacade.previsionOfWeatherCity(city);
+    }
     public void showCurrentWeather(CurrentWeather currentWeather){
+
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(currentWeather.toString());
+                mainApp.initPrintCurrentWeather(currentWeather);
+
+            }
+        });
+
+
+
+
+    }
+
+    public void showPredictionWeather(List<PredictionWeather> list){
 
         Platform.runLater(new Runnable() {
 
             @Override
             public void run() {
-                mainApp.initPrintCurrentWeather(currentWeather);
+                mainApp.initPrintPredictionWeather(list);
             }
 
         });

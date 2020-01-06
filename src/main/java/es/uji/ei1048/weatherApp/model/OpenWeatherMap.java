@@ -74,7 +74,7 @@ public class OpenWeatherMap implements IWeatherService {
             currentWeather.setMaxTemperature(Double.parseDouble(mainMap.get("temp_max").toString()));
             currentWeather.setMinTemperature(Double.parseDouble(mainMap.get("temp_min").toString()));
             currentWeather.setHumidty(Double.parseDouble(mainMap.get("humidity").toString()));
-            currentWeather.setPreassure(Double.parseDouble(mainMap.get("pressure").toString()));
+            currentWeather.setPressure(Double.parseDouble(mainMap.get("pressure").toString()));
             currentWeather.setDateOfConsultation(new Timestamp(System.currentTimeMillis()));
 
 
@@ -162,7 +162,7 @@ public class OpenWeatherMap implements IWeatherService {
 
                 p.setPredictionDate(Timestamp.valueOf(date));
                 p.setHumidty(Double.parseDouble(dataHumidity.toString()));
-                p.setPreassure(Double.parseDouble(dataPressure.toString()));
+                p.setPressure(Double.parseDouble(dataPressure.toString()));
                 p.setTemperature(Double.parseDouble(dataTemperature.toString()));
 
                 String[] dateSplit = date.split(" ");
@@ -221,7 +221,7 @@ public class OpenWeatherMap implements IWeatherService {
 
                 for(PredictionWeather p : listPredictionsOfThisDay){
                     sumTemperature += p.getTemperature();
-                    sumPressure += p.getPreassure();
+                    sumPressure += p.getPressure();
                     sumHumidity += p.getHumidty();
                 }
 
@@ -231,7 +231,7 @@ public class OpenWeatherMap implements IWeatherService {
                 predictionWeather.setCoordinates(first.getCoordinates());
                 predictionWeather.setPredictionDate(first.getPredictionDate());
                 predictionWeather.setTemperature(sumTemperature/listPredictionsOfThisDay.size());
-                predictionWeather.setPreassure(sumPressure/listPredictionsOfThisDay.size());
+                predictionWeather.setPressure(sumPressure/listPredictionsOfThisDay.size());
                 predictionWeather.setHumidty(sumHumidity/listPredictionsOfThisDay.size());
 
                 finalListPredictions.add(predictionWeather);

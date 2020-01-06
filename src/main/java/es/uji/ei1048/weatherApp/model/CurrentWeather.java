@@ -43,7 +43,7 @@ public class CurrentWeather extends Weather {
                 ", coordinates=" + coordinates +
                 ", temperature=" + temperature +
                 ", humidty=" + humidty +
-                ", preassure=" + preassure +
+                ", preassure=" + pressure +
                 '}';
     }
 }

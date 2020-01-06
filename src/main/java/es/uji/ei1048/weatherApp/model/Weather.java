@@ -6,7 +6,7 @@ public abstract class Weather {
     Coordinates coordinates;
     double temperature;
     double humidty;
-    double preassure;
+    double pressure;
 
 
 
@@ -42,12 +42,12 @@ public abstract class Weather {
         this.humidty = humidty;
     }
 
-    public double getPreassure() {
-        return preassure;
+    public double getPressure() {
+        return pressure;
     }
 
-    public void setPreassure(double preassure) {
-        this.preassure = preassure;
+    public void setPressure(double preassure) {
+        this.pressure = preassure;
     }
 
 }

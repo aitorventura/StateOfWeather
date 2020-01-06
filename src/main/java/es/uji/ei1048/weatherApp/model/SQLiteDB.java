@@ -67,7 +67,7 @@ public class SQLiteDB implements IStore {
             currentWeather.setMaxTemperature(resultSet.getDouble("maxTemperature"));
             currentWeather.setMinTemperature(resultSet.getDouble("minTemperature"));
             currentWeather.setHumidty(resultSet.getDouble("humidity"));
-            currentWeather.setPreassure(resultSet.getDouble("pressure"));
+            currentWeather.setPressure(resultSet.getDouble("pressure"));
 
             StringBuilder s = new StringBuilder(resultSet.getString("dateOfConsultation"));
             s.append(".00");
@@ -118,7 +118,7 @@ public class SQLiteDB implements IStore {
             currentWeather.setMaxTemperature(resultSet.getDouble("maxTemperature"));
             currentWeather.setMinTemperature(resultSet.getDouble("minTemperature"));
             currentWeather.setHumidty(resultSet.getDouble("humidity"));
-            currentWeather.setPreassure(resultSet.getDouble("pressure"));
+            currentWeather.setPressure(resultSet.getDouble("pressure"));
             StringBuilder s = new StringBuilder(resultSet.getString("dateOfConsultation"));
             s.append(".00");
             Timestamp ts = Timestamp.valueOf(s.toString());
@@ -145,7 +145,7 @@ public class SQLiteDB implements IStore {
             s.append(currentWeather.getCoordinates().getLat() + ",");
             s.append(currentWeather.getTemperature() + ",");
             s.append(currentWeather.getHumidty() + ",");
-            s.append(currentWeather.getPreassure() + ",");
+            s.append(currentWeather.getPressure() + ",");
             s.append(currentWeather.getMinTemperature() + ",");
             s.append(currentWeather.getMaxTemperature() + ",");
             s.append("CURRENT_TIMESTAMP)");
@@ -211,7 +211,7 @@ public class SQLiteDB implements IStore {
                 predictionWeather.setTemperature(resultSet.getDouble("temperature"));
 
                 predictionWeather.setHumidty(resultSet.getDouble("humidity"));
-                predictionWeather.setPreassure(resultSet.getDouble("pressure"));
+                predictionWeather.setPressure(resultSet.getDouble("pressure"));
 
                 StringBuilder s = new StringBuilder(resultSet.getString("dateOfConsultation"));
                 s.append(".00");
@@ -263,7 +263,7 @@ public class SQLiteDB implements IStore {
                 predictionWeather.setTemperature(resultSet.getDouble("temperature"));
 
                 predictionWeather.setHumidty(resultSet.getDouble("humidity"));
-                predictionWeather.setPreassure(resultSet.getDouble("pressure"));
+                predictionWeather.setPressure(resultSet.getDouble("pressure"));
 
                 StringBuilder s = new StringBuilder(resultSet.getString("dateOfConsultation"));
                 s.append(".00");
@@ -299,7 +299,7 @@ public class SQLiteDB implements IStore {
             s.append(predictionWeather.getCity() + " ',");
             s.append(predictionWeather.getTemperature() + ",");
             s.append(predictionWeather.getHumidty() + ",");
-            s.append(predictionWeather.getPreassure() + ")");
+            s.append(predictionWeather.getPressure() + ")");
 
 
             stmt.execute(s.toString());

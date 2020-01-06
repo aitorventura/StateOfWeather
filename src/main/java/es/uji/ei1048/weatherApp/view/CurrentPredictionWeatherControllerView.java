@@ -58,7 +58,6 @@ public class CurrentPredictionWeatherControllerView {
                 Coordinates coordinates = new Coordinates(lat, lon);
 
                 currentWeather = helperControllerMain.getCurrentWeatherOfCoordinates(coordinates);
-                System.out.println(currentWeather.toString());
             }else{
                 String city = place.getText();
 
@@ -67,7 +66,6 @@ public class CurrentPredictionWeatherControllerView {
                 }
 
                 currentWeather = helperControllerMain.getCurrentWeatherOfCity(city);
-                System.out.println(currentWeather.toString());
 
 
             }
@@ -75,14 +73,18 @@ public class CurrentPredictionWeatherControllerView {
             //TODO imprimir por pantalla error al intentar crear una coordenada
             //hasError = true;
             System.out.println("sucedió un error");
+            helperControllerMain.showErrorCityOrCoordinates();
         }
 
         if (currentWeather != null){
             helperControllerMain.showCurrentWeather(currentWeather);
         }else{
+
             //TODO enseñar mensaje de que no se ha podido encontrar la ciudad/coordenada especificada
             //se debe tener en cuenta que al conseguir el tiempo se pueden lanzar excepciones
             System.out.println("sucedió un error");
+            helperControllerMain.showErrorCityOrCoordinates();
+
         }
 
     }
@@ -118,6 +120,8 @@ public class CurrentPredictionWeatherControllerView {
             //TODO imprimir por pantalla error al intentar crear una coordenada
             //hasError = true;
             System.out.println("sucedió un error");
+            helperControllerMain.showErrorCityOrCoordinates();
+
         }
 
         if (predictionWeatherList != null){
@@ -126,6 +130,8 @@ public class CurrentPredictionWeatherControllerView {
             //TODO enseñar mensaje de que no se ha podido encontrar la ciudad/coordenada especificada
             //se debe tener en cuenta que al conseguir el tiempo se pueden lanzar excepciones
             System.out.println("sucedió un error");
+            helperControllerMain.showErrorCityOrCoordinates();
+
         }
     }
 }

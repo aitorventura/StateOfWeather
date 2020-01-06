@@ -37,13 +37,14 @@ public class CurrentWeatherControllerView {
 
     public void setCurrentWeather(CurrentWeather currentWeather) {
       //  this.currentWeather = currentWeather;
+
         this.textCity.setText(currentWeather.getCity());
-        this.textCoordinates.setText(currentWeather.getCoordinates().toString());
-        this.textTemp.setText(currentWeather.getTemperature() +"ºC");
-        this.textMaxTemp.setText(currentWeather.getMaxTemperature() +"ºC");
-        this.textMinTemp.setText(currentWeather.getMinTemperature() +"ºC");
-        this.textHumidity.setText(currentWeather.getHumidty() + "%");
-        this.textPressure.setText(currentWeather.getPressure() + "hPa");
+        this.textCoordinates.setText(currentWeather.getCoordinates().getLat() + ", " + currentWeather.getCoordinates().getLon());
+        this.textTemp.setText(currentWeather.getTemperature() +" ºC");
+        this.textMaxTemp.setText(currentWeather.getMaxTemperature() +" ºC");
+        this.textMinTemp.setText(currentWeather.getMinTemperature() +" ºC");
+        this.textHumidity.setText(currentWeather.getHumidty() + " %");
+        this.textPressure.setText(currentWeather.getPressure() + " hPa");
 
 
 

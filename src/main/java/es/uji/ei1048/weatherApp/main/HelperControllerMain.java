@@ -46,6 +46,7 @@ public class HelperControllerMain {
     public List<PredictionWeather> getPredictionWeatherOfCity(String city){
         return weatherAppFacade.previsionOfWeatherCity(city);
     }
+
     public void showCurrentWeather(CurrentWeather currentWeather){
 
         Platform.runLater(new Runnable() {
@@ -87,4 +88,16 @@ public class HelperControllerMain {
         });
     }
 
+    public void showErrorCityOrCoordinates(){
+        Platform.runLater(new Runnable() {
+
+            @Override
+            public void run() {
+                mainApp.initErrorCityOrCoordinates();
+            }
+
+        });
+
+
+    }
 }

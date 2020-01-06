@@ -40,7 +40,7 @@ public class OpenWeatherMap implements IWeatherService {
 
     public CurrentWeather giveMeTheCurrentWeatherUsingCoordinates(double lon, double lat) {
 
-        String urlStringCoordenadas = "http://api.openweathermap.org/data/2.5/weather?lon=" + lon + "&lat=" + lat + "&appid=" + API_KEY + "&units=metric";
+        String urlStringCoordenadas = "http://api.openweathermap.org/data/2.5/weather?lon=" + lat + "&lat=" + lon + "&appid=" + API_KEY + "&units=metric";
         CurrentWeather currentWeather = getCurrentWeather(urlStringCoordenadas);
 
         return currentWeather;
@@ -96,7 +96,7 @@ public class OpenWeatherMap implements IWeatherService {
     }
 
     private List<PredictionWeather> getPredictionWeathers(String urlStringLocation) {
-        HashMap<String, List<PredictionWeather>> temperaturesPerDay = new HashMap<>();
+        TreeMap<String, List<PredictionWeather>> temperaturesPerDay = new TreeMap<>();
 
 
         try {
@@ -200,7 +200,7 @@ public class OpenWeatherMap implements IWeatherService {
 
     }
 
-    private List<PredictionWeather> giveMeOnlyThePredictionsOf3Days(HashMap<String, List<PredictionWeather>> mapPredictionWeather){
+    private List<PredictionWeather> giveMeOnlyThePredictionsOf3Days(TreeMap<String, List<PredictionWeather>> mapPredictionWeather){
         List<PredictionWeather> finalListPredictions = new ArrayList<>();
 
         if(mapPredictionWeather == null){
@@ -211,6 +211,7 @@ public class OpenWeatherMap implements IWeatherService {
 
         int counterOfDays = 0;
         for(String day : mapPredictionWeather.keySet()){
+            System.out.println(day);
             if(!day.equals(today) && counterOfDays < 3){
                 List<PredictionWeather> listPredictionsOfThisDay = mapPredictionWeather.get(day);
                 PredictionWeather predictionWeather  = new PredictionWeather();

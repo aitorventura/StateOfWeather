@@ -18,11 +18,16 @@ public class MainApp extends Application{
     private Stage currentWeatherStage;
     private Stage savedLabelsStage;
     private Stage predictionWeatherStage;
+    private Stage errorWeatherStage;
+
     private AnchorPane mainAppPane;
     private AnchorPane currentPredicitionWeatherPane;
     private AnchorPane currentWeatherPane;
     private AnchorPane savedLabelsPane;
     private AnchorPane predictionWeatherPane;
+    private AnchorPane errorWeatherPane;
+
+
 
     private MainControllerView controllerView;
     private HelperControllerMain helperControllerMain;
@@ -124,7 +129,7 @@ public class MainApp extends Application{
             currentWeatherStage.setScene(scene);
 
             CurrentWeatherControllerView controller = loader.getController();
-           // controller.setCurrentWeather(currentWeather);
+            controller.setCurrentWeather(currentWeather);
             //controller.setTextDataCurrentWeather();
 
             // Show the dialog and wait until the user closes it
@@ -170,10 +175,10 @@ public class MainApp extends Application{
             loader.setLocation(MainApp.class.getResource("../view/PredictionWeatherView.fxml"));
             predictionWeatherPane = (AnchorPane) loader.load();
             predictionWeatherStage = new Stage();
-            predictionWeatherStage.setTitle("CurrentWeatherView");
+            predictionWeatherStage.setTitle("PredictionWeatherView");
             predictionWeatherStage.initOwner(primaryStage);
             predictionWeatherStage.setResizable(false);
-            Scene scene = new Scene(currentWeatherPane);
+            Scene scene = new Scene(predictionWeatherPane);
             predictionWeatherStage.setScene(scene);
 
             PredictionWeatherControllerView controller = loader.getController();
@@ -187,5 +192,29 @@ public class MainApp extends Application{
             e.printStackTrace();
         }
 
+    }
+
+    public void initErrorCityOrCoordinates(){
+
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("../view/ErrorWeatherView.fxml"));
+
+            errorWeatherPane = (AnchorPane) loader.load();
+
+            errorWeatherStage = new Stage();
+            errorWeatherStage.setTitle("Error");
+            errorWeatherStage.initOwner(primaryStage);
+            errorWeatherStage.setResizable(false);
+            Scene scene = new Scene(errorWeatherPane);
+            errorWeatherStage.setScene(scene);
+
+            // Show the dialog and wait until the user closes it
+            //currentPredictionWeatherStage.showAndWait();
+            errorWeatherStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

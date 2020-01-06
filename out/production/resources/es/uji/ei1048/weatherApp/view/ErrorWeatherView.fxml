@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #274a2a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="WHITE" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ERROR" textAlignment="CENTER" wrappingWidth="400.0">
+         <font>
+            <Font name="Berlin Sans FB" size="66.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="3.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Incorrect city or coordinates." textAlignment="CENTER" wrappingWidth="394.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

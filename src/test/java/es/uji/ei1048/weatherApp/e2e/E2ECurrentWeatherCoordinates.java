@@ -24,7 +24,7 @@ public class E2ECurrentWeatherCoordinates extends E2ETestBed {
 
 
         //Then
-        assertTrue(currentWeather.getTemperature() > 5);
+        assertTrue(currentWeather.getTemperature() > 0);
         assertTrue(currentWeather.getTemperature() < 25);
 
     }

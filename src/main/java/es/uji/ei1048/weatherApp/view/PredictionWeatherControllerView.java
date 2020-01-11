@@ -54,7 +54,7 @@ public class PredictionWeatherControllerView {
 
 
     public void setListPredictionWeather(List<PredictionWeather> predictionWeatherList){
-        DecimalFormat format = new DecimalFormat("#.00");
+        /*DecimalFormat format = new DecimalFormat("#.00");
         textCity.setText(predictionWeatherList.get(0).getCity());
         textCoordinates.setText(format.format(predictionWeatherList.get(0).getCoordinates().getLon()) + ", " + format.format(predictionWeatherList.get(0).getCoordinates().getLat()));
 
@@ -71,7 +71,28 @@ public class PredictionWeatherControllerView {
         textDay3.setText(predictionWeatherList.get(2).getPredictionDate().toString().split(" ")[0]);
         textPressure3.setText(format.format(predictionWeatherList.get(2).getPressure()) + " hPa");
         textHumidity3.setText(format.format(predictionWeatherList.get(2).getHumidty())+ "%");
-        textTemp3.setText(format.format(predictionWeatherList.get(2).getTemperature()) + " ºC");
+        textTemp3.setText(format.format(predictionWeatherList.get(2).getTemperature()) + " ºC");*/
+
+
+        DecimalFormat format = new DecimalFormat("#.00");
+
+        textCity.setText(predictionWeatherList.get(0).getCity());
+        textCoordinates.setText(predictionWeatherList.get(0).getCoordinates().getLon() + ", " + predictionWeatherList.get(0).getCoordinates().getLat());
+
+        textDay1.setText(predictionWeatherList.get(0).getPredictionDate().toString().split(" ")[0]);
+        textPressure1.setText(predictionWeatherList.get(0).getPressure() + " hPa");
+        textHumidity1.setText(predictionWeatherList.get(0).getHumidty() + "%");
+        textTemp1.setText(format.format(predictionWeatherList.get(0).getTemperature()) + " ºC");
+
+        textDay2.setText(predictionWeatherList.get(1).getPredictionDate().toString().split(" ")[0]);
+        textPressure2.setText(predictionWeatherList.get(1).getPressure() + " hPa");
+        textHumidity2.setText(predictionWeatherList.get(1).getHumidty()+ "%");
+        textTemp2.setText(format.format(predictionWeatherList.get(0).getTemperature()) + " ºC");
+
+        textDay3.setText(predictionWeatherList.get(2).getPredictionDate().toString().split(" ")[0]);
+        textPressure3.setText(predictionWeatherList.get(2).getPressure() + " hPa");
+        textHumidity3.setText(predictionWeatherList.get(2).getHumidty()+ "%");
+        textTemp3.setText(format.format(predictionWeatherList.get(0).getTemperature()) + " ºC");
 
     }
 }

@@ -17,7 +17,7 @@ public class E2ECurrentWeatherCity extends E2ETestBed {
         CurrentWeather currentWeather = weatherAppFacade.currentWeatherCity(city);
 
         //Then
-        assertTrue(currentWeather.getTemperature() > 5);
+        assertTrue(currentWeather.getTemperature() > 0);
         assertTrue(currentWeather.getTemperature() < 25);
 
     }

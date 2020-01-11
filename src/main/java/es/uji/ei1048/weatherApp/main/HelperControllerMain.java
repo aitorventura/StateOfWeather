@@ -151,4 +151,20 @@ public class HelperControllerMain {
 
 
     }
+
+    public boolean addNewFavouriteCoordinate(Coordinates coordinates) {
+        return weatherAppFacade.addCoordinatesToFavorites(coordinates);
+    }
+
+    public boolean addNewFavouriteCity(String city) {
+        return weatherAppFacade.addCityToFavorites(city);
+    }
+
+    public boolean removeFavouriteCoordinates(Coordinates coordinates) {
+        return weatherAppFacade.deleteCoordinatesFromFavorites(coordinates);
+    }
+
+    public boolean removeFavouriteCity(String city) {
+        return weatherAppFacade.deleteCityFromFavorites(city);
+    }
 }

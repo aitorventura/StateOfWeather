@@ -44,7 +44,6 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
 
         for (Coordinates coordinates: favoriteCoordinates){
             weatherAppFacade.previsionOfWeatherCoordinates(coordinates);
-
         }
 
 

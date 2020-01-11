@@ -94,7 +94,6 @@ public class OpenWeatherMap implements IWeatherService {
 
 
     }
-
     private List<PredictionWeather> getPredictionWeathers(String urlStringLocation) {
         TreeMap<String, List<PredictionWeather>> temperaturesPerDay = new TreeMap<>();
 
@@ -108,6 +107,116 @@ public class OpenWeatherMap implements IWeatherService {
             while ((line = rd.readLine()) != null) {
                 result.append(line);
             }
+
+
+
+            rd.close();
+
+            JsonParser parser = new JsonParser();
+
+
+            Object obj = parser.parse(result.toString());
+            JsonObject jsonObject = (JsonObject) obj;
+
+            JsonArray lista = (JsonArray) jsonObject.get("list");
+
+
+            JsonElement cityInfo = (JsonElement) jsonObject.get("city");
+            Object objcity = parser.parse(cityInfo.toString());
+            JsonObject cityData = (JsonObject) objcity;
+
+            JsonElement nameJson = (JsonElement) cityData.get("name");
+
+            JsonElement coordinates = (JsonElement) cityData.get("coord");
+
+            Object coordObj = parser.parse(coordinates.toString());
+            JsonObject coordinatesObject = (JsonObject) coordObj;
+            JsonElement longitude = coordinatesObject.get("lon");
+
+            JsonElement latitude = coordinatesObject.get("lat");
+
+            String name = "";
+
+            try {
+
+                name = nameJson.toString().substring(1, nameJson.toString().length() - 1);
+            } catch (Exception e){
+                name = "";
+            }
+
+
+            for (int i = 0; i < lista.size(); i++) {
+
+                PredictionWeather p = new PredictionWeather();
+
+
+                p.setCoordinates(new Coordinates(Double.parseDouble(longitude.toString()), Double.parseDouble(latitude.toString())));
+
+                p.setCity(name);
+
+
+                JsonElement object = lista.get(i);
+
+
+                Object obj2 = parser.parse(object.toString());
+                JsonObject jsonObject2 = (JsonObject) obj2;
+
+
+
+                JsonElement mainDeCadaLista = (JsonElement) jsonObject2.get("main");
+
+                Object obj3 = parser.parse(mainDeCadaLista.toString());
+                JsonObject jsonObject3 = (JsonObject) obj3;
+
+                JsonElement fechaDeCadaLista = (JsonElement) jsonObject2.get("dt_txt");
+
+                JsonElement dataTemperature = (JsonElement) jsonObject3.get("temp");
+                JsonElement dataPressure = (JsonElement) jsonObject3.get("pressure");
+                JsonElement dataHumidity = (JsonElement) jsonObject3.get("humidity");
+
+                String date = fechaDeCadaLista.toString().substring(1, fechaDeCadaLista.toString().length() - 1);
+
+                p.setPredictionDate(Timestamp.valueOf(date));
+                p.setHumidty(Double.parseDouble(dataHumidity.toString()));
+                p.setPressure(Double.parseDouble(dataPressure.toString()));
+                p.setTemperature(Double.parseDouble(dataTemperature.toString()));
+
+                String[] dateSplit = date.split(" ");
+                String day = dateSplit[0];
+
+                if (!temperaturesPerDay.containsKey(day)) {
+                    List<PredictionWeather> predictionWeathers = new ArrayList<PredictionWeather>();
+                    predictionWeathers.add(p);
+                    temperaturesPerDay.put(day, predictionWeathers);
+                } else {
+                    List<PredictionWeather> predictionWeathers = temperaturesPerDay.get(day);
+                    predictionWeathers.add(p);
+                }
+            }
+
+
+        } catch(IOException e)    {
+            System.out.println("esto es el error del open weather");
+            System.out.println(e.getMessage());
+        }
+
+
+        return giveMeOnlyThePredictionsOf3Days(temperaturesPerDay);
+    }
+    private List<PredictionWeather> getPredictionWeathers(String urlStringLocation, double lon, double lat) {
+        TreeMap<String, List<PredictionWeather>> temperaturesPerDay = new TreeMap<>();
+
+
+        try {
+            StringBuilder result = new StringBuilder();
+            URL url = new URL(urlStringLocation);
+            URLConnection conn = url.openConnection();
+            BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line;
+            while ((line = rd.readLine()) != null) {
+                result.append(line);
+            }
+
 
             rd.close();
 
@@ -132,19 +241,37 @@ public class OpenWeatherMap implements IWeatherService {
             JsonObject coordinatesObject = (JsonObject) coordObj;
             JsonElement longitude = coordinatesObject.get("lon");
             JsonElement latitude = coordinatesObject.get("lat");
-            String name = nameJson.toString().substring(1, nameJson.toString().length() - 1);
 
+            String name = "";
+
+            try {
+                 name = nameJson.toString().substring(1, nameJson.toString().length() - 1);
+            } catch (Exception e){
+                 name = "";
+            }
 
             for (int i = 0; i < lista.size(); i++) {
+
                 PredictionWeather p = new PredictionWeather();
-                p.setCoordinates(new Coordinates(Double.parseDouble(longitude.toString()), Double.parseDouble(latitude.toString())));
+
+                if(name.equals("") || longitude == null || latitude == null){
+
+                    p.setCoordinates(new Coordinates(lon, lat));
+
+                }else {
+                    p.setCoordinates(new Coordinates(Double.parseDouble(longitude.toString()), Double.parseDouble(latitude.toString())));
+                }
+
                 p.setCity(name);
+
 
                 JsonElement object = lista.get(i);
 
 
+
                 Object obj2 = parser.parse(object.toString());
                 JsonObject jsonObject2 = (JsonObject) obj2;
+
 
 
                 JsonElement mainDeCadaLista = (JsonElement) jsonObject2.get("main");
@@ -190,7 +317,7 @@ public class OpenWeatherMap implements IWeatherService {
     public List<PredictionWeather> giveMeTheListOfPredictionsUsingCoordinates(double lon, double lat){
         String urlStringCoordinates = "https://api.openweathermap.org/data/2.5/forecast?lon=" + lon + "&lat=" + lat + "&APPID=" + API_KEY + "&units=metric";
 
-        return getPredictionWeathers(urlStringCoordinates);
+        return getPredictionWeathers(urlStringCoordinates, lon, lat);
 
 
     }
@@ -202,7 +329,6 @@ public class OpenWeatherMap implements IWeatherService {
 
     private List<PredictionWeather> giveMeOnlyThePredictionsOf3Days(TreeMap<String, List<PredictionWeather>> mapPredictionWeather){
         List<PredictionWeather> finalListPredictions = new ArrayList<>();
-
         if(mapPredictionWeather == null){
             return null;
         }
@@ -211,7 +337,6 @@ public class OpenWeatherMap implements IWeatherService {
 
         int counterOfDays = 0;
         for(String day : mapPredictionWeather.keySet()){
-            System.out.println(day);
             if(!day.equals(today) && counterOfDays < 3){
                 List<PredictionWeather> listPredictionsOfThisDay = mapPredictionWeather.get(day);
                 PredictionWeather predictionWeather  = new PredictionWeather();
@@ -241,6 +366,8 @@ public class OpenWeatherMap implements IWeatherService {
             }
 
         }
+
+
         return finalListPredictions;
     }
 

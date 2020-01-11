@@ -39,6 +39,12 @@ public class Coordinates {
     }
 
 
+    @Override
+    public String toString(){
+        return lon+", "+lat;
+    }
+
+
    @Override
     public boolean equals(Object obj) {
 

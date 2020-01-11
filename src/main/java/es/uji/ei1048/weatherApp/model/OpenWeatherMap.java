@@ -40,7 +40,7 @@ public class OpenWeatherMap implements IWeatherService {
 
     public CurrentWeather giveMeTheCurrentWeatherUsingCoordinates(double lon, double lat) {
 
-        String urlStringCoordenadas = "http://api.openweathermap.org/data/2.5/weather?lon=" + lat + "&lat=" + lon + "&appid=" + API_KEY + "&units=metric";
+        String urlStringCoordenadas = "http://api.openweathermap.org/data/2.5/weather?lon=" + lon + "&lat=" + lat + "&appid=" + API_KEY + "&units=metric";
         CurrentWeather currentWeather = getCurrentWeather(urlStringCoordenadas);
 
         return currentWeather;
@@ -188,7 +188,7 @@ public class OpenWeatherMap implements IWeatherService {
     }
 
     public List<PredictionWeather> giveMeTheListOfPredictionsUsingCoordinates(double lon, double lat){
-        String urlStringCoordinates = "https://api.openweathermap.org/data/2.5/forecast?lon=" + lat + "&lat=" + lon + "&APPID=" + API_KEY + "&units=metric";
+        String urlStringCoordinates = "https://api.openweathermap.org/data/2.5/forecast?lon=" + lon + "&lat=" + lat + "&APPID=" + API_KEY + "&units=metric";
 
         return getPredictionWeathers(urlStringCoordinates);
 

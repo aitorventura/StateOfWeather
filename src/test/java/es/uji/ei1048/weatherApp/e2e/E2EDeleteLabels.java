@@ -16,8 +16,8 @@ public class E2EDeleteLabels  extends  E2ETestBed {
     @Override
     public void setUp() throws Exception {
         super.setUp();
-        double lon =  39.9945711;
-        double lat = -0.071089;
+        double lat =  39.9945711;
+        double lon = -0.071089;
         Coordinates coordinates = new Coordinates(lon, lat);
         String newLabel = "UJI";
 

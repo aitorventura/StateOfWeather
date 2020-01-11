@@ -14,8 +14,8 @@ public class E2EPredictionWeatherCoordinates extends E2ETestBed {
     @Test
     public void validPredictionWeatherConsultationUsingCoordinates(){
         //Given: coordenadas válidas
-        double lon =  39.9945711;
-        double lat = -0.071089;
+        double lat =  39.9945711;
+        double lon = -0.071089;
         Coordinates coordinates = new Coordinates(lon, lat);
 
         //When : consulto el tiempo de los proximos 3 dias para esas coordenadas

@@ -31,7 +31,7 @@ public class MainControllerView {
 
     @FXML
     private void handleButtonFavourites(){
-
+        this.helperControllerMain.showFavourites();
     }
 
     @FXML

@@ -73,7 +73,7 @@ public class CurrentPredictionWeatherControllerView {
             //TODO imprimir por pantalla error al intentar crear una coordenada
             //hasError = true;
             System.out.println("sucedió un error");
-            helperControllerMain.showErrorCityOrCoordinates();
+            //helperControllerMain.showErrorCityOrCoordinates();
         }
 
         if (currentWeather != null){
@@ -120,7 +120,7 @@ public class CurrentPredictionWeatherControllerView {
             //TODO imprimir por pantalla error al intentar crear una coordenada
             //hasError = true;
             System.out.println("sucedió un error");
-            helperControllerMain.showErrorCityOrCoordinates();
+            //helperControllerMain.showErrorCityOrCoordinates();
 
         }
 

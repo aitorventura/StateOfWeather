@@ -30,7 +30,6 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
 
 
 
-    //TODO: He añadido el throws porque ya no sé qué hacer para que la prueba pase
 
     @Test
     public void predictionOfFavouritePlacesWithConnectionAndDataLessThan1Hour() throws ThereAreNoFavouriteCities {

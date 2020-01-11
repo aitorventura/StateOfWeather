@@ -5,7 +5,7 @@ import es.uji.ei1048.weatherApp.model.CurrentWeather;
 import es.uji.ei1048.weatherApp.model.PredictionWeather;
 import javafx.application.Platform;
 
-import java.util.List;
+import java.util.*;
 
 public class HelperControllerMain {
 
@@ -15,6 +15,45 @@ public class HelperControllerMain {
     public HelperControllerMain(MainApp mainApp){
         this.mainApp = mainApp;
         this.weatherAppFacade = new WeatherAppFacade();
+    }
+
+
+
+    public Set<String> getLabels(){
+        Map<String, Coordinates> mapLabels = weatherAppFacade.getAllLabels();
+
+        Set<String> listLabels = mapLabels.keySet();
+
+
+        return listLabels;
+
+
+    }
+
+    public List<String> getListOfFavourites(){
+        List<Coordinates> listCoordinates = weatherAppFacade.getListOfFavouriteCoordinates();
+        List<String> listCities = weatherAppFacade.getListOfFavouriteCities();
+
+        List<String> listFavourites = new ArrayList<>();
+        listFavourites.addAll(listCities);
+
+        for(Coordinates c: listCoordinates){
+            listFavourites.add(c.toString());
+        }
+
+        return listFavourites;
+    }
+    public void removeLabel(String label){
+        weatherAppFacade.deleteLabel(label);
+    }
+
+    public boolean addNewLabel(String label, Coordinates coordinates){
+        return weatherAppFacade.addLabel(label, coordinates);
+    }
+
+
+    public CurrentWeather getCurrentWeatherUsingLabel(String label){
+        return weatherAppFacade.currentWeatherOfLabel(label);
     }
 
     public void openCurrentPredictionWeatherView() {
@@ -87,6 +126,18 @@ public class HelperControllerMain {
 
         });
     }
+
+    public void showFavourites(){  Platform.runLater(new Runnable() {
+
+        @Override
+        public void run() {
+            mainApp.initFavouritesView();
+        }
+
+    });
+
+    }
+
 
     public void showErrorCityOrCoordinates(){
         Platform.runLater(new Runnable() {

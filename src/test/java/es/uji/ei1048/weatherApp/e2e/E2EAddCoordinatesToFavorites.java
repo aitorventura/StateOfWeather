@@ -15,8 +15,8 @@ public class E2EAddCoordinatesToFavorites extends E2ETestBed {
     @Test
     public void addValidCoordinatesToFavorites(){
         //Given: coordenadas válidas
-        double lon =  39.9945711;
-        double lat = -0.071089;
+        double lat =  39.9945711;
+        double lon = -0.071089;
         Coordinates coordinates = new Coordinates(lon, lat);
 
         //TODO es correcto poner esto aquí?
@@ -34,8 +34,8 @@ public class E2EAddCoordinatesToFavorites extends E2ETestBed {
     @Test
     public void addExistentCoordinatesToFavorites(){
         //Given: coordenadas ya añadidas en favoritos
-        double lon = 39.7305972;
-        double lat = -0.5330876;
+        double lat = 39.9945711;
+        double lon = -0.071089;
         Coordinates coordinates = new Coordinates(lon, lat);
 
         //nos aseguramos de que las coordenadas necesarias estén en la BBDD para hacer el test

@@ -56,7 +56,7 @@ public class PredictionWeatherControllerView {
     public void setListPredictionWeather(List<PredictionWeather> predictionWeatherList){
         DecimalFormat format = new DecimalFormat("#.00");
         textCity.setText(predictionWeatherList.get(0).getCity());
-        textCoordinates.setText(format.format(predictionWeatherList.get(0).getCoordinates().getLat()) + ", " + format.format(predictionWeatherList.get(0).getCoordinates().getLon()));
+        textCoordinates.setText(format.format(predictionWeatherList.get(0).getCoordinates().getLon()) + ", " + format.format(predictionWeatherList.get(0).getCoordinates().getLat()));
 
         textDay1.setText(predictionWeatherList.get(0).getPredictionDate().toString().split(" ")[0]);
         textPressure1.setText(format.format(predictionWeatherList.get(0).getPressure()) + " hPa");

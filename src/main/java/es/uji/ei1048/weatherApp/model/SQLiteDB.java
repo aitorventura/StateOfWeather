@@ -6,10 +6,7 @@ import es.uji.ei1048.weatherApp.interfaces.IStore;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class SQLiteDB implements IStore {
     Connection c = null;
@@ -154,7 +151,7 @@ public class SQLiteDB implements IStore {
 
         } catch (Exception e) {
 
-            e.printStackTrace();
+            //e.printStackTrace();
         }
 
 
@@ -538,7 +535,7 @@ public class SQLiteDB implements IStore {
     //TODO: Revisar creado por @Zayda
     public Map<String, Coordinates> getLabels() {
 
-        Map<String, Coordinates> labels = new HashMap<>();
+        TreeMap<String, Coordinates> labels = new TreeMap<>();
 
         try {
             this.open();

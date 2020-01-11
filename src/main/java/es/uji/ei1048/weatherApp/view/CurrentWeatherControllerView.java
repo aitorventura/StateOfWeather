@@ -39,7 +39,7 @@ public class CurrentWeatherControllerView {
       //  this.currentWeather = currentWeather;
 
         this.textCity.setText(currentWeather.getCity());
-        this.textCoordinates.setText(currentWeather.getCoordinates().getLat() + ", " + currentWeather.getCoordinates().getLon());
+        this.textCoordinates.setText(currentWeather.getCoordinates().getLon() + ", " + currentWeather.getCoordinates().getLat());
         this.textTemp.setText(currentWeather.getTemperature() +" ºC");
         this.textMaxTemp.setText(currentWeather.getMaxTemperature() +" ºC");
         this.textMinTemp.setText(currentWeather.getMinTemperature() +" ºC");

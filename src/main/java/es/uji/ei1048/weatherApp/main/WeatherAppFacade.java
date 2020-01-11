@@ -72,9 +72,9 @@ public class WeatherAppFacade {
     }
 
     //lista de etiquetas (no nos hace falta por ahora)
-   /* public Map<String, Coordinates> getAllLabels(){
+    public Map<String, Coordinates> getAllLabels(){
         return savedLabels.getAllLabels();
-    }*/
+    }
 
     public CurrentWeather currentWeatherOfLabel(String label) {
         //TODO si no encuentra la etiqueta devolverá null, no se comprueba
@@ -95,6 +95,14 @@ public class WeatherAppFacade {
     }
 
 
+    public List<Coordinates> getListOfFavouriteCoordinates(){
+        return favouriteCoordinates.getFavouriteCoordinates();
+    }
+
+
+    public List<String> getListOfFavouriteCities(){
+        return favouriteCities.getFavouriteCities();
+    }
     //Comento porque no se usa
    /* public Map<String,CurrentWeather> getListOfFavouriteCities() {
 

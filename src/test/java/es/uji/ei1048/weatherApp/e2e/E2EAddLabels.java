@@ -12,8 +12,8 @@ public class E2EAddLabels extends E2ETestBed {
     @Test
     public void addValidCoordinates(){
         //Given: coordenadas válidas
-        double lon =  39.9945711;
-        double lat = -0.071089;
+        double lat =  39.9945711;
+        double lon = -0.071089;
         String newLabel = "UJI";
         Coordinates coordinates = new Coordinates(lon, lat);
 

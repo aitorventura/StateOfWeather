@@ -19,6 +19,8 @@ public class MainApp extends Application{
     private Stage savedLabelsStage;
     private Stage predictionWeatherStage;
     private Stage errorWeatherStage;
+    private Stage favouritesStage;
+
 
     private AnchorPane mainAppPane;
     private AnchorPane currentPredicitionWeatherPane;
@@ -26,6 +28,8 @@ public class MainApp extends Application{
     private AnchorPane savedLabelsPane;
     private AnchorPane predictionWeatherPane;
     private AnchorPane errorWeatherPane;
+    private AnchorPane favouritesPane;
+
 
 
 
@@ -158,15 +162,40 @@ public class MainApp extends Application{
             savedLabelsStage.setScene(scene);
 
             SaveLabelsControllerView saveLabelsControllerView = loader.getController();
+            saveLabelsControllerView.setHelperControllerMain(helperControllerMain);
 
             // Show the dialog and wait until the user closes it
-            currentWeatherStage.showAndWait();
+            savedLabelsStage.showAndWait();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+
+    public void initFavouritesView(){
+        try {
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("../view/FavoritesView.fxml"));
+            favouritesPane = (AnchorPane) loader.load();
+            favouritesStage = new Stage();
+            favouritesStage.setTitle("FavouritesView");
+            favouritesStage.initOwner(primaryStage);
+            favouritesStage.setResizable(false);
+            Scene scene = new Scene(favouritesPane);
+            favouritesStage.setScene(scene);
+
+            FavoritesViewController favoritesViewController = loader.getController();
+            favoritesViewController.setHelperControllerMain(helperControllerMain);
+
+            // Show the dialog and wait until the user closes it
+            favouritesStage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void initPrintPredictionWeather(List<PredictionWeather> predictionWeatherList){
         try {

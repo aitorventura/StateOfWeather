@@ -167,4 +167,22 @@ public class HelperControllerMain {
     public boolean removeFavouriteCity(String city) {
         return weatherAppFacade.deleteCityFromFavorites(city);
     }
+
+    public void showTheMap(String option) {
+        weatherAppFacade.openTheMap(option);
+    }
+
+    public String[] getListOfOptions() {
+        return weatherAppFacade.getListOfMeterologicalPhenomenon();
+    }
+
+    public void showOpenTheMap() { Platform.runLater(new Runnable() {
+
+        @Override
+        public void run() {
+            mainApp.initOpenAMap();
+        }
+
+    });
+    }
 }

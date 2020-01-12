@@ -7,6 +7,7 @@ import es.uji.ei1048.weatherApp.controllerWeather.*;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCityException;
 import es.uji.ei1048.weatherApp.exceptions.NotValidCoordinatesException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +22,7 @@ public class WeatherAppFacade {
     private final PredictionFavouriteCities predictionFavouriteCities;
     private final PredictionFavouriteCoordinates predictionFavouriteCoordinates;
     private final OpenAMap openAMap;
+    private final String[] listOfMeterologicalPhenomenon = {"Temperature", "Precipitation", "Pressure", "Clouds", "Wind speed"};
 
     public WeatherAppFacade() {
         this.currentWeatherUsingCity = new CurrentWeatherUsingCity();
@@ -33,6 +35,7 @@ public class WeatherAppFacade {
         this.predictionFavouriteCities = new PredictionFavouriteCities();
         this.predictionFavouriteCoordinates = new PredictionFavouriteCoordinates();
         this.openAMap = new OpenAMap();
+
     }
 
 
@@ -158,7 +161,11 @@ public class WeatherAppFacade {
 
     }
 
-    //TODO  buscar tiempo por etiqueta
+    public String[] getListOfMeterologicalPhenomenon(){
+        return listOfMeterologicalPhenomenon;
+    }
+
+
 
 
 }

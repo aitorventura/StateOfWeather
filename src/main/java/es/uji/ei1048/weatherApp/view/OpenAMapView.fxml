@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.uji.ei1048.weatherApp.view.OpenAMapViewController">
+    <children>
+        <Pane prefHeight="97.0" prefWidth="800.0" style="-fx-background-color: #274a2a;">
+            <children>
+                <Text fill="WHITE" layoutX="1.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Open the Map" textAlignment="CENTER" wrappingWidth="800.0">
+                    <font>
+                        <Font name="Berlin Sans FB" size="69.0" />
+                    </font>
+                </Text>
+            </children>
+        </Pane>
+        <Pane layoutX="46.0" layoutY="129.0" prefHeight="441.0" prefWidth="712.0" style="-fx-background-color: #809f39;">
+         <children>
+            <Text fill="WHITE" layoutX="-1.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the kind of map:" textAlignment="CENTER" wrappingWidth="712.0">
+               <font>
+                  <Font name="Calibri Bold" size="34.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="options" layoutX="186.0" layoutY="166.0" prefHeight="25.0" prefWidth="340.0" />
+            <Button layoutX="291.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleOpen" prefHeight="47.0" prefWidth="129.0" text="Open ">
+               <font>
+                  <Font size="19.0" />
+               </font></Button>
+            <Text fx:id="error" fill="#bf0000" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="712.0">
+               <font>
+                  <Font name="Calibri" size="22.0" />
+               </font>
+            </Text>
+         </children>
+        </Pane>
+    </children>
+</AnchorPane>

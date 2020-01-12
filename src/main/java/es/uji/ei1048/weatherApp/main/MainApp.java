@@ -20,6 +20,7 @@ public class MainApp extends Application{
     private Stage predictionWeatherStage;
     private Stage errorWeatherStage;
     private Stage favouritesStage;
+    private Stage openAMapStage;
 
 
     private AnchorPane mainAppPane;
@@ -29,6 +30,7 @@ public class MainApp extends Application{
     private AnchorPane predictionWeatherPane;
     private AnchorPane errorWeatherPane;
     private AnchorPane favouritesPane;
+    private AnchorPane openAMapPane;
 
 
 
@@ -246,4 +248,30 @@ public class MainApp extends Application{
             e.printStackTrace();
         }
     }
+
+    public void initOpenAMap() {
+        try {
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("../view/OpenAMapView.fxml"));
+            openAMapPane = (AnchorPane) loader.load();
+            openAMapStage = new Stage();
+            openAMapStage.setTitle("OpenAMapView");
+            openAMapStage.initOwner(primaryStage);
+            openAMapStage.setResizable(false);
+            Scene scene = new Scene(openAMapPane);
+            openAMapStage.setScene(scene);
+
+            OpenAMapViewController controller = loader.getController();
+            controller.setHelperControllerMain(helperControllerMain);
+
+            // Show the dialog and wait until the user closes it
+            openAMapStage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

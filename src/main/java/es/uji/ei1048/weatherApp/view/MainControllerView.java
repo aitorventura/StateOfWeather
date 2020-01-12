@@ -41,6 +41,7 @@ public class MainControllerView {
 
     @FXML
     private void handleButtonOpenMap(){
+        this.helperControllerMain.showOpenTheMap();
 
     }
 

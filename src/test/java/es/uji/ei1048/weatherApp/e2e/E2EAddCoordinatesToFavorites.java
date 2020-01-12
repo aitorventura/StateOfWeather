@@ -19,7 +19,6 @@ public class E2EAddCoordinatesToFavorites extends E2ETestBed {
         double lon = -0.071089;
         Coordinates coordinates = new Coordinates(lon, lat);
 
-        //TODO es correcto poner esto aquí?
         //nos aseguramos de que las coordenadas que no estén las coordenadas necesarias en la BBDD para hacer el test
         weatherAppFacade.deleteCoordinatesFromFavorites(coordinates);
 
@@ -41,10 +40,8 @@ public class E2EAddCoordinatesToFavorites extends E2ETestBed {
         //nos aseguramos de que las coordenadas necesarias estén en la BBDD para hacer el test
         weatherAppFacade.addCoordinatesToFavorites(coordinates);
 
-
         //When : intento añadir unas coordenadas ya presentes en favoritos
         boolean added = weatherAppFacade.addCoordinatesToFavorites(coordinates);
-
 
         //Then no se añaden a favoritos
         assertFalse(added);

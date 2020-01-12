@@ -42,15 +42,12 @@ public class TestFavouriteCities {
         verify(store, times(0)).addCityToFavorite("sds<zdsxcsd");
 
         Assert.assertFalse(result);
-
-
     }
 
     @Test
     public void addCityWhichExistsAndIsntInTheDB() {
         when(weatherService.giveMeTheCurrentWeatherUsingACity("Castellón de la Plana")).thenReturn(new CurrentWeather());
         when(store.addCityToFavorite("Castellón de la Plana")).thenReturn(true);
-
 
         boolean result = favouriteCities.addCityToFavourite("Castellón de la Plana");
 
@@ -59,7 +56,6 @@ public class TestFavouriteCities {
         verify(store, times(1)).addCityToFavorite("Castellón de la Plana");
 
         Assert.assertTrue(result);
-
     }
 
     @Test
@@ -84,8 +80,6 @@ public class TestFavouriteCities {
 
         boolean result = favouriteCities.removeCityFromFavourite("Castellón de la Plana");
 
-
-
         verify(store, times(1)).removeCityFromFavorite("Castellón de la Plana");
 
         Assert.assertTrue(result);
@@ -98,18 +92,8 @@ public class TestFavouriteCities {
 
         boolean result = favouriteCities.removeCityFromFavourite("Castellón de la Plana");
 
-
-
         verify(store, times(1)).removeCityFromFavorite("Castellón de la Plana");
 
         Assert.assertFalse(result);
     }
-
-
-
-
-
-
-
-
 }

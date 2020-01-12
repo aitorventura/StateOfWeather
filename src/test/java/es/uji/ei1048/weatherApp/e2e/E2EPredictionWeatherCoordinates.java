@@ -28,8 +28,6 @@ public class E2EPredictionWeatherCoordinates extends E2ETestBed {
             assertTrue(predictionWeather.getTemperature() > 5);
             assertTrue(predictionWeather.getTemperature() < 25);
         }
-
-
     }
 
     @Test(expected = NotValidCoordinatesException.class)
@@ -39,12 +37,9 @@ public class E2EPredictionWeatherCoordinates extends E2ETestBed {
         double lat = 56.872;
         Coordinates coordinates = new Coordinates(lon, lat);
 
-
         //When : consulto el tiempo de los proximos 3 dias para esas coordenadas
         List<PredictionWeather> listPredictionWeather = weatherAppFacade.previsionOfWeatherCoordinates(coordinates);
 
         //Then: espero que se lance una excepcion
-
     }
-
 }

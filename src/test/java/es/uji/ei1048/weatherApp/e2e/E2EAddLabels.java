@@ -20,13 +20,11 @@ public class E2EAddLabels extends E2ETestBed {
         //nos aseguramos de que la etiqueta no está en Labels
         weatherAppFacade.deleteLabel(newLabel);
 
-
         //When : añado una nueva etiqueta
         boolean result = weatherAppFacade.addLabel(newLabel, coordinates);
 
         //Then
         assertTrue(result);
-
     }
 
     @Test(expected = NotValidCoordinatesException.class)
@@ -37,17 +35,12 @@ public class E2EAddLabels extends E2ETestBed {
         String newLabel = "Casa";
         Coordinates coordinates = new Coordinates(lon, lat);
 
-
-
         //When : intento añadir una nueva etiqueta
         boolean result = weatherAppFacade.addLabel(newLabel, coordinates);
 
 
         //Then: espero que devuelve false
         assertFalse(result);
-
-
     }
-
 
 }

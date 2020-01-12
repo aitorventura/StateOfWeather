@@ -8,7 +8,6 @@ import static org.junit.Assert.assertTrue;
 
 public class E2EDeleteLabels  extends  E2ETestBed {
 
-
     public E2EDeleteLabels(){
         super();
     }
@@ -25,7 +24,6 @@ public class E2EDeleteLabels  extends  E2ETestBed {
         weatherAppFacade.addLabel(newLabel, coordinates);
 
     }
-
 
     @Test
     public void deleteValidLabelFromCoordinates(){
@@ -45,14 +43,10 @@ public class E2EDeleteLabels  extends  E2ETestBed {
         //Given: etiqueta inválida
         String nameOfLabel = "ñññ";
 
-
         //When: no existe la etiqueta que quiero borrar
         boolean result = weatherAppFacade.deleteLabel(nameOfLabel);
 
-
         //Then
         assertFalse(result);
-
     }
-
 }

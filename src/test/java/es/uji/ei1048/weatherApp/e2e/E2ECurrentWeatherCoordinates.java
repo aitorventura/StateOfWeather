@@ -17,11 +17,8 @@ public class E2ECurrentWeatherCoordinates extends E2ETestBed {
         double lon = -0.071089;
         Coordinates coordinates = new Coordinates(lon, lat);
 
-
-
         //When : consulto el tiempo actual para esa ciudad
         CurrentWeather currentWeather = weatherAppFacade.currentWeatherCoordinates(coordinates);
-
 
         //Then
         assertTrue(currentWeather.getTemperature() > 0);
@@ -35,7 +32,6 @@ public class E2ECurrentWeatherCoordinates extends E2ETestBed {
         double lon =   -500.908;
         double lat = 56.872;
         Coordinates coordinates = new Coordinates(lon, lat);
-
 
         //When : consulto el tiempo actual para esa ciudad
         CurrentWeather currentWeather = weatherAppFacade.currentWeatherCoordinates(coordinates);

@@ -32,7 +32,6 @@ public class E2EDeleteCoordinatesFromFavorites  extends  E2ETestBed{
         //When: queremos borrar unas coordenadas presentes en favoritos
         boolean deleted = weatherAppFacade.deleteCoordinatesFromFavorites(coordinates);
 
-
         //Then: las borramos de favoritos
         assertTrue(deleted);
 
@@ -47,7 +46,6 @@ public class E2EDeleteCoordinatesFromFavorites  extends  E2ETestBed{
 
         //When: no existe la ciudad que quiero borrar en favoritos
         boolean deleted = weatherAppFacade.deleteCoordinatesFromFavorites(coordinates);
-
 
         //Then
         assertFalse(deleted);

@@ -41,7 +41,6 @@ public class TestCurrentWeatherCoordinates {
     @Test
     public void validCurrentWeatherConsultationUsingACoordinatesWithDataInTheBBDD() {
         CurrentWeather currentWeather = new CurrentWeather();
-        //when(store.giveMeTheCurrentWeather(anyString())).thenThrow(SQLException.class);
         when(store.giveMeTheCurrentWeather( anyDouble(), anyDouble())).thenReturn(currentWeather);
         when(store.giveMeTheCurrentWeather( 39.9945711, -0.071089)).thenReturn(currentWeather);
 

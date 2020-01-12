@@ -26,7 +26,6 @@ public class E2EPredictionWeatherCity extends E2ETestBed{
             assertTrue(predictionWeather.getTemperature() > 5);
             assertTrue(predictionWeather.getTemperature() < 25);
         }
-
     }
 
     @Test(expected = NotValidCityException.class)
@@ -38,6 +37,5 @@ public class E2EPredictionWeatherCity extends E2ETestBed{
         List<PredictionWeather> listPredictionWeather = weatherAppFacade.previsionOfWeatherCity(city);
 
         //Then: espero que se lance una excepcion
-
     }
 }

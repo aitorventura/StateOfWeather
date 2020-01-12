@@ -44,7 +44,7 @@ public class TestPredictionWeatherUsingCity {
         for (int i = 0; i < 3; i++) {
             predictionWeatherList.add(new PredictionWeather());
         }
-        //when(store.giveMeTheCurrentWeather(anyString())).thenThrow(SQLException.class);
+
         when(store.giveMeTheListOfPredictionWeather("Castellón de la Plana")).thenReturn(predictionWeatherList);
 
         predictionWeatherUsingCity.giveMeThePredictionToThisCity("Castellón de la Plana");
@@ -63,7 +63,7 @@ public class TestPredictionWeatherUsingCity {
         for (int i = 0; i < 3; i++) {
             predictionWeatherList.add(new PredictionWeather());
         }
-        //when(store.giveMeTheCurrentWeather(anyString())).thenThrow(SQLException.class);
+
         when(store.giveMeTheListOfPredictionWeather("Castellón de la Plana")).thenReturn(null);
 
         when(weatherService.giveMeTheListOfPredictionsUsingACity(anyString())).thenReturn(null);
@@ -80,20 +80,17 @@ public class TestPredictionWeatherUsingCity {
     }
 
     //La ciudad no está en la BBDD SIN conexión
-    //TODO Mirar las excepciones
     @Test(expected = NotValidCityException.class)
     public void validPredictionWeatherConsultationUsingACityWithoutDataInTheBBDDWithoutConnection() {
         ArrayList predictionWeatherList = new ArrayList<PredictionWeather>();
         for (int i = 0; i < 3; i++) {
             predictionWeatherList.add(new PredictionWeather());
         }
-        //when(store.giveMeTheCurrentWeather(anyString())).thenThrow(SQLException.class);
         when(store.giveMeTheListOfPredictionWeather(anyString())).thenReturn(null);
         when(store.giveMeTheListOfPredictionWeather("Castellón de la Plana")).thenReturn(null);
 
         when(weatherService.giveMeTheListOfPredictionsUsingACity(anyString())).thenReturn(null);
         when(weatherService.giveMeTheListOfPredictionsUsingACity("Castellón de la Plana")).thenReturn(null);
-
 
         predictionWeatherUsingCity.giveMeThePredictionToThisCity("Castellón de la Plana");
 
@@ -101,8 +98,5 @@ public class TestPredictionWeatherUsingCity {
         verify(store, times(1)).giveMeTheListOfPredictionWeather("Castellón de la Plana");
         verify(weatherService, times(1)).giveMeTheListOfPredictionsUsingACity("Castellón de la Plana");
         verify(store, times(0)).addPredictionWeatherToTheDataBase(any(PredictionWeather.class));
-
     }
-
-
 }

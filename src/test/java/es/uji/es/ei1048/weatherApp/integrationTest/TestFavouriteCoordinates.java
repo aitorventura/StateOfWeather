@@ -38,8 +38,6 @@ public class TestFavouriteCoordinates {
         verify(store, times(0)).addCoordinatesToFavorite(new Coordinates(-500, 58821));
 
         Assert.assertFalse(result);
-
-
     }
 
     @Test
@@ -52,7 +50,6 @@ public class TestFavouriteCoordinates {
         verify(store, times(1)).addCoordinatesToFavorite(new Coordinates(39.9945711, -0.071089));
 
         Assert.assertTrue(result);
-
     }
 
     @Test
@@ -82,7 +79,6 @@ public class TestFavouriteCoordinates {
 
         boolean result = favouriteCoordinates.removeCoordinatesFromFavourite(c);
 
-
         verify(store, times(1)).listFavoriteCoordinates();
         verify(store, times(1)).removeCoordinatesFromFavorite(c);
 
@@ -102,11 +98,9 @@ public class TestFavouriteCoordinates {
 
         boolean result = favouriteCoordinates.removeCoordinatesFromFavourite(c);
 
-
         verify(store, times(1)).listFavoriteCoordinates();
         verify(store, times(0)).removeCoordinatesFromFavorite(c);
 
         Assert.assertFalse(result);
     }
-
 }

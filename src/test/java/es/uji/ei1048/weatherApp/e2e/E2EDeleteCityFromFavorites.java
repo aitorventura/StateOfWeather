@@ -7,7 +7,6 @@ import static org.junit.Assert.assertTrue;
 
 public class E2EDeleteCityFromFavorites extends  E2ETestBed {
 
-
     public E2EDeleteCityFromFavorites(){
         super();
     }
@@ -16,7 +15,6 @@ public class E2EDeleteCityFromFavorites extends  E2ETestBed {
     public void setUp() throws Exception {
         super.setUp();
     }
-
 
     @Test
     public void deleteExistentCityOfFavorites(){
@@ -30,10 +28,8 @@ public class E2EDeleteCityFromFavorites extends  E2ETestBed {
         //When: queremos borrar una ciudad presente en favoritos
         boolean deleted = weatherAppFacade.deleteCityFromFavorites(city);
 
-
         //Then: la borramos de favoritos
         assertTrue(deleted);
-
     }
 
     @Test
@@ -41,14 +37,10 @@ public class E2EDeleteCityFromFavorites extends  E2ETestBed {
         //Given: ciudad no añadida en favoritos
         String city = "ñññ";
 
-
         //When: no existe la ciudad que quiero borrar en favoritos
         boolean deleted = weatherAppFacade.deleteCityFromFavorites(city);
 
-
         //Then
         assertFalse(deleted);
-
     }
-
 }

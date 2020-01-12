@@ -23,12 +23,7 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
     public void setUp() throws Exception {
         super.setUp();
         sqLiteDB = new SQLiteDB();
-
-
-
     }
-
-
 
 
     @Test
@@ -46,18 +41,13 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
             weatherAppFacade.previsionOfWeatherCoordinates(coordinates);
         }
 
-
         //When: entro en la aplicación, hay conexión y datos de menos de XXX
         Map<String, List<PredictionWeather>> predictionOfFavouriteCities = weatherAppFacade.predictionOfFavouriteCities();
         Map<Coordinates, List<PredictionWeather>> predictionOfFavouroteCoordinates = weatherAppFacade.predictionOfFavouriteCoordenates();
 
-
-
         //Then: se muestran los datos
         int numberOfFavorites = sqLiteDB.listFavoriteCities().size();
         int numberOfFavoritesCoordinates = sqLiteDB.listFavoriteCoordinates().size();
-
-
 
         assertTrue(numberOfFavorites == predictionOfFavouriteCities.size());
 
@@ -73,28 +63,21 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
 
     }
 
-
     @Test
     public void predictionOfFavouritePlacesWithConnectionAndWithoutDataLessThan1Hour() throws NotValidCityException{
 
         //Given: no hay datos
         sqLiteDB.removeAllPredictions();
 
-
-
         //When: entro en la aplicación, hay conexión, pero no datos de menos de XXX en la BBDD
         Map<String, List<PredictionWeather>> predictionOfFavouriteCities = weatherAppFacade.predictionOfFavouriteCities();
         Map<Coordinates, List<PredictionWeather>> predictionOfFavouriteCoordinates = weatherAppFacade.predictionOfFavouriteCoordenates();
-
 
         //Then: se muestran los datos
         int numberOfFavorites = sqLiteDB.listFavoriteCities().size();
         int numberOfFavoritesCoordinates = sqLiteDB.listFavoriteCoordinates().size();
 
-
         assertTrue(numberOfFavorites == predictionOfFavouriteCities.size());
-
-
 
         for (String s: predictionOfFavouriteCities.keySet()){
             assertTrue(3 == predictionOfFavouriteCities.get(s).size());
@@ -105,10 +88,5 @@ public class E2EPredictionListFromFavouriteWithConnection extends  E2ETestBed {
         for (Coordinates coordinates: predictionOfFavouriteCoordinates.keySet()){
             assertTrue(3 == predictionOfFavouriteCoordinates.get(coordinates).size());
         }
-
     }
-
-
-
-
 }

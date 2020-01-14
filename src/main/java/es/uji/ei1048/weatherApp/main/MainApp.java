@@ -120,7 +120,7 @@ public class MainApp extends Application{
         currentPredictionWeatherStage.close();
     }
 
-    public void initPrintCurrentWeather(CurrentWeather currentWeather) {
+    public void initPrintCurrentWeather(CurrentWeather currentWeather){
 
         try {
 

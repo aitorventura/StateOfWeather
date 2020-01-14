@@ -62,8 +62,12 @@ public class SaveLabelsControllerView {
        if(option == null || option.equals("")){
            helperControllerMain.showErrorCityOrCoordinates();
        } else {
-           CurrentWeather currentWeather = helperControllerMain.getCurrentWeatherUsingLabel(option);
-           helperControllerMain.showCurrentWeather(currentWeather);
+           try {
+               CurrentWeather currentWeather = helperControllerMain.getCurrentWeatherUsingLabel(option);
+               helperControllerMain.showCurrentWeather(currentWeather);
+           }catch (Exception e){
+               errorMessage.setText("No connection");
+           }
        }
 
     }

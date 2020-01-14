@@ -51,6 +51,8 @@ public class SQLiteDB implements IStore {
     }
 
     public CurrentWeather giveMeTheCurrentWeather(String city) {
+
+        System.out.println(city);
         CurrentWeather currentWeather = new CurrentWeather();
         try {
             this.open();
@@ -193,7 +195,6 @@ public class SQLiteDB implements IStore {
         PredictionWeather predictionWeather;
         try {
             this.open();
-
             this.stmt = c.createStatement();
 
 
@@ -219,7 +220,6 @@ public class SQLiteDB implements IStore {
 
             }
             this.close();
-
             return list;
 
         } catch (Exception e) {

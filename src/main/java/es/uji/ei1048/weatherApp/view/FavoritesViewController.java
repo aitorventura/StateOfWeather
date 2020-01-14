@@ -71,12 +71,19 @@ public class FavoritesViewController {
 
             Coordinates coordinates = getCoordinatesFromOption(option);
             currentWeather = helperControllerMain.getCurrentWeatherOfCoordinates(coordinates);
+            helperControllerMain.showCurrentWeather(currentWeather);
+
 
         }catch (Exception e){
-            currentWeather = helperControllerMain.getCurrentWeatherOfCity(option);
+            try {
+                currentWeather = helperControllerMain.getCurrentWeatherOfCity(option);
+                helperControllerMain.showCurrentWeather(currentWeather);
+
+            }catch (Exception ex){
+                helperControllerMain.showErrorCityOrCoordinates();
+            }
         }
 
-        helperControllerMain.showCurrentWeather(currentWeather);
 
     }
 
@@ -101,13 +108,19 @@ public class FavoritesViewController {
 
             Coordinates coordinates = getCoordinatesFromOption(option);
             listPredictionWeather = helperControllerMain.getPredictionWeatherOfCoordinates(coordinates);
-
+            helperControllerMain.showPredictionWeather(listPredictionWeather);
         }catch (Exception e){
             System.out.println("es una ciudad");
-            listPredictionWeather = helperControllerMain.getPredictionWeatherOfCity(option);
+            try {
+                listPredictionWeather = helperControllerMain.getPredictionWeatherOfCity(option);
+                helperControllerMain.showPredictionWeather(listPredictionWeather);
+
+            }catch (Exception ex){
+                helperControllerMain.showErrorCityOrCoordinates();
+            }
         }
 
-        helperControllerMain.showPredictionWeather(listPredictionWeather);
+
 
     }
 

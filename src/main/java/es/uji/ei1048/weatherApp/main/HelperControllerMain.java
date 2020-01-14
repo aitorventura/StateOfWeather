@@ -91,7 +91,6 @@ public class HelperControllerMain {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                System.out.println(currentWeather.toString());
                 mainApp.initPrintCurrentWeather(currentWeather);
 
             }

@@ -4,14 +4,9 @@
     <list default="true" id="9427932e-56e4-4f44-90de-756001784a6a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StateOfWeatherDataBase.db" beforeDir="false" afterPath="$PROJECT_DIR$/StateOfWeatherDataBase.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/model/SQLiteDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/model/SQLiteDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/view/FavoritesViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/es/uji/ei1048/weatherApp/view/FavoritesViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/HelperControllerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/HelperControllerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/WeatherAppFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/WeatherAppFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/SQLiteDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/SQLiteDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentWeatherControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentWeatherControllerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/FavoritesViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/FavoritesViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/SaveLabelsControllerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/SaveLabelsControllerView.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -43,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="122" column="70" selection-start-line="122" selection-start-column="70" selection-end-line="122" selection-end-column="70" />
+            <state relative-caret-position="589">
+              <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#initPrintPredictionWeather#0;class#MainApp#0" />
@@ -58,64 +53,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentPredictionWeatherControllerView.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/OpenAMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-590">
-              <caret line="57" column="61" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/HelperControllerMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1229#1230#0" expanded="true" />
-                <element signature="e#1280#1281#0" expanded="true" />
-                <element signature="method#addNewLabel#0;class#HelperControllerMain#0" />
-                <element signature="method#openCurrentPredictionWeatherView#0;class#HelperControllerMain#0" />
-                <element signature="e#1868#1869#0" expanded="true" />
-                <element signature="e#1932#1933#0" expanded="true" />
-                <element signature="method#getCurrentWeatherOfCoordinates#0;class#HelperControllerMain#0" />
-                <element signature="method#showPredictionWeather#0;class#HelperControllerMain#0" />
-                <element signature="e#3144#3145#0" expanded="true" />
-                <element signature="e#3205#3206#0" expanded="true" />
-                <element signature="method#showErrorCityOrCoordinates#0;class#HelperControllerMain#0" />
-                <element signature="e#4241#4242#0" expanded="true" />
-                <element signature="e#4292#4293#0" expanded="true" />
-                <element signature="e#4334#4335#0" expanded="true" />
-                <element signature="e#4408#4409#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentWeatherControllerView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/SaveLabelsControllerView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/SQLiteDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-437">
-              <caret line="204" selection-start-line="204" selection-end-line="204" />
+            <state relative-caret-position="89">
+              <caret line="238" lean-forward="true" selection-start-line="238" selection-end-line="238" />
               <folding>
                 <element signature="method#giveMeTheCurrentWeather#0;class#SQLiteDB#0" />
                 <element signature="method#giveMeTheCurrentWeather#1;class#SQLiteDB#0" />
@@ -126,9 +76,48 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentPredictionWeatherView.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/CurrentWeatherUsingCity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="27" column="110" lean-forward="true" selection-start-line="27" selection-start-column="110" selection-end-line="27" selection-end-column="110" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCoordinates.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/PredictionWeather.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -143,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/WeatherAppFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="51">
+              <caret line="24" column="119" selection-start-line="24" selection-start-column="119" selection-end-line="24" selection-end-column="119" />
               <folding>
                 <element signature="e#3085#3086#0" expanded="true" />
                 <element signature="e#3138#3139#0" expanded="true" />
@@ -184,6 +173,7 @@
       <find>Todo</find>
       <find>//</find>
       <find>cur</find>
+      <find>INSERT</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -205,7 +195,6 @@
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/PredictionWeatherControllerView.java" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/OpenAMapView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/MainControllerView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/WeatherAppFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/OpenAMapViewController.java" />
         <option value="$PROJECT_DIR$/src/test/java/es/uji/ei1048/weatherApp/e2e/E2EAddLabels.java" />
         <option value="$PROJECT_DIR$/src/test/java/es/uji/ei1048/weatherApp/e2e/E2EAddCoordinatesToFavorites.java" />
@@ -226,11 +215,14 @@
         <option value="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestCurrentWeatherCity.java" />
         <option value="$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCities.java" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/FavoritesViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/SQLiteDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/SaveLabelsControllerView.java" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/HelperControllerMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentWeatherControllerView.java" />
         <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/MainApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/WeatherAppFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/CurrentWeatherUsingCity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/SQLiteDB.java" />
       </list>
     </option>
   </component>
@@ -253,7 +245,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -286,6 +277,15 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="weatherApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StateOfWeather" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StateOfWeather" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="weatherApp" type="462c0819:PsiDirectoryNode" />
+              <item name="controllerWeather" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StateOfWeather" type="b2602c69:ProjectViewProjectNode" />
@@ -349,12 +349,13 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578976875557" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1579035281379" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -405,6 +406,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in es.uji.ei1048.StateOfWeather.test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="es.uji.ei1048.StateOfWeather.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in es.uji.ei1048.StateOfWeather.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="es.uji.ei1048.StateOfWeather.test" />
       <option name="PACKAGE_NAME" value="" />
@@ -427,36 +436,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="es.uji.es.ei1048.weatherApp.integrationTest in StateOfWeather_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StateOfWeather_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="es.uji.es.ei1048.weatherApp.integrationTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="es.uji.es.ei1048.weatherApp.integrationTest" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.MainApp" />
       <item itemvalue="Application.MainApp (1)" />
-      <item itemvalue="JUnit.es.uji.es.ei1048.weatherApp.integrationTest in StateOfWeather_test" />
       <item itemvalue="JUnit.es.uji in es.uji.ei1048.StateOfWeather.test" />
       <item itemvalue="JUnit.All in es.uji.ei1048.StateOfWeather.test" />
+      <item itemvalue="JUnit.All in es.uji.ei1048.StateOfWeather.test (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainApp (1)" />
+        <item itemvalue="JUnit.All in es.uji.ei1048.StateOfWeather.test (1)" />
         <item itemvalue="JUnit.All in es.uji.ei1048.StateOfWeather.test" />
         <item itemvalue="JUnit.es.uji in es.uji.ei1048.StateOfWeather.test" />
         <item itemvalue="Application.MainApp" />
-        <item itemvalue="JUnit.es.uji.es.ei1048.weatherApp.integrationTest in StateOfWeather_test" />
       </list>
     </recent_temporary>
   </component>
@@ -476,35 +469,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="es_uji_in_es_uji_ei1048_StateOfWeather_test - 2020.01.12 at 15h 28m 59s.xml">
-      <configuration name="es.uji in es.uji.ei1048.StateOfWeather.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="es_uji_in_es_uji_ei1048_StateOfWeather_test - 2020.01.12 at 15h 29m 18s.xml">
-      <configuration name="es.uji in es.uji.ei1048.StateOfWeather.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="es_uji_in_es_uji_ei1048_StateOfWeather_test - 2020.01.13 at 21h 22m 22s.xml">
-      <configuration name="es.uji in es.uji.ei1048.StateOfWeather.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test - 2020.01.14 at 05h 15m 02s.xml">
-      <configuration name="All in es.uji.ei1048.StateOfWeather.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test - 2020.01.14 at 05h 24m 35s.xml">
-      <configuration name="All in es.uji.ei1048.StateOfWeather.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test - 2020.01.14 at 05h 25m 27s.xml">
-      <configuration name="All in es.uji.ei1048.StateOfWeather.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test - 2020.01.14 at 05h 26m 45s.xml">
-      <configuration name="All in es.uji.ei1048.StateOfWeather.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test - 2020.01.14 at 05h 29m 22s.xml">
-      <configuration name="All in es.uji.ei1048.StateOfWeather.test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test - 2020.01.14 at 05h 29m 48s.xml">
       <configuration name="All in es.uji.ei1048.StateOfWeather.test" configurationId="JUnit" />
     </history-entry>
     <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test - 2020.01.14 at 05h 33m 28s.xml">
       <configuration name="All in es.uji.ei1048.StateOfWeather.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test_(1) - 2020.01.14 at 21h 32m 36s.xml">
+      <configuration name="All in es.uji.ei1048.StateOfWeather.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test_(1) - 2020.01.14 at 21h 33m 19s.xml">
+      <configuration name="All in es.uji.ei1048.StateOfWeather.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test_(1) - 2020.01.14 at 21h 34m 23s.xml">
+      <configuration name="All in es.uji.ei1048.StateOfWeather.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test_(1) - 2020.01.14 at 21h 34m 48s.xml">
+      <configuration name="All in es.uji.ei1048.StateOfWeather.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test_(1) - 2020.01.14 at 21h 36m 49s.xml">
+      <configuration name="All in es.uji.ei1048.StateOfWeather.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test_(1) - 2020.01.14 at 21h 37m 36s.xml">
+      <configuration name="All in es.uji.ei1048.StateOfWeather.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test_(1) - 2020.01.14 at 21h 38m 58s.xml">
+      <configuration name="All in es.uji.ei1048.StateOfWeather.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_es_uji_ei1048_StateOfWeather_test_(1) - 2020.01.14 at 21h 40m 40s.xml">
+      <configuration name="All in es.uji.ei1048.StateOfWeather.test (1)" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -513,7 +506,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23294243" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24093817" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -522,7 +515,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.49837488" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29469123" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3993808" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -598,13 +591,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.2/6d8591dcd32b4b97808d3ed78d76c6272299309c/gson-2.6.2-sources.jar!/com/google/gson/internal/LinkedTreeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.2/6d8591dcd32b4b97808d3ed78d76c6272299309c/gson-2.6.2-sources.jar!/com/google/gson/JsonObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
@@ -676,28 +662,28 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/PredictionWeatherView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/SaveLabelsView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="95" selection-end-column="13" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentWeatherView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="117" selection-end-line="117" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/MainView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/MainControllerView.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -717,12 +703,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/OpenAMapView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
           <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/ei1048/weatherApp/e2e/E2ETestBed.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -829,13 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCoordinates.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="37" column="77" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestCurrentWeatherCity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-60">
@@ -871,34 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="35" column="74" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/CurrentWeatherUsingCity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/PredictionWeather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/SavedLabels.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -910,24 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/WeatherAppFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="e#3085#3086#0" expanded="true" />
-            <element signature="e#3138#3139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/Weather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/FavoritesViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -935,46 +868,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentPredictionWeatherView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/SQLiteDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-437">
-          <caret line="204" selection-start-line="204" selection-end-line="204" />
-          <folding>
-            <element signature="method#giveMeTheCurrentWeather#0;class#SQLiteDB#0" />
-            <element signature="method#giveMeTheCurrentWeather#1;class#SQLiteDB#0" />
-            <element signature="method#addCurrentWeatherToTheDataBase#0;class#SQLiteDB#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/SaveLabelsControllerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="67" column="32" lean-forward="true" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentPredictionWeatherControllerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-590">
+        <state relative-caret-position="782">
           <caret line="57" column="61" selection-start-line="57" selection-start-column="61" selection-end-line="57" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentWeatherControllerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/HelperControllerMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
+        <state relative-caret-position="1309">
           <caret line="93" selection-start-line="93" selection-end-line="93" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -986,25 +889,109 @@
             <element signature="e#1932#1933#0" expanded="true" />
             <element signature="method#getCurrentWeatherOfCoordinates#0;class#HelperControllerMain#0" />
             <element signature="method#showPredictionWeather#0;class#HelperControllerMain#0" />
-            <element signature="e#3144#3145#0" expanded="true" />
-            <element signature="e#3205#3206#0" expanded="true" />
             <element signature="method#showErrorCityOrCoordinates#0;class#HelperControllerMain#0" />
-            <element signature="e#4241#4242#0" expanded="true" />
-            <element signature="e#4292#4293#0" expanded="true" />
-            <element signature="e#4334#4335#0" expanded="true" />
-            <element signature="e#4408#4409#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentWeatherControllerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="37" column="65" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/SaveLabelsControllerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/view/CurrentPredictionWeatherView.fxml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/Weather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/es/uji/es/ei1048/weatherApp/integrationTest/TestPredictionFavouriteCoordinates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="122" column="70" selection-start-line="122" selection-start-column="70" selection-end-line="122" selection-end-column="70" />
+        <state relative-caret-position="589">
+          <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initPrintPredictionWeather#0;class#MainApp#0" />
             <element signature="method#initErrorCityOrCoordinates#0;class#MainApp#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/OpenAMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/main/WeatherAppFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="24" column="119" selection-start-line="24" selection-start-column="119" selection-end-line="24" selection-end-column="119" />
+          <folding>
+            <element signature="e#3085#3086#0" expanded="true" />
+            <element signature="e#3138#3139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/CurrentWeatherUsingCity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="27" column="110" lean-forward="true" selection-start-line="27" selection-start-column="110" selection-end-line="27" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/controllerWeather/PredictionWeatherUsingCity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/PredictionWeather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/es/uji/ei1048/weatherApp/model/SQLiteDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="238" lean-forward="true" selection-start-line="238" selection-end-line="238" />
+          <folding>
+            <element signature="method#giveMeTheCurrentWeather#0;class#SQLiteDB#0" />
+            <element signature="method#giveMeTheCurrentWeather#1;class#SQLiteDB#0" />
+            <element signature="method#addCurrentWeatherToTheDataBase#0;class#SQLiteDB#0" />
           </folding>
         </state>
       </provider>

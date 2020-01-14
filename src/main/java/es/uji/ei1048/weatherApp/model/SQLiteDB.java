@@ -211,8 +211,7 @@ public class SQLiteDB implements IStore {
                 predictionWeather.setHumidty(resultSet.getDouble("humidity"));
                 predictionWeather.setPressure(resultSet.getDouble("pressure"));
 
-                StringBuilder s = new StringBuilder(resultSet.getString("dateOfConsultation"));
-                s.append(".00");
+                StringBuilder s = new StringBuilder(resultSet.getString("date"));
                 Timestamp ts = Timestamp.valueOf(s.toString());
                 predictionWeather.setPredictionDate(ts);
 
@@ -223,7 +222,7 @@ public class SQLiteDB implements IStore {
             return list;
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
             return null;
         }
 
@@ -262,8 +261,7 @@ public class SQLiteDB implements IStore {
                 predictionWeather.setHumidty(resultSet.getDouble("humidity"));
                 predictionWeather.setPressure(resultSet.getDouble("pressure"));
 
-                StringBuilder s = new StringBuilder(resultSet.getString("dateOfConsultation"));
-                s.append(".00");
+                StringBuilder s = new StringBuilder(resultSet.getString("date"));
                 Timestamp ts = Timestamp.valueOf(s.toString());
                 predictionWeather.setPredictionDate(ts);
 
@@ -293,17 +291,17 @@ public class SQLiteDB implements IStore {
             s.append(predictionWeather.getCoordinates().getLon() + ",");
             s.append(predictionWeather.getCoordinates().getLat() + ", '");
             s.append(predictionWeather.getPredictionDate() + "' , '");
-            s.append(predictionWeather.getCity() + " ',");
+            s.append(predictionWeather.getCity() + "',");
             s.append(predictionWeather.getTemperature() + ",");
             s.append(predictionWeather.getHumidty() + ",");
             s.append(predictionWeather.getPressure() + ")");
 
-
             stmt.execute(s.toString());
             this.close();
 
-        } catch (Exception e) {
 
+
+        } catch (Exception e) {
 
         }
     }

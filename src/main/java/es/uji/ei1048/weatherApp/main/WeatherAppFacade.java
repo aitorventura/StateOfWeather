@@ -22,7 +22,7 @@ public class WeatherAppFacade {
     private final PredictionFavouriteCities predictionFavouriteCities;
     private final PredictionFavouriteCoordinates predictionFavouriteCoordinates;
     private final OpenAMap openAMap;
-    private final String[] listOfMeterologicalPhenomenon = {"Temperature", "Precipitation", "Pressure", "Clouds", "Wind speed"};
+    private final String[] listOfMeterologicalPhenomenon = {"temperature", "precipitation", "pressure", "clouds", "windspeed"};
 
     public WeatherAppFacade() {
         this.currentWeatherUsingCity = new CurrentWeatherUsingCity();

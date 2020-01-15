@@ -1,8 +1,10 @@
 package es.uji.es.ei1048.weatherApp.integrationTest;
 
+import es.uji.ei1048.weatherApp.interfaces.IWeatherService;
 import es.uji.ei1048.weatherApp.model.Coordinates;
 import es.uji.ei1048.weatherApp.controllerWeather.FavouriteCoordinates;
 import es.uji.ei1048.weatherApp.interfaces.IStore;
+import es.uji.ei1048.weatherApp.model.CurrentWeather;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,11 +19,13 @@ import static org.mockito.Mockito.times;
 public class TestFavouriteCoordinates {
     FavouriteCoordinates favouriteCoordinates;
     IStore store;
+    IWeatherService weatherService;
 
     @Before
     public void setUp() throws Exception {
         store = mock(IStore.class);
-        favouriteCoordinates = new FavouriteCoordinates(store);
+        weatherService = mock(IWeatherService.class);
+        favouriteCoordinates = new FavouriteCoordinates(store, weatherService);
     }
 
     @After
@@ -42,24 +46,29 @@ public class TestFavouriteCoordinates {
 
     @Test
     public void addCoordinatesWhichExistAndArenotInTheDB() {
+        Coordinates c = new Coordinates(39.9945711, -0.071089);
+        CurrentWeather cu = new CurrentWeather();
+        when(store.addCoordinatesToFavorite(cu.getCoordinates())).thenReturn(true);
+        when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(c.getLon(), c.getLat())).thenReturn(cu);
 
-        when(store.addCoordinatesToFavorite(new Coordinates(39.9945711, -0.071089))).thenReturn(true);
+        boolean result = favouriteCoordinates.addCoordinatesToFavourite(c);
 
-        boolean result = favouriteCoordinates.addCoordinatesToFavourite(new Coordinates(39.9945711, -0.071089));
-
-        verify(store, times(1)).addCoordinatesToFavorite(new Coordinates(39.9945711, -0.071089));
+        verify(store, times(1)).addCoordinatesToFavorite(cu.getCoordinates());
 
         Assert.assertTrue(result);
     }
 
     @Test
     public void addCoordinatesWhichExistAndAreInTheDB() {
+        Coordinates c = new Coordinates(39.9945711, -0.071089);
+        CurrentWeather cu = new CurrentWeather();
+        cu.setCoordinates(c);
+        when(store.addCoordinatesToFavorite(c)).thenReturn(false);
+        when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(c.getLon(), c.getLat())).thenReturn(cu);
 
-        when(store.addCoordinatesToFavorite(new Coordinates(39.9945711, -0.071089))).thenReturn(false);
+        boolean result = favouriteCoordinates.addCoordinatesToFavourite(c);
 
-        boolean result = favouriteCoordinates.addCoordinatesToFavourite(new Coordinates(39.9945711, -0.071089));
-
-        verify(store, times(1)).addCoordinatesToFavorite(new Coordinates(39.9945711, -0.071089));
+        verify(store, times(1)).addCoordinatesToFavorite(c);
 
         Assert.assertFalse(result);
     }

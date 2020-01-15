@@ -1,12 +1,18 @@
 package es.uji.ei1048.weatherApp.model;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Coordinates {
     private double lon;
     private double lat;
 
     public Coordinates(double lon, double lat) {
-        this.lon = lon;
-        this.lat = lat;
+        double longi = new BigDecimal(lon).setScale(2, RoundingMode.HALF_UP).doubleValue();
+        double lati = new BigDecimal(lat).setScale(2, RoundingMode.HALF_UP).doubleValue();
+
+        this.lon = longi;
+        this.lat = lati;
     }
 
 
@@ -21,11 +27,15 @@ public class Coordinates {
 
 
     public void setLat(double lat) {
-        this.lat = lat;
+        double lati = new BigDecimal(lat).setScale(2, RoundingMode.HALF_UP).doubleValue();
+
+        this.lat = lati;
     }
 
     public void setLon(double lon) {
-        this.lon = lon;
+        double longi = new BigDecimal(lon).setScale(2, RoundingMode.HALF_UP).doubleValue();
+
+        this.lon = longi;
     }
 
     public boolean areValid(){

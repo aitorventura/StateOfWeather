@@ -46,28 +46,33 @@ public class TestFavouriteCities {
 
     @Test
     public void addCityWhichExistsAndIsntInTheDB() {
-        when(weatherService.giveMeTheCurrentWeatherUsingACity("Castellón de la Plana")).thenReturn(new CurrentWeather());
+        CurrentWeather c = new CurrentWeather();
+        c.setCity("Castellón de la Plana");
+
+        when(weatherService.giveMeTheCurrentWeatherUsingACity("Castellón de la Plana")).thenReturn(c);
         when(store.addCityToFavorite("Castellón de la Plana")).thenReturn(true);
 
         boolean result = favouriteCities.addCityToFavourite("Castellón de la Plana");
 
         verify(weatherService, times(1)).giveMeTheCurrentWeatherUsingACity("Castellón de la Plana");
 
-        verify(store, times(1)).addCityToFavorite("Castellón de la Plana");
+        verify(store, times(1)).addCityToFavorite(c.getCity());
 
         Assert.assertTrue(result);
     }
 
     @Test
     public void addCityWhichExistsAndIsInTheDB() {
-        when(weatherService.giveMeTheCurrentWeatherUsingACity("Castellón de la Plana")).thenReturn(new CurrentWeather());
+        CurrentWeather c = new CurrentWeather();
+        c.setCity("Castellón de la Plana");
+        when(weatherService.giveMeTheCurrentWeatherUsingACity("Castellón de la Plana")).thenReturn(c);
         when(store.addCityToFavorite("Castellón de la Plana")).thenReturn(false);
 
         boolean result = favouriteCities.addCityToFavourite("Castellón de la Plana");
 
         verify(weatherService, times(1)).giveMeTheCurrentWeatherUsingACity("Castellón de la Plana");
 
-        verify(store, times(1)).addCityToFavorite("Castellón de la Plana");
+        verify(store, times(1)).addCityToFavorite(c.getCity());
 
         Assert.assertFalse(result);
     }

@@ -1,6 +1,7 @@
 package es.uji.es.ei1048.weatherApp.integrationTest;
 
 
+import es.uji.ei1048.weatherApp.model.Coordinates;
 import es.uji.ei1048.weatherApp.model.CurrentWeather;
 
 import es.uji.ei1048.weatherApp.controllerWeather.CurrentWeatherUsingCoordinates;
@@ -41,14 +42,15 @@ public class TestCurrentWeatherCoordinates {
     @Test
     public void validCurrentWeatherConsultationUsingACoordinatesWithDataInTheBBDD() {
         CurrentWeather currentWeather = new CurrentWeather();
+        Coordinates c = new Coordinates(39.9945711, -0.071089);
         when(store.giveMeTheCurrentWeather( anyDouble(), anyDouble())).thenReturn(currentWeather);
-        when(store.giveMeTheCurrentWeather( 39.9945711, -0.071089)).thenReturn(currentWeather);
+        when(store.giveMeTheCurrentWeather( c.getLon(), c.getLat())).thenReturn(currentWeather);
 
-        currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordinates(39.9945711, -0.071089);
+        currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordinates(c.getLon(), c.getLat());
 
         verify(store, times(1)).removeOldCurrentWeathers();
-        verify(store, times(1)).giveMeTheCurrentWeather(39.9945711, -0.071089);
-        verify(weatherService, times(0)).giveMeTheCurrentWeatherUsingCoordinates(39.9945711, -0.071089);
+        verify(store, times(1)).giveMeTheCurrentWeather(c.getLon(), c.getLat());
+        verify(weatherService, times(0)).giveMeTheCurrentWeatherUsingCoordinates(c.getLon(), c.getLat());
         verify(store, times(0)).addCurrentWeatherToTheDataBase(any(CurrentWeather.class));
 
     }
@@ -56,16 +58,18 @@ public class TestCurrentWeatherCoordinates {
     //Las coordenadas no están en la BBDD con conexión
     @Test
     public void validCurrentWeatherConsultationUsingACoordinatesWithoutDataInTheBBDDWithConnection() {
+        Coordinates c = new Coordinates(39.9945711, -0.071089);
+
         CurrentWeather currentWeather = new CurrentWeather();
         when(store.giveMeTheCurrentWeather(anyString())).thenReturn(null);
         when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(anyDouble(), anyDouble())).thenReturn(null);
-        when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(39.9945711, -0.071089)).thenReturn(currentWeather);
+        when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(c.getLon(), c.getLat())).thenReturn(currentWeather);
 
-        currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordinates(39.9945711, -0.071089);
+        currentWeatherUsingCoordinates.giveMeTheCurrentWeatherUsingACoordinates(c.getLon(), c.getLat());
 
         verify(store, times(1)).removeOldCurrentWeathers();
-        verify(store, times(1)).giveMeTheCurrentWeather(39.9945711, -0.071089);
-        verify(weatherService, times(1)).giveMeTheCurrentWeatherUsingCoordinates(39.9945711, -0.071089);
+        verify(store, times(1)).giveMeTheCurrentWeather(c.getLon(), c.getLat());
+        verify(weatherService, times(1)).giveMeTheCurrentWeatherUsingCoordinates(c.getLon(), c.getLat());
         verify(store, times(1)).addCurrentWeatherToTheDataBase(any(CurrentWeather.class));
     }
 

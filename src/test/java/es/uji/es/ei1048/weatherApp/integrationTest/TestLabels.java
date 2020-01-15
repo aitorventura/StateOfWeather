@@ -50,12 +50,14 @@ public class TestLabels {
     //Añadir una nueva etiqueta que no está en la BBDD con coordenadas válidas
     @Test
     public void addValidLabel() {
-
+        CurrentWeather currentWeather = new CurrentWeather();
+        currentWeather.setCoordinates(new Coordinates(39.99,-0.07));
         Coordinates coordinates = new Coordinates(39.9945711, -0.071089);
         when(store.addLabel("UJI", coordinates)).thenReturn(true);
+        when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(coordinates.getLon(), coordinates.getLat())).thenReturn(currentWeather);
 
         boolean result = savedLabels.addLabel("UJI",coordinates);
-        verify(store, times(1)).addLabel("UJI",coordinates);
+        verify(store, times(1)).addLabel("UJI", currentWeather.getCoordinates());
 
         Assert.assertTrue(result);
     }
@@ -64,10 +66,13 @@ public class TestLabels {
     @Test
     public void addInvalidLabel() {
         Coordinates coordinates = new Coordinates(39.9945711, -0.071089);
+        CurrentWeather currentWeather = new CurrentWeather();
+        currentWeather.setCoordinates(new Coordinates(39.99,-0.07));
         when(store.addLabel("UJI", coordinates)).thenReturn(false);
+        when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(coordinates.getLon(), coordinates.getLat())).thenReturn(currentWeather);
 
         boolean result = savedLabels.addLabel("UJI",coordinates);
-        verify(store, times(1)).addLabel("UJI",coordinates);
+        verify(store, times(1)).addLabel("UJI", currentWeather.getCoordinates());
 
         Assert.assertFalse(result);
     }
@@ -127,12 +132,12 @@ public class TestLabels {
     @Test
     public void getValidLabelWithCurrentWeatherInDB() {
         when(store.getCoordinatesOfLabel("UJI")).thenReturn(coordinates);
-        when(store.giveMeTheCurrentWeather(lon,lat)).thenReturn(currentWeather);
+        when(store.giveMeTheCurrentWeather(coordinates.getLon(),coordinates.getLat())).thenReturn(currentWeather);
 
         savedLabels.getCurrentWeatherOfLabel("UJI");
 
         verify(store, times(1)).getCoordinatesOfLabel("UJI");
-        verify(store, times(1)).giveMeTheCurrentWeather(lon,lat);
+        verify(store, times(1)).giveMeTheCurrentWeather(coordinates.getLon(),coordinates.getLat());
         verify(weatherService, times(0)).giveMeTheCurrentWeatherUsingCoordinates(anyDouble(),anyDouble());
     }
 
@@ -141,13 +146,13 @@ public class TestLabels {
     public void getValidLabelWithoutCurrentWeatherInDBWithConnection() {
 
         when(store.getCoordinatesOfLabel("UJI")).thenReturn(coordinates);
-        when(store.giveMeTheCurrentWeather(lon,lat)).thenReturn(null);
-        when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(lon,lat)).thenReturn(currentWeather);
+        when(store.giveMeTheCurrentWeather(coordinates.getLon(),coordinates.getLat())).thenReturn(null);
+        when(weatherService.giveMeTheCurrentWeatherUsingCoordinates(coordinates.getLon(),coordinates.getLat())).thenReturn(currentWeather);
 
         savedLabels.getCurrentWeatherOfLabel("UJI");
 
         verify(store, times(1)).getCoordinatesOfLabel("UJI");
-        verify(store, times(1)).giveMeTheCurrentWeather(lon,lat);
-        verify(weatherService, times(1)).giveMeTheCurrentWeatherUsingCoordinates(lon,lat);
+        verify(store, times(1)).giveMeTheCurrentWeather(coordinates.getLon(),coordinates.getLat());
+        verify(weatherService, times(1)).giveMeTheCurrentWeatherUsingCoordinates(coordinates.getLon(),coordinates.getLat());
     }
 }

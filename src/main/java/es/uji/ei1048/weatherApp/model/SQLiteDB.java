@@ -333,9 +333,8 @@ public class SQLiteDB implements IStore {
             return null;
         }
 
-        //TODO: Esto es una prueba a ver si salta la excepción, pero no - Parece que no lo hace
         if (favouriteCities.size() == 0 || favouriteCities == null) {
-            throw new ThereAreNoFavouriteCities();
+            //throw new ThereAreNoFavouriteCities();
         }
         return favouriteCities;
 
@@ -348,7 +347,7 @@ public class SQLiteDB implements IStore {
             this.open();
 
             this.stmt = c.createStatement();
-            stmt.execute("INSERT INTO FAVORITECITY(city) VALUES('" + city.toUpperCase() + "')");
+            stmt.execute("INSERT INTO FAVORITECITY(city) VALUES('" + city + "')");
 
             this.close();
             return true;
@@ -369,7 +368,7 @@ public class SQLiteDB implements IStore {
                 this.open();
 
                 this.stmt = c.createStatement();
-                stmt.execute("DELETE FROM FAVORITECITY WHERE city = '" + city.toUpperCase() + "'");
+                stmt.execute("DELETE FROM FAVORITECITY WHERE city = '" + city + "'");
 
                 this.close();
                 return true;
@@ -390,7 +389,7 @@ public class SQLiteDB implements IStore {
             this.open();
             this.stmt = c.createStatement();
 
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM FAVORITECITY WHERE city = '" + city.toUpperCase() + "'");
+            ResultSet resultSet = stmt.executeQuery("SELECT * FROM FAVORITECITY WHERE city = '" + city + "'");
 
             //while (resultSet.next()){
             existingCity = resultSet.getString("city");

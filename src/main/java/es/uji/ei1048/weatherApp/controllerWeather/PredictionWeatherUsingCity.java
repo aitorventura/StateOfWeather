@@ -29,9 +29,7 @@ public class PredictionWeatherUsingCity {
 
         sqLiteDB.removeOldPredicionWeathers(); //se borran aquellos datos que no sean de prodicciones futuras
 
-        System.out.println("ENTRO");
         List<PredictionWeather> listPredictions = sqLiteDB.giveMeTheListOfPredictionWeather(city); //devuelve lista si la hay
-        System.out.println(listPredictions.size());
         if(listPredictions == null || listPredictions.size() < 3) { //si no existe, se consulta al servidor
             listPredictions = this.openWeatherMap.giveMeTheListOfPredictionsUsingACity(city);
         } else {

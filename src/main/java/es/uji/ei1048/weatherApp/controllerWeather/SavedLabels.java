@@ -43,7 +43,12 @@ public class SavedLabels {
     public boolean addLabel(String label, Coordinates coordinates) {
 
         if (coordinates.areValid()){
-            return sqLiteDB.addLabel(label, coordinates);
+            CurrentWeather c = weatherService.giveMeTheCurrentWeatherUsingCoordinates(coordinates.getLon(), coordinates.getLat());
+            if(c != null){
+                sqLiteDB.addCurrentWeatherToTheDataBase(c);
+
+            }
+            return sqLiteDB.addLabel(label, c.getCoordinates());
         }
         throw new NotValidCoordinatesException();
         //return false;
@@ -67,6 +72,11 @@ public class SavedLabels {
 
         if(currentWeatherOfLabel == null){ //el tiempo no está en la BBDD
             currentWeatherOfLabel = weatherService.giveMeTheCurrentWeatherUsingCoordinates(lon, lat);
+
+            if(currentWeatherOfLabel!= null){
+                sqLiteDB.addCurrentWeatherToTheDataBase(currentWeatherOfLabel);
+            }
+
            /* if(currentWeatherOfLabel == null){
                 //thow NotConnectionException
             }*/

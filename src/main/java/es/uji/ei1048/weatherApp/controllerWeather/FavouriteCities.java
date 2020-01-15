@@ -30,14 +30,10 @@ public class FavouriteCities {
     }
 
     public boolean removeCityFromFavourite(String city){
-        //todo borrarlo de la bbdd y ver si daría error al no existir la ciudad
         return sqLiteDB.removeCityFromFavorite(city);
     }
 
-    //todo tener en cuenta que para no repetir código, la comprobación de si existe la ciudad ya se hace en
-    // CurrentWeatherUsingCity, por tanto saltará la excepción en WeatherAppFacade
-    //también tener en cuenta que la ciudad podría estar repetida y también se lanzaría una excepción
-    //todo tal vez habría que cambiarlo
+
     public boolean addCityToFavourite(String city){
 
         CurrentWeather currentWeather = openWeatherMap.giveMeTheCurrentWeatherUsingACity(city);
@@ -46,7 +42,7 @@ public class FavouriteCities {
             return false;
         }
 
-        return sqLiteDB.addCityToFavorite(city);
+        return sqLiteDB.addCityToFavorite(currentWeather.getCity());
     }
 
 

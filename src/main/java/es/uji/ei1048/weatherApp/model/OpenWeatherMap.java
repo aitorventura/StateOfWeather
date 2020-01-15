@@ -1,6 +1,9 @@
 package es.uji.ei1048.weatherApp.model;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -69,6 +72,8 @@ public class OpenWeatherMap implements IWeatherService {
 
             currentWeather.setCity(respMap.get("name").toString());
             Coordinates coordinates = new Coordinates(Double.parseDouble(coordMap.get("lon").toString()), Double.parseDouble(coordMap.get("lat").toString()));
+            System.out.println(Double.parseDouble(coordMap.get("lon").toString()));
+
             currentWeather.setCoordinates(coordinates);
             currentWeather.setTemperature(Double.parseDouble(mainMap.get("temp").toString()));
             currentWeather.setMaxTemperature(Double.parseDouble(mainMap.get("temp_max").toString()));
@@ -144,13 +149,18 @@ public class OpenWeatherMap implements IWeatherService {
                 name = "";
             }
 
-
+            DecimalFormat df = new DecimalFormat("#.00");
             for (int i = 0; i < lista.size(); i++) {
 
                 PredictionWeather p = new PredictionWeather();
 
+                double longi = new BigDecimal(Double.parseDouble(longitude.toString())).setScale(2, RoundingMode.HALF_UP).doubleValue();
+                double lati = new BigDecimal(Double.parseDouble(latitude.toString())).setScale(2, RoundingMode.HALF_UP).doubleValue();
 
-                p.setCoordinates(new Coordinates(Double.parseDouble(longitude.toString()), Double.parseDouble(latitude.toString())));
+
+
+
+                p.setCoordinates(new Coordinates(longi, lati));
 
                 p.setCity(name);
 
